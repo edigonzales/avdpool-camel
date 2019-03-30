@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/edigonzales/avdpool-camel.svg?branch=master)](https://travis-ci.org/edigonzales/avdpool-camel)
 # avdpool-camel
 Import of cadastral surveying data into PostgreSQL with Apache Camel.
 
