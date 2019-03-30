@@ -1,0 +1,30 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.3.RELEASE'
+    id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'ch.so.agi'
+
+ext {
+    apacheCamelVersion = "2.23.1"
+}
+
+sourceCompatibility = '1.8'
+targetCompatibility = '1.8'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-actuator'
+    implementation "org.apache.camel:camel-spring-boot-starter:${apacheCamelVersion}"
+    implementation "org.apache.camel:camel-ftp:${apacheCamelVersion}"
+    implementation "org.apache.camel:camel-zipfile:${apacheCamelVersion}"
+    runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+    runtimeOnly 'org.postgresql:postgresql'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
