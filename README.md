@@ -3,8 +3,11 @@
 Import of cadastral surveying data into PostgreSQL with Apache Camel.
 
 ## Schema vorbereiten
+
 ```
-java -jar /Users/stefan/apps/ili2pg-4.0.0-20190328.174729-25-bindist/ili2pg-4.0.0-SNAPSHOT.jar --dbhost 192.168.50.8 --dbdatabase edit --dbusr ddluser --dbpwd ddluser --createBasketCol --createDatasetCol --createFk --createFkIdx --createGeomIdx --createEnumTabs --defaultSrsCode 2056 --nameByTopic --createscript fubar.sql --dbschema agi_dm01avso24 --models DM01AVSO24LV95 --schemaimport
+java -jar /Users/stefan/apps/ili2pg-4.0.0-20190404.083713-30-bindist/ili2pg-4.0.0-SNAPSHOT.jar --createBasketCol --createDatasetCol --createFk --createFkIdx --createGeomIdx --createImportTabs --createEnumTabs --beautifyEnumDispName --createMetaInfo --createUnique --createNumChecks --defaultSrsCode 2056 --nameByTopic --createscript create_schema.sql --dbschema agi_dm01avso24 --models DM01AVSO24LV95 
 ```
 
-TODO: Index auf bbart und eoart.
+TODO: 
+- Index auf bbart und eoart
+- Grant Permissions für sogis-Umgebung.

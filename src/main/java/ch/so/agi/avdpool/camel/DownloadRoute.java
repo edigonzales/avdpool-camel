@@ -1,7 +1,6 @@
 package ch.so.agi.avdpool.camel;
 
 import org.apache.camel.builder.RouteBuilder;
-import org.apache.camel.component.aws.s3.S3Constants;
 import org.apache.camel.dataformat.zipfile.ZipSplitter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -22,9 +21,6 @@ public class DownloadRoute extends RouteBuilder {
     @Value("${app.ftpUrlInfogrips}")
     private String ftpUrlInfogrips;
 
-//    @Value("${app.idempotentFileUrl}")
-//    private String idempotentFileUrl;
-
     @Value("${app.pathToDownloadFolder}")
     private String pathToDownloadFolder;
 
@@ -39,35 +35,21 @@ public class DownloadRoute extends RouteBuilder {
 
     @Value("${app.awsSecretKey}")
     private String awsSecretKey;
+    
+    @Value("${app.awsBucketName}")
+    private String awsBucketName;
 
     @Override
     public void configure() throws Exception {
-        
-//        from("ftp://"+ftpUserInfogrips+"@"+ftpUrlInfogrips+"/\\gb2av\\?password="+ftpPwdInfogrips+"&antInclude=VOLLZUG*.zip&autoCreate=false&noop=true&readLock=changed&stepwise=false&separator=Windows&passiveMode=true&binary=true&delay=30000&initialDelay=5000&idempotentRepository=#fileConsumerRepo&idempotentKey=${file:name}-${file:size}-${file:modified}")
-//        .to("file://"+pathToDownloadFolder)
-//        .split(new ZipSplitter())
-//        .streaming().convertBodyTo(String.class) // What happens when it gets huge? Is 'String.class' a problem? 
-//            .choice()
-//                .when(body().isNotNull())
-//                    .to("file://"+pathToUnzipFolder)
-//            .end()
-//        .end();
-        
-        
-        from("file://"+pathToUnzipFolder+"/?noop=true&delay=30000&initialDelay=5000")
-        .convertBodyTo(byte[].class)
-        .setHeader(S3Constants.CONTENT_LENGTH, simple("${in.header.CamelFileLength}"))
-        .setHeader(S3Constants.KEY,simple("${in.header.CamelFileNameOnly}"))
-        .to("aws-s3://ch.so.agi.geodaten"
-                + "?deleteAfterWrite=false&region=EU_CENTRAL_1" //https://docs.aws.amazon.com/de_de/general/latest/gr/rande.html https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/regions/Regions.html
-                + "&accessKey={{awsAccessKey}}"
-                + "&secretKey=RAW({{awsSecretKey}})")
-        .log("done.");
-
-
-
-        
-        
+        //from("ftp://"+ftpUserInfogrips+"@"+ftpUrlInfogrips+"/\\gb2av\\?password="+ftpPwdInfogrips+"&antInclude=VOLLZUG*.zip&autoCreate=false&noop=true&readLock=changed&stepwise=false&separator=Windows&passiveMode=true&binary=true&delay=30000&initialDelay=5000&idempotentRepository=#fileConsumerRepo&idempotentKey=${file:name}-${file:size}-${file:modified}")
+        from("ftp://"+ftpUserInfogrips+"@"+ftpUrlInfogrips+"/\\dm01avso24lv95\\itf\\?password="+ftpPwdInfogrips+"&antInclude=*.zip&autoCreate=false&noop=true&readLock=changed&stepwise=false&separator=Windows&passiveMode=true&binary=true&delay=60000&initialDelay=5000&idempotentRepository=#fileConsumerRepo&idempotentKey=ftp-${file:name}-${file:size}-${file:modified}")
+        .to("file://"+pathToDownloadFolder)
+        .split(new ZipSplitter())
+        .streaming().convertBodyTo(String.class) // What happens when it gets huge? Is 'String.class' a problem? 
+            .choice()
+                .when(body().isNotNull())
+                    .to("file://"+pathToUnzipFolder)
+            .end()
+        .end();        
     }
-
 }
