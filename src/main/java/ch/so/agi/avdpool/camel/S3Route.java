@@ -21,19 +21,19 @@ public class S3Route extends RouteBuilder {
     @Value("${app.awsSecretKey}")
     private String awsSecretKey;
     
-    @Value("${app.awsBucketName}")
-    private String awsBucketName;
+    @Value("${app.awsBucketNameSo}")
+    private String awsBucketNameSo;
 
     @Override
     public void configure() throws Exception {
-      from("file://"+pathToUnzipFolder+"/?noop=true&delay=30000&initialDelay=5000&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-${file:name}-${file:size}-${file:modified}")
-      .convertBodyTo(byte[].class)
-      .setHeader(S3Constants.CONTENT_LENGTH, simple("${in.header.CamelFileLength}"))
-      .setHeader(S3Constants.KEY,simple("${in.header.CamelFileNameOnly}"))
-      .to("aws-s3://" + awsBucketName
-              + "?deleteAfterWrite=false&region=EU_CENTRAL_1" //https://docs.aws.amazon.com/de_de/general/latest/gr/rande.html https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/regions/Regions.html
-              + "&accessKey={{awsAccessKey}}"
-              + "&secretKey=RAW({{awsSecretKey}})")
-      .log(LoggingLevel.INFO, "File uploaded: ${in.header.CamelFileNameOnly}");
+//      from("file://"+pathToUnzipFolder+"/?noop=true&delay=30000&initialDelay=5000&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-${file:name}-${file:size}-${file:modified}")
+//      .convertBodyTo(byte[].class)
+//      .setHeader(S3Constants.CONTENT_LENGTH, simple("${in.header.CamelFileLength}"))
+//      .setHeader(S3Constants.KEY,simple("${in.header.CamelFileNameOnly}"))
+//      .to("aws-s3://" + awsBucketName
+//              + "?deleteAfterWrite=false&region=EU_CENTRAL_1" //https://docs.aws.amazon.com/de_de/general/latest/gr/rande.html https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/regions/Regions.html
+//              + "&accessKey={{awsAccessKey}}"
+//              + "&secretKey=RAW({{awsSecretKey}})")
+//      .log(LoggingLevel.INFO, "File uploaded: ${in.header.CamelFileNameOnly}");
     }
 }

@@ -36,8 +36,8 @@ public class DownloadRoute extends RouteBuilder {
     @Value("${app.awsSecretKey}")
     private String awsSecretKey;
     
-    @Value("${app.awsBucketName}")
-    private String awsBucketName;
+//    @Value("${app.awsBucketName}")
+//    private String awsBucketName;
 
     @Override
     public void configure() throws Exception {
@@ -45,10 +45,10 @@ public class DownloadRoute extends RouteBuilder {
         from("ftp://"+ftpUserInfogrips+"@"+ftpUrlInfogrips+"/\\dm01avso24lv95\\itf\\?password="+ftpPwdInfogrips+"&antInclude=*.zip&autoCreate=false&noop=true&readLock=changed&stepwise=false&separator=Windows&passiveMode=true&binary=true&delay=60000&initialDelay=5000&idempotentRepository=#fileConsumerRepo&idempotentKey=ftp-${file:name}-${file:size}-${file:modified}")
         .to("file://"+pathToDownloadFolder)
         .split(new ZipSplitter())
-        .streaming().convertBodyTo(String.class) // What happens when it gets huge? Is 'String.class' a problem? 
+        .streaming().convertBodyTo(String.class, "ISO-8859-1") // What happens when it gets huge? Is 'String.class' a problem? 
             .choice()
                 .when(body().isNotNull())
-                    .to("file://"+pathToUnzipFolder)
+                    .to("file://"+pathToUnzipFolder+"?charset=ISO-8859-1") // Encodings... I love it.
             .end()
         .end();        
     }
