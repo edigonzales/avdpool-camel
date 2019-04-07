@@ -18,7 +18,11 @@ repositories {
     jcenter()
     mavenCentral()
     maven { url "http://jars.interlis.ch" } 
-    maven { url "https://dl.bintray.com/sogis/camel-components/" }
+}
+
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
+    resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
 }
 
 dependencies {
@@ -28,8 +32,8 @@ dependencies {
     implementation "org.apache.camel:camel-ftp:${apacheCamelVersion}"
     implementation "org.apache.camel:camel-zipfile:${apacheCamelVersion}"
     implementation "org.apache.camel:camel-aws:${apacheCamelVersion}"
-    implementation 'ch.so.agi.camel:camel-ili2pg:1.0.12'
-    implementation 'ch.so.agi.camel:camel-components:1.0.16'
+    implementation ('ch.so.agi.camel:camel-ili2pg:1.0.+') {changing = true}
+    implementation ('ch.so.agi.camel:camel-components:1.0.+') {changing = true}
     runtimeOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'org.postgresql:postgresql'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
