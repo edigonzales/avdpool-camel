@@ -5,9 +5,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import ch.so.agi.camel.processors.Av2chProcessor;
+//import ch.so.agi.camel.processors.Av2chProcessor;
 
-@Component
+//@Component
 public class Av2chRoute extends RouteBuilder {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
@@ -20,7 +20,7 @@ public class Av2chRoute extends RouteBuilder {
     @Override
     public void configure() throws Exception {
         from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&delay=30000&initialDelay=5000&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=av2ch-${file:name}-${file:size}-${file:modified}")
-        .process(new Av2chProcessor())
+        //.process(new Av2chProcessor())
         .to("file://"+pathToAv2ChFolder+"/");
 
     }

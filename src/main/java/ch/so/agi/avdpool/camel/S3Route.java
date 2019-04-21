@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class S3Route extends RouteBuilder {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
@@ -30,6 +30,7 @@ public class S3Route extends RouteBuilder {
 //      .convertBodyTo(byte[].class)
 //      .setHeader(S3Constants.CONTENT_LENGTH, simple("${in.header.CamelFileLength}"))
 //      .setHeader(S3Constants.KEY,simple("${in.header.CamelFileNameOnly}"))
+//      .setHeader(S3Constants.CANNED_ACL,simple("public-read")) // TODO: does this work?
 //      .to("aws-s3://" + awsBucketName
 //              + "?deleteAfterWrite=false&region=EU_CENTRAL_1" //https://docs.aws.amazon.com/de_de/general/latest/gr/rande.html https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/regions/Regions.html
 //              + "&accessKey={{awsAccessKey}}"

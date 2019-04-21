@@ -1,5 +1,5 @@
 plugins {
-    id 'org.springframework.boot' version '2.1.3.RELEASE'
+    id 'org.springframework.boot' version '2.1.4.RELEASE'
     id 'java'
 }
 
@@ -15,6 +15,7 @@ sourceCompatibility = '1.8'
 targetCompatibility = '1.8'
 
 repositories {
+    maven { url  "https://dl.bintray.com/sogis/ili2pg" } // temporary!
     jcenter()
     mavenCentral()
     maven { url "http://jars.interlis.ch" } 
@@ -23,6 +24,8 @@ repositories {
 configurations.all {
     resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
     resolutionStrategy.cacheDynamicVersionsFor 0, 'seconds'
+    
+    //exclude group: 'org.slf4j', module: 'slf4j-simple'
 }
 
 dependencies {
@@ -32,8 +35,8 @@ dependencies {
     implementation "org.apache.camel:camel-ftp:${apacheCamelVersion}"
     implementation "org.apache.camel:camel-zipfile:${apacheCamelVersion}"
     implementation "org.apache.camel:camel-aws:${apacheCamelVersion}"
-    implementation ('ch.so.agi.camel:camel-ili2pg:1.0.+') {changing = true}
-    implementation ('ch.so.agi.camel:camel-components:1.0.+') {changing = true}
+    implementation ('ch.so.agi.camel:camel-ili2pg:latest.integration') {changing = true}
+    implementation ('ch.so.agi.camel:camel-components:latest.integration') {changing = true}
     runtimeOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'org.postgresql:postgresql'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
