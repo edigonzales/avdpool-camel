@@ -100,7 +100,7 @@ public class IntegrationRoute extends RouteBuilder {
         
         /*
          * Convert ITF files to "Bundesmodell" (DM01AVCH24DLV95)
-         * Be carefull: The library writes the error log messages to dev/null since it was really verbose.
+         * Be careful: The library writes the error log messages to dev/null since it was really verbose.
          * It should restore the default behaviour but in there can be exotic corner cases... 
          */
         
