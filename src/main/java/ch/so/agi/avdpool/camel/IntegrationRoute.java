@@ -7,6 +7,8 @@ import org.apache.camel.dataformat.zipfile.ZipSplitter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import ch.so.agi.camel.processors.Av2chProcessor;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,6 +33,9 @@ public class IntegrationRoute extends RouteBuilder {
 
     @Value("${app.pathToErrorFolder}")
     private String pathToErrorFolder;
+    
+    @Value("${app.pathToAv2ChFolder}")
+    private String pathToAv2ChFolder;
 
     @Value("${app.awsAccessKey}")
     private String awsAccessKey;
@@ -40,12 +45,18 @@ public class IntegrationRoute extends RouteBuilder {
     
     @Value("${app.awsBucketNameSO}")
     private String awsBucketNameSO;
+    
+    @Value("${app.awsBucketNameCH}")
+    private String awsBucketNameCH;
 
     @Value("${app.downloadDelay}")
     private String downloadDelay;
 
     @Value("${app.uploadDelay}")
     private String uploadDelay;
+    
+    @Value("${app.convertDelay}")
+    private String convertDelay;
 
     @Value("${app.initialDownloadDelay}")
     private String initialDownloadDelay;
@@ -53,6 +64,12 @@ public class IntegrationRoute extends RouteBuilder {
     @Value("${app.initialUploadDelay}")
     private String initialUploadDelay;
     
+    @Value("${app.initialConvertDelay}")
+    private String initialConvertDelay;
+    
+    @Value("${app.importCronScheduleExpression}")
+    private String importCronScheduleExpression;
+
     @Value("${app.dbHostEdit}")
     private String dbHostEdit;
     
@@ -96,22 +113,39 @@ public class IntegrationRoute extends RouteBuilder {
                 + "?deleteAfterWrite=false&region=EU_CENTRAL_1" //https://docs.aws.amazon.com/de_de/general/latest/gr/rande.html https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/regions/Regions.html
                 + "&accessKey={{awsAccessKey}}"
                 + "&secretKey=RAW({{awsSecretKey}})")
-        .log(LoggingLevel.INFO, "File uploaded: ${in.header.CamelFileNameOnly}");
+        .log(LoggingLevel.INFO, "DM01-SO-File uploaded: ${in.header.CamelFileNameOnly}");
         
         /*
-         * Convert ITF files to "Bundesmodell" (DM01AVCH24DLV95)
+         * Convert ITF files to "Bundesmodell" (DM01AVCH24DLV95) every n seconds or minutes.
          * Be careful: The library writes the error log messages to dev/null since it was really verbose.
          * It should restore the default behaviour but in there can be exotic corner cases... 
          */
-        
-        
+        from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&delay="+convertDelay+"&initialDelay="+initialConvertDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=av2ch-${file:name}-${file:size}-${file:modified}")
+        .process(new Av2chProcessor())
+        .to("file://"+pathToAv2ChFolder+"/")
+        .log(LoggingLevel.INFO, "File converted to DM01-CH: ${in.header.CamelFileNameOnly}");
+
+        /*
+         * Upload "Bundesmodell" to S3 every n seconds or minutes.
+         */
+        from("file://"+pathToAv2ChFolder+"/?noop=true&include=.*\\.itf&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-ch-${file:name}-${file:size}-${file:modified}")
+        .convertBodyTo(byte[].class)
+        .setHeader(S3Constants.CONTENT_LENGTH, simple("${in.header.CamelFileLength}"))
+        .setHeader(S3Constants.KEY,simple("${in.header.CamelFileNameOnly}"))
+        .setHeader(S3Constants.CANNED_ACL,simple("PublicRead")) 
+        .to("aws-s3://" + awsBucketNameCH
+                + "?deleteAfterWrite=false&region=EU_CENTRAL_1" 
+                + "&accessKey={{awsAccessKey}}"
+                + "&secretKey=RAW({{awsSecretKey}})")
+        .log(LoggingLevel.INFO, "DM01-CH-File uploaded: ${in.header.CamelFileNameOnly}");
         
         /*
          * Import ITF files into database three times a day (12:00 and 18:00 and 23:00).
          */
         //from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&scheduler=spring&scheduler.cron=*+*+*+*+*+*&initialDelay=5000&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=ili2pg-${file:name}-${file:size}-${file:modified}")
-        from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&scheduler=spring&scheduler.cron=0+0+12,18,23+*+*+*&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=ili2pg-${file:name}-${file:size}-${file:modified}")
-        .toD("ili2pg:replace?dbhost="+dbHostEdit+"&dbport=5432&dbdatabase="+dbDatabaseEdit+"&dbschema="+dbSchemaEdit+"&dbusr="+dbUserEdit+"&dbpwd="+dbPwdEdit+"&dataset=${in.header.CamelFileNameOnly.substring(0,4)}");
+        from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&scheduler=spring&scheduler.cron="+importCronScheduleExpression+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=ili2pg-${file:name}-${file:size}-${file:modified}")
+        .toD("ili2pg:replace?dbhost="+dbHostEdit+"&dbport=5432&dbdatabase="+dbDatabaseEdit+"&dbschema="+dbSchemaEdit+"&dbusr="+dbUserEdit+"&dbpwd="+dbPwdEdit+"&dataset=${in.header.CamelFileNameOnly.substring(0,4)}")
+        .log(LoggingLevel.INFO, "File imported: ${in.header.CamelFileNameOnly}");
 
     }
 }
