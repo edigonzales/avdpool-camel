@@ -73,6 +73,9 @@ public class IntegrationRoute extends RouteBuilder {
     @Value("${app.dbHostEdit}")
     private String dbHostEdit;
     
+    @Value("${app.dbPortEdit}")
+    private String dbPortEdit;
+    
     @Value("${app.dbDatabaseEdit}")
     private String dbDatabaseEdit;
     
@@ -84,13 +87,32 @@ public class IntegrationRoute extends RouteBuilder {
 
     @Value("${app.dbPwdEdit}")
     private String dbPwdEdit;
+    
+    @Value("${app.emailUserSender}")
+    private String emailUserSender;
+
+    @Value("${app.emailPwdSender}")
+    private String emailPwdSender;
+
+    @Value("${app.emailUserRecipient}")
+    private String emailUserRecipient;
 
     @Override
     public void configure() throws Exception {
         /*
+         * Send an email if an exception occures.
+         */
+        onException(Exception.class)
+        .setHeader("subject", simple("AV-Import/-Export: Fehler"))
+        .setHeader("to", simple(emailUserRecipient))
+        .setBody(simple("Route Id: ${routeId} \n Date: ${date:now:yyyy-MM-dd HH:mm:ss} \n File: ${in.header.CamelFileAbsolutePath} \n Message: ${exception.message} \n Stacktrace: ${exception.stacktrace}"))
+        .to("smtps://smtp.gmail.com:465?username="+emailUserSender+"&password="+emailPwdSender);
+
+        /*
          * Download ITF (ZIP) files from Infogrips FTP server every n seconds or minutes.
          */
         from("ftp://"+ftpUserInfogrips+"@"+ftpUrlInfogrips+"/\\dm01avso24lv95\\itf\\?password="+ftpPwdInfogrips+"&antInclude=*.zip&autoCreate=false&noop=true&readLock=changed&stepwise=false&separator=Windows&passiveMode=true&binary=true&delay="+downloadDelay+"&initialDelay="+initialDownloadDelay+"&idempotentRepository=#fileConsumerRepo&idempotentKey=ftp-${file:name}-${file:size}-${file:modified}")
+        .routeId("_download_")
         .to("file://"+pathToDownloadFolder)
         .split(new ZipSplitter())
         .streaming().convertBodyTo(String.class, "ISO-8859-1") 
@@ -105,6 +127,7 @@ public class IntegrationRoute extends RouteBuilder {
          * Upload the unzipped ITF files to S3 every n seconds or minutes.
          */
         from("file://"+pathToUnzipFolder+"/?noop=true&include=.*\\.itf&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-${file:name}-${file:size}-${file:modified}")
+        .routeId("_upload_")
         .convertBodyTo(byte[].class)
         .setHeader(S3Constants.CONTENT_LENGTH, simple("${in.header.CamelFileLength}"))
         .setHeader(S3Constants.KEY,simple("${in.header.CamelFileNameOnly}"))
@@ -121,6 +144,7 @@ public class IntegrationRoute extends RouteBuilder {
          * It should restore the default behaviour but in there can be exotic corner cases... 
          */
         from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&delay="+convertDelay+"&initialDelay="+initialConvertDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=av2ch-${file:name}-${file:size}-${file:modified}")
+        .routeId("_av2ch_")
         .process(new Av2chProcessor())
         .to("file://"+pathToAv2ChFolder+"/")
         .log(LoggingLevel.INFO, "File converted to DM01-CH: ${in.header.CamelFileNameOnly}");
@@ -129,6 +153,7 @@ public class IntegrationRoute extends RouteBuilder {
          * Upload "Bundesmodell" to S3 every n seconds or minutes.
          */
         from("file://"+pathToAv2ChFolder+"/?noop=true&include=.*\\.itf&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-ch-${file:name}-${file:size}-${file:modified}")
+        .routeId("_av2ch upload_")
         .convertBodyTo(byte[].class)
         .setHeader(S3Constants.CONTENT_LENGTH, simple("${in.header.CamelFileLength}"))
         .setHeader(S3Constants.KEY,simple("${in.header.CamelFileNameOnly}"))
@@ -142,9 +167,11 @@ public class IntegrationRoute extends RouteBuilder {
         /*
          * Import ITF files into database three times a day (12:00 and 18:00 and 23:00).
          */
+        //dbPwdEdit = "gaga";
         //from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&scheduler=spring&scheduler.cron=*+*+*+*+*+*&initialDelay=5000&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=ili2pg-${file:name}-${file:size}-${file:modified}")
         from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&scheduler=spring&scheduler.cron="+importCronScheduleExpression+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=ili2pg-${file:name}-${file:size}-${file:modified}")
-        .toD("ili2pg:replace?dbhost="+dbHostEdit+"&dbport=5432&dbdatabase="+dbDatabaseEdit+"&dbschema="+dbSchemaEdit+"&dbusr="+dbUserEdit+"&dbpwd="+dbPwdEdit+"&dataset=${in.header.CamelFileNameOnly.substring(0,4)}")
+        .routeId("_ili2pg_")
+        .toD("ili2pg:replace?dbhost="+dbHostEdit+"&dbport="+dbPortEdit+"&dbdatabase="+dbDatabaseEdit+"&dbschema="+dbSchemaEdit+"&dbusr="+dbUserEdit+"&dbpwd="+dbPwdEdit+"&dataset=${in.header.CamelFileNameOnly.substring(0,4)}")
         .log(LoggingLevel.INFO, "File imported: ${in.header.CamelFileNameOnly}");
 
     }

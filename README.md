@@ -16,6 +16,29 @@ Hinweise:
 - `--strokeArcs`: Im Erfassungsmodell sollen die Kreisbogen erhalten bleiben. Im Publikationsmodell ("MOpublic") werden die Kreisbogen segmentiert.
 - `--createUnique`: Kann nicht verwendet werden, da einige Attribute kantonsweit nicht eindeutig sein können.
 
+## Docker
+Manuell das Dockerimage erstellen:
+```
+docker build -t sogis/avdpool .
+```
+
+Docker Container starten:
+```
+docker run --restart -d -p 8887:8888 -v /Users/stefan/tmp/avdpool_data:/avdpool_data \
+-e "SPRING_PROFILES_ACTIVE=do" \
+-e "awsAccessKey=XXXXXX" \
+-e "awsSecretKey=XXXXXX" \
+-e "emailUserSender=XXXXXX" \
+-e "emailPwdSender=XXXXXX" \
+-e "emailUserRecipient=XXXXXX" \
+-e "ftpUserInfogrips=XXXXXX" \
+-e "ftpPwdInfogrips=XXXXXX" \
+-e "dbUserEdit=XXXXXX" \
+-e "dbPwdEdit=XXXXXX" \
+-e "TZ=Europe/Amsterdam" \
+sogis/avdpool
+```
+ 
 ## Betrieb
 
 ## TODO 

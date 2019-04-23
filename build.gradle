@@ -4,6 +4,7 @@ plugins {
 }
 
 apply plugin: 'io.spring.dependency-management'
+apply from: "$rootDir/gradle/versioning.gradle"
 
 group = 'ch.so.agi'
 
@@ -33,11 +34,30 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-actuator'
     implementation "org.apache.camel:camel-spring-boot-starter:${apacheCamelVersion}"
     implementation "org.apache.camel:camel-ftp:${apacheCamelVersion}"
+    implementation "org.apache.camel:camel-mail:${apacheCamelVersion}"
     implementation "org.apache.camel:camel-zipfile:${apacheCamelVersion}"
     implementation "org.apache.camel:camel-aws:${apacheCamelVersion}"
     implementation ('ch.so.agi.camel:camel-ili2pg:latest.integration') {changing = true}
     implementation ('ch.so.agi.camel:camel-components:latest.integration') {changing = true}
+    
+    implementation 'com.sun.xml.bind:jaxb-core:2.3.0.1'
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'
+    implementation 'com.sun.xml.bind:jaxb-impl:2.3.1'
+    
     runtimeOnly 'org.springframework.boot:spring-boot-devtools'
     runtimeOnly 'org.postgresql:postgresql'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
+
+// Slighly better ("thinner") docker image handling
+task deleteFilesJarDir(type: Delete) {
+    delete fileTree("${buildDir}/dependency/")//.listFiles()
+    delete file("${buildDir}/dependency/")
+}
+
+task unzipJar(type: Copy) {
+    from zipTree(file("${buildDir}/libs/avdpool-"+version+".jar"))
+    into file("${buildDir}/dependency/")
+}
+unzipJar.dependsOn(deleteFilesJarDir)
+bootJar.finalizedBy(unzipJar)
