@@ -17,9 +17,11 @@ Hinweise:
 - `--createUnique`: Kann nicht verwendet werden, da einige Attribute kantonsweit nicht eindeutig sein können.
 
 ## Docker
-Manuell das Dockerimage erstellen:
+Manuell das Dockerimage erstellen und pushen:
 ```
+./gradlew clean build -x test
 docker build -t sogis/avdpool .
+docker push sogis/avdpool
 ```
 
 Docker Container starten:
