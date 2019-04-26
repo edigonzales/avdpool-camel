@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/edigonzales/avdpool-camel.svg?branch=master)](https://travis-ci.org/edigonzales/avdpool-camel)
+[![Build Status](https://travis-ci.org/sogis/avdpool-camel.svg?branch=master)](https://travis-ci.org/sogis/avdpool-camel)
 # avdpool-camel
 Ablösung für AV-Import/-Export.
 
