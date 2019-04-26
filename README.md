@@ -1,9 +1,51 @@
 [![Build Status](https://travis-ci.org/edigonzales/avdpool-camel.svg?branch=master)](https://travis-ci.org/edigonzales/avdpool-camel)
 # avdpool-camel
-Import of cadastral surveying data into PostgreSQL with Apache Camel.
+Ablösung für AV-Import/-Export.
 
-## Setup
-SQL-Datei für DDL erzeugen:
+1. Beschreibung
+2. Betriebsdokumentation
+3. Entwicklerdokumentation
+4. TODO
+
+## Beschreibung
+Importiert die Daten der amtlichen Vermessung in die Edit-Datenbank und erstellt verschiedene (DM01-Bund, DXF-Geobau (to be done)) abgeleitete Produkte. Die Originaldateien wie auch die Derivate werden auf AWS-S3 archiviert.
+
+Umgesetzt wurde der Prozess als Apache Camel Pipeline, die in Spring Boot läuft. Der Import in die Datenbank findet nur dreimal täglich statt. Das Herunterladen, Umwandeln und Hochladen jede Minute. Alle Zyklen können in einer Properties-Datei konfiguriert werden.
+
+## Betriebsdokumentation
+Bei jedem Git-Push wird mittels Travis das Docker-Image neu gebildet und als sogis/avdpool mit den Tags "Travis-Buildnummer" und "latest" auf Docker Hub abgelegt. Auf der Testumgebung des AGI wird viertelstündlich das latest-Image neu deployed.
+
+### Konfiguration
+Die Verbindungsparameter werden über Spring Boot Profile gesteuert. Für jede Umgebung gibt es ein application-[dev|test|int|prod]properties. Diese spezielle, zusätzliche Propertiesfile kann mit der speziellen Spring-Boot-Umgebungsvariable SPRING_PROFILES_ACTIVE gesteuert werden: SPRING_PROFILES_ACTIVE=[dev|test|int|prod] vorhanden sein.
+
+Der Import wird über eine Cron-Schedule-Expression gesteuert, allen anderen Zyklen über Millisekundenangaben.
+
+### Persistenz
+Es ist ein Persistence-Volume notwendig (siehe `docker run`-Befehl).
+
+### Docker
+```
+docker run --restart -d -p 8888:8888 -v /mnt/avdpool_data:/avdpool_data \
+-e "SPRING_PROFILES_ACTIVE=test" \
+-e "awsAccessKey=XXXXXX" \
+-e "awsSecretKey=XXXXXX" \
+-e "emailSmtpSender=XXXXXX" \
+-e "emailUserSender=XXXXXX" \
+-e "emailPwdSender=XXXXXX" \
+-e "emailUserRecipient=XXXXXX" \
+-e "ftpUserInfogrips=XXXXXX" \
+-e "ftpPwdInfogrips=XXXXXX" \
+-e "dbUserEdit=XXXXXX" \
+-e "dbPwdEdit=XXXXXX" \
+-e "TZ=Europe/Amsterdam" \
+sogis/avdpool
+```
+
+- `emailSmtpSender`: z.B. `smtps://smtp.gmail.com:465`
+- `emailUserRecipient`: Kommaseparierte Liste
+- `TZ=Europe/Amsterdam`: Damit sollte der Ausführzeitpunkt des Cronjobs (Datenimport) transparenter sein, da das Dockerimage nicht mehr UTC o.ä., sondern unsere Zeitzone erhält.
+
+### ili2pg
 ```
 java -jar /Users/stefan/apps/ili2pg-4.0.0/ili2pg-4.0.0.jar \
 --dbschema agi_dm01avso24 --models DM01AVSO24LV95 \
@@ -16,35 +58,17 @@ Hinweise:
 - `--strokeArcs`: Im Erfassungsmodell sollen die Kreisbogen erhalten bleiben. Im Publikationsmodell ("MOpublic") werden die Kreisbogen segmentiert.
 - `--createUnique`: Kann nicht verwendet werden, da einige Attribute kantonsweit nicht eindeutig sein können.
 
-## Docker
-Manuell das Dockerimage erstellen und pushen:
-```
-./gradlew clean build -x test
-docker build -t sogis/avdpool .
-docker push sogis/avdpool
-```
+## Entwicklerdokumentation
 
-Docker Container starten:
-```
-docker run --restart -d -p 8887:8888 -v /Users/stefan/tmp/avdpool_data:/avdpool_data \
--e "SPRING_PROFILES_ACTIVE=do" \
--e "awsAccessKey=XXXXXX" \
--e "awsSecretKey=XXXXXX" \
--e "emailUserSender=XXXXXX" \
--e "emailPwdSender=XXXXXX" \
--e "emailUserRecipient=XXXXXX" \
--e "ftpUserInfogrips=XXXXXX" \
--e "ftpPwdInfogrips=XXXXXX" \
--e "dbUserEdit=XXXXXX" \
--e "dbPwdEdit=XXXXXX" \
--e "TZ=Europe/Amsterdam" \
-sogis/avdpool
-```
- 
-## Betrieb
+### Lokale Datenbank
+Vagrant as usual.
+
+### Umgebungsvariablen
+Entweder werden sie z.B. in die `.bashrc`-Datei o.ä. geschrieben oder in Eclipse unter `Run configurations...` definiert. Erste Methode funktioniert unter macOS nicht: Eclipse erkennt die Umgebungsvariablen nicht.
 
 ## TODO 
-- pre- und postscript.sql für Edit-DB? Rollen?
-- Index auf bbart und eoart
-- Grant Permissions für sogis-Umgebung.
-- Anpassung Modellierungshandbuch an ili2pg-4.0
+- Zusätzliche Indexe in den DB-Tabellen. Welche?
+- Anpassung Modellierungshandbuch an ili2pg-4.0. Anfang ist gemacht.
+
+
+

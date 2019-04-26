@@ -1,6 +1,7 @@
 plugins {
     id 'org.springframework.boot' version '2.1.4.RELEASE'
     id 'java'
+    id "com.bmuschko.docker-remote-api" version "4.6.2"    
 }
 
 apply plugin: 'io.spring.dependency-management'
@@ -61,3 +62,73 @@ task unzipJar(type: Copy) {
 }
 unzipJar.dependsOn(deleteFilesJarDir)
 bootJar.finalizedBy(unzipJar)
+
+// Build Docker image
+import com.bmuschko.gradle.docker.tasks.image.Dockerfile
+import com.bmuschko.gradle.docker.tasks.image.DockerBuildImage
+import com.bmuschko.gradle.docker.tasks.image.DockerPushImage
+
+docker {
+    registryCredentials {
+        username = System.env.dockerRegistryUser
+        password = System.env.dockerRegistryPass
+    }
+}
+
+task buildDockerImage(type: DockerBuildImage) {
+    description = "Build docker image."
+    inputDir = project.projectDir
+    tags = ["sogis/avdpool:"+ version, "sogis/avdpool:latest"]
+    labels = ["avdpool.created": new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date()), 
+            "avdpool.git_commit":  getCheckedOutGitCommitHash(), 
+            "avdpool.travis_build": version]
+}
+
+task pushDockerImage_One(type: DockerPushImage) {
+    description = "Push docker image to hub.docker.com (images are UNTESTED)."
+    imageName = buildDockerImage.tags.get().toArray()[0]
+}
+
+task pushDockerImage_Two(type: DockerPushImage) {
+    description = "Push docker image to hub.docker.com (images are UNTESTED)."
+    imageName = buildDockerImage.tags.get().toArray()[1]
+}
+
+task pushDockerImages() {
+    description = "Collect all push images tasks."
+}
+
+pushDockerImages.dependsOn {
+    tasks.findAll { task -> task.name.startsWith('pushDockerImage_') }
+}
+
+import java.text.SimpleDateFormat
+
+def getCheckedOutGitCommitHash() {
+    'git log -1 --pretty=%H'.execute().text.trim()
+}
+
+def getTimestamp() {
+    def date = new Date()
+    return date.format('yyyy-MM-dd HH:mm:ss')
+}
+
+// Create a static text file with same meta information as the docker labels
+task versionTxt()  {
+    outputs.upToDateWhen { false }
+    doLast {
+        new File("version.txt").text = """
+Version: $version
+Revision: ${getCheckedOutGitCommitHash()}
+Buildtime: ${getTimestamp()}
+Application-name: avdpool
+"""
+    }
+}
+task copyVersionTxt(type: Copy) {
+    from "version.txt"
+    into "src/main/resources/static/"
+}
+copyVersionTxt.dependsOn(versionTxt)
+build.dependsOn(copyVersionTxt)
+classes.dependsOn(copyVersionTxt)

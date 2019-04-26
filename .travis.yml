@@ -13,4 +13,11 @@ branches:
 install: true
 
 script:
-  - ./gradlew clean build
+  - ./gradlew clean build buildDockerImage
+
+  deploy:
+  - provider: script
+    skip_cleanup: true
+    script: ./gradlew pushDockerImages
+    on:
+      branch: master

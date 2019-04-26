@@ -88,6 +88,9 @@ public class IntegrationRoute extends RouteBuilder {
     @Value("${app.dbPwdEdit}")
     private String dbPwdEdit;
     
+    @Value("${app.emailSmtpSender}")
+    private String emailSmtpSender;
+
     @Value("${app.emailUserSender}")
     private String emailUserSender;
 
@@ -106,7 +109,7 @@ public class IntegrationRoute extends RouteBuilder {
         .setHeader("subject", simple("AV-Import/-Export: Fehler"))
         .setHeader("to", simple(emailUserRecipient))
         .setBody(simple("Route Id: ${routeId} \n Date: ${date:now:yyyy-MM-dd HH:mm:ss} \n File: ${in.header.CamelFileAbsolutePath} \n Message: ${exception.message} \n Stacktrace: ${exception.stacktrace}"))
-        .to("smtps://smtp.gmail.com:465?username="+emailUserSender+"&password="+emailPwdSender);
+        .to(emailSmtpSender+"?username="+emailUserSender+"&password="+emailPwdSender);
 
         /*
          * Download ITF (ZIP) files from Infogrips FTP server every n seconds or minutes.
