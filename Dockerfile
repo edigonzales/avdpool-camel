@@ -1,6 +1,6 @@
 FROM adoptopenjdk/openjdk11:jdk-11.0.2.9
 VOLUME /avdpool_data
-EXPOSE 8888:8888
+EXPOSE 8888
 
 ENV USER_NAME avdpool
 ENV APP_HOME /home/$USER_NAME/app
