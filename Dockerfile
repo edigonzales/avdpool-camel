@@ -4,6 +4,7 @@ EXPOSE 8888
 
 ENV USER_NAME avdpool
 ENV APP_HOME /home/$USER_NAME/app
+WORKDIR /home/$USER_NAME
 
 RUN useradd -ms /bin/bash $USER_NAME
 RUN mkdir $APP_HOME
