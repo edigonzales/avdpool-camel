@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk11:jdk-11.0.2.9
+FROM adoptopenjdk/openjdk11:latest
 VOLUME /avdpool_data
 EXPOSE 8888
 
