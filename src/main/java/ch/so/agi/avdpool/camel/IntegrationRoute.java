@@ -1,6 +1,8 @@
 package ch.so.agi.avdpool.camel;
 
 import org.apache.camel.LoggingLevel;
+import org.apache.camel.Predicate;
+import org.apache.camel.builder.PredicateBuilder;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.aws.s3.S3Constants;
 import org.apache.camel.dataformat.zipfile.ZipSplitter;
@@ -100,17 +102,31 @@ public class IntegrationRoute extends RouteBuilder {
     @Value("${app.emailUserRecipient}")
     private String emailUserRecipient;
 
+    @Value("${app.smtpAuth}")
+    private String smtpAuth = "false";
+
     @Override
     public void configure() throws Exception {
         /*
          * Send an email if an exception occures.
          */
+        Predicate noSmtpAuthPredicate;
+        if (smtpAuth.equalsIgnoreCase("false")) {
+            noSmtpAuthPredicate = PredicateBuilder.constant(true);
+        } else {
+            noSmtpAuthPredicate = PredicateBuilder.constant(false);
+        }
+        
         onException(Exception.class)
         .setHeader("subject", simple("AV-Import/-Export: Fehler"))
         .setHeader("to", simple(emailUserRecipient))
         .setBody(simple("Route Id: ${routeId} \n Date: ${date:now:yyyy-MM-dd HH:mm:ss} \n File: ${in.header.CamelFileAbsolutePath} \n Message: ${exception.message} \n Stacktrace: ${exception.stacktrace}"))
-        .to(emailSmtpSender+"?username="+emailUserSender+"&password="+emailPwdSender);
-
+        .choice()
+            .when(noSmtpAuthPredicate).to(emailSmtpSender+"?mail.smtp.auth="+smtpAuth)
+        .otherwise()
+            .to(emailSmtpSender+"?username="+emailUserSender+"&password="+emailPwdSender)
+        .end();
+         
         /*
          * Download ITF (ZIP) files from Infogrips FTP server every n seconds or minutes.
          */
@@ -124,7 +140,7 @@ public class IntegrationRoute extends RouteBuilder {
                     .to("file://"+pathToUnzipFolder+"?charset=ISO-8859-1")
             .end()
         .end()
-        .log(LoggingLevel.INFO, "File unzipped: ${in.header.CamelFileNameOnly}"); 
+        .log(LoggingLevel.INFO, "File unzipped: ${in.header.CamelFileNameOnly}");
         
         /*
          * Upload the unzipped ITF files to S3 every n seconds or minutes.
