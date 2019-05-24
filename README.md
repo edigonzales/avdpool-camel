@@ -54,7 +54,10 @@ java -jar /Users/stefan/apps/ili2pg-4.1.0/ili2pg-4.1.0.jar \
 ```
 
 Hinweise:
-- Pre- und Postscripts werden nicht in das erzeugte SQL geschrieben.
+- Pre- und Postscripts werden nicht in das erzeugte SQL geschrieben. Die SQL-Skripte deshalb ausführen mit
+```
+psql --single-transaction -h XXXXXX -d edit -f sql/prescript.sql -f sql/agi_dm01avso24.sql -f sql/postscript.sql
+```
 - `--strokeArcs`: Im Erfassungsmodell sollen die Kreisbogen erhalten bleiben. Im Publikationsmodell ("MOpublic") werden die Kreisbogen segmentiert.
 - `--createUnique`: Kann nicht verwendet werden, da einige Attribute kantonsweit nicht eindeutig sein können.
 
