@@ -2225,109 +2225,10 @@ CREATE TABLE agi_dm01avso24.T_ILI2DB_MODEL (
   ,modelName text NOT NULL
   ,content text NOT NULL
   ,importDate timestamp NOT NULL
-  ,PRIMARY KEY (iliversion,modelName)
+  ,PRIMARY KEY (modelName,iliversion)
 )
 ;
-CREATE TABLE agi_dm01avso24.versicherungsart (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.einzelobjekte_einzelpunkt_exaktdefiniert (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.liegenschaften_lineattrib3_linienart (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.rohrleitungen_einzelpunkt_exaktdefiniert (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.liegenschaften_grenzpunkt_exaktdefiniert (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.schriftgroesse (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.rohrleitungen_medium (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.gebaeudeadrssen_strassenstueck_istachse (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.kantonsgrenzen_kantonsgrenzabschnitt_gueltigkeit (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.nummerierngsbrche_kantonskuerzel (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.rohrleitungen_linienelement_linienart (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.hoehen_aussparung_art (
+CREATE TABLE agi_dm01avso24.gemeindegrenzen_lineattrib8_linienart (
   itfCode integer PRIMARY KEY
   ,iliCode varchar(1024) NOT NULL
   ,seq integer NULL
@@ -2345,115 +2246,7 @@ CREATE TABLE agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_im_gebaeude (
   ,description varchar(1024) NULL
 )
 ;
-CREATE TABLE agi_dm01avso24.liegenschaften_grenzpunkt_hoheitsgrenzsteinalt (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_istoffiziellebezeichnung (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.liegenschaften_grundstueck_vollstaendigkeit (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
 CREATE TABLE agi_dm01avso24.halignment (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.gebaeudeadrssen_lokalisation_attributeprovisorisch (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.planrahmen_beschriftungsart (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.liegenschaften_lineattrib5_linienart (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.qualitaetsstandard (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.zuverlaessigkeit (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.sprachtyp (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.liegenschaften_lineattrib4_linienart (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.status_ga (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.planrahmen_darstellungsflaeche_auswahlart (
   itfCode integer PRIMARY KEY
   ,iliCode varchar(1024) NOT NULL
   ,seq integer NULL
@@ -2471,223 +2264,7 @@ CREATE TABLE agi_dm01avso24.gemeindegrenzen_hoheitsgrenzpunkt_exaktdefiniert (
   ,description varchar(1024) NULL
 )
 ;
-CREATE TABLE agi_dm01avso24.fixpunktktgrie3_lfp3_protokoll (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.planrahmen_linientyp (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.gebaeudeadrssen_lokalisation_inaenderung (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.fixpunktktgrie1_lfp1_begehbarkeit (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.fixpunktktgrie2_lfp2_begehbarkeit (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.planrahmen_symbolart (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.astatus (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.landesgrenzen_landesgrenzabschnitt_gueltigkeit (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.liegenschaften_lineattrib1_linienart (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.valignment (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.plzortschaft_ortschaft_inaenderung (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.bodenbedeckung_einzelpunkt_exaktdefiniert (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_inaenderung (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.schriftstil (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.liegenschaften_projgrundstueck_vollstaendigkeit (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.rohrleitungen_signalpunkt_punktart (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
 CREATE TABLE agi_dm01avso24.planrahmen_kreuzart (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.planrahmen_planlayout_mit_koordinatennetz (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.tseinteilung_toleranzstufe_art (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.liegenschaften_grundstuecksart (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.gemeindegrenzen_lineattrib8_linienart (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.plzortschaft_plz6_inaenderung (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.liegenschaften_lineattrib6_linienart (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.hoehen_gelaendekante_art (
-  itfCode integer PRIMARY KEY
-  ,iliCode varchar(1024) NOT NULL
-  ,seq integer NULL
-  ,inactive boolean NOT NULL
-  ,dispName varchar(250) NOT NULL
-  ,description varchar(1024) NULL
-)
-;
-CREATE TABLE agi_dm01avso24.bodenbedeckung_bbart (
   itfCode integer PRIMARY KEY
   ,iliCode varchar(1024) NOT NULL
   ,seq integer NULL
@@ -2705,7 +2282,7 @@ CREATE TABLE agi_dm01avso24.gebaeudeadrssen_lokalisation_nummerierungsprinzip (
   ,description varchar(1024) NULL
 )
 ;
-CREATE TABLE agi_dm01avso24.gemeindegrenzen_hoheitsgrenzpunkt_hoheitsgrenzstein (
+CREATE TABLE agi_dm01avso24.valignment (
   itfCode integer PRIMARY KEY
   ,iliCode varchar(1024) NOT NULL
   ,seq integer NULL
@@ -2714,7 +2291,7 @@ CREATE TABLE agi_dm01avso24.gemeindegrenzen_hoheitsgrenzpunkt_hoheitsgrenzstein 
   ,description varchar(1024) NULL
 )
 ;
-CREATE TABLE agi_dm01avso24.bezirksgrenzen_bezirksgrenzabschnitt_gueltigkeit (
+CREATE TABLE agi_dm01avso24.planrahmen_darstellungsflaeche_auswahlart (
   itfCode integer PRIMARY KEY
   ,iliCode varchar(1024) NOT NULL
   ,seq integer NULL
@@ -2723,7 +2300,151 @@ CREATE TABLE agi_dm01avso24.bezirksgrenzen_bezirksgrenzabschnitt_gueltigkeit (
   ,description varchar(1024) NULL
 )
 ;
-CREATE TABLE agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_attributeprovisorisch (
+CREATE TABLE agi_dm01avso24.planrahmen_symbolart (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.liegenschaften_lineattrib6_linienart (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.gebaeudeadrssen_strassenstueck_istachse (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.status_ga (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.rohrleitungen_linienelement_linienart (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.liegenschaften_grundstueck_vollstaendigkeit (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.schriftstil (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.liegenschaften_grenzpunkt_hoheitsgrenzsteinalt (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.einzelobjekte_einzelpunkt_exaktdefiniert (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.liegenschaften_projgrundstueck_vollstaendigkeit (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.landesgrenzen_landesgrenzabschnitt_gueltigkeit (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.versicherungsart (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.hoehen_gelaendekante_art (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.liegenschaften_grundstuecksart (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.fixpunktktgrie3_lfp3_protokoll (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.liegenschaften_projgrundstueck_gueltigkeit (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.planrahmen_planlayout_mit_koordinatennetz (
   itfCode integer PRIMARY KEY
   ,iliCode varchar(1024) NOT NULL
   ,seq integer NULL
@@ -2741,7 +2462,7 @@ CREATE TABLE agi_dm01avso24.gebaeudeadrssen_lokalisation_art (
   ,description varchar(1024) NULL
 )
 ;
-CREATE TABLE agi_dm01avso24.rohrleitungen_lineattrib7_linienart (
+CREATE TABLE agi_dm01avso24.plzortschaft_plz6_inaenderung (
   itfCode integer PRIMARY KEY
   ,iliCode varchar(1024) NOT NULL
   ,seq integer NULL
@@ -2750,7 +2471,52 @@ CREATE TABLE agi_dm01avso24.rohrleitungen_lineattrib7_linienart (
   ,description varchar(1024) NULL
 )
 ;
-CREATE TABLE agi_dm01avso24.liegenschaften_grundstueck_gueltigkeit (
+CREATE TABLE agi_dm01avso24.fixpunktktgrie2_lfp2_begehbarkeit (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.gebaeudeadrssen_lokalisation_attributeprovisorisch (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.hoehen_aussparung_art (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.zuverlaessigkeit (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.rohrleitungen_einzelpunkt_exaktdefiniert (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.gemeindegrenzen_hoheitsgrenzpunkt_hoheitsgrenzstein (
   itfCode integer PRIMARY KEY
   ,iliCode varchar(1024) NOT NULL
   ,seq integer NULL
@@ -2777,7 +2543,61 @@ CREATE TABLE agi_dm01avso24.fixpunktktgrie3_hilfsfixpunkt_protokoll (
   ,description varchar(1024) NULL
 )
 ;
-CREATE TABLE agi_dm01avso24.einzelobjekte_eoart (
+CREATE TABLE agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_attributeprovisorisch (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.liegenschaften_lineattrib4_linienart (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.kantonsgrenzen_kantonsgrenzabschnitt_gueltigkeit (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.liegenschaften_grundstueck_gueltigkeit (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.rohrleitungen_signalpunkt_punktart (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.planrahmen_linientyp (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.rohrleitungen_medium (
   itfCode integer PRIMARY KEY
   ,iliCode varchar(1024) NOT NULL
   ,seq integer NULL
@@ -2795,7 +2615,187 @@ CREATE TABLE agi_dm01avso24.gebaeudeadrssen_lokalisation_istoffiziellebezeichnun
   ,description varchar(1024) NULL
 )
 ;
-CREATE TABLE agi_dm01avso24.liegenschaften_projgrundstueck_gueltigkeit (
+CREATE TABLE agi_dm01avso24.liegenschaften_grenzpunkt_exaktdefiniert (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.einzelobjekte_eoart (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.fixpunktktgrie1_lfp1_begehbarkeit (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.liegenschaften_lineattrib5_linienart (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.rohrleitungen_lineattrib7_linienart (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.schriftgroesse (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.liegenschaften_lineattrib3_linienart (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.bodenbedeckung_bbart (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.bezirksgrenzen_bezirksgrenzabschnitt_gueltigkeit (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_inaenderung (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.astatus (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.qualitaetsstandard (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.liegenschaften_lineattrib1_linienart (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.plzortschaft_ortschaft_inaenderung (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.nummerierngsbrche_kantonskuerzel (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_istoffiziellebezeichnung (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.sprachtyp (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.gebaeudeadrssen_lokalisation_inaenderung (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.bodenbedeckung_einzelpunkt_exaktdefiniert (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.planrahmen_beschriftungsart (
+  itfCode integer PRIMARY KEY
+  ,iliCode varchar(1024) NOT NULL
+  ,seq integer NULL
+  ,inactive boolean NOT NULL
+  ,dispName varchar(250) NOT NULL
+  ,description varchar(1024) NULL
+)
+;
+CREATE TABLE agi_dm01avso24.tseinteilung_toleranzstufe_art (
   itfCode integer PRIMARY KEY
   ,iliCode varchar(1024) NOT NULL
   ,seq integer NULL
@@ -2814,7 +2814,7 @@ CREATE TABLE agi_dm01avso24.T_ILI2DB_ATTRNAME (
   ,SqlName varchar(1024) NOT NULL
   ,ColOwner varchar(1024) NOT NULL
   ,Target varchar(1024) NULL
-  ,PRIMARY KEY (SqlName,ColOwner)
+  ,PRIMARY KEY (ColOwner,SqlName)
 )
 ;
 CREATE TABLE agi_dm01avso24.T_ILI2DB_COLUMN_PROP (
@@ -3196,9 +3196,9 @@ CREATE UNIQUE INDEX T_ILI2DB_DATASET_datasetName_key ON agi_dm01avso24.T_ILI2DB_
 ;
 ALTER TABLE agi_dm01avso24.T_ILI2DB_IMPORT_BASKET ADD CONSTRAINT T_ILI2DB_IMPORT_BASKET_importrun_fkey FOREIGN KEY ( importrun ) REFERENCES agi_dm01avso24.T_ILI2DB_IMPORT DEFERRABLE INITIALLY DEFERRED;
 ALTER TABLE agi_dm01avso24.T_ILI2DB_IMPORT_BASKET ADD CONSTRAINT T_ILI2DB_IMPORT_BASKET_basket_fkey FOREIGN KEY ( basket ) REFERENCES agi_dm01avso24.T_ILI2DB_BASKET DEFERRABLE INITIALLY DEFERRED;
-CREATE UNIQUE INDEX T_ILI2DB_MODEL_iliversion_modelName_key ON agi_dm01avso24.T_ILI2DB_MODEL (iliversion,modelName)
+CREATE UNIQUE INDEX T_ILI2DB_MODEL_modelName_iliversion_key ON agi_dm01avso24.T_ILI2DB_MODEL (modelName,iliversion)
 ;
-CREATE UNIQUE INDEX T_ILI2DB_ATTRNAME_SqlName_ColOwner_key ON agi_dm01avso24.T_ILI2DB_ATTRNAME (SqlName,ColOwner)
+CREATE UNIQUE INDEX T_ILI2DB_ATTRNAME_ColOwner_SqlName_key ON agi_dm01avso24.T_ILI2DB_ATTRNAME (ColOwner,SqlName)
 ;
 INSERT INTO agi_dm01avso24.T_ILI2DB_CLASSNAME (IliName,SqlName) VALUES ('DM01AVSO24LV95.Hoehen.Gelaendekante','hoehen_gelaendekante');
 INSERT INTO agi_dm01avso24.T_ILI2DB_CLASSNAME (IliName,SqlName) VALUES ('DM01AVSO24LV95.Liegenschaften.SelbstRechtSelbstRecht_von','liegenschaften_selbstrechtselbstrecht_von');
@@ -3324,9 +3324,9 @@ INSERT INTO agi_dm01avso24.T_ILI2DB_CLASSNAME (IliName,SqlName) VALUES ('DM01AVS
 INSERT INTO agi_dm01avso24.T_ILI2DB_CLASSNAME (IliName,SqlName) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.LFP3','fixpunktekatgrie3_lfp3');
 INSERT INTO agi_dm01avso24.T_ILI2DB_CLASSNAME (IliName,SqlName) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OrtschaftsName','plzortschaft_ortschaftsname');
 INSERT INTO agi_dm01avso24.T_ILI2DB_CLASSNAME (IliName,SqlName) VALUES ('DM01AVSO24LV95.Liegenschaften.Grundstueck.Vollstaendigkeit','liegenschaften_grundstueck_vollstaendigkeit');
+INSERT INTO agi_dm01avso24.T_ILI2DB_CLASSNAME (IliName,SqlName) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.LineAttrib8.Linienart','gemeindegrenzen_lineattrib8_linienart');
 INSERT INTO agi_dm01avso24.T_ILI2DB_CLASSNAME (IliName,SqlName) VALUES ('DM01AVSO24LV95.Versicherungsart','versicherungsart');
 INSERT INTO agi_dm01avso24.T_ILI2DB_CLASSNAME (IliName,SqlName) VALUES ('DM01AVSO24LV95.Liegenschaften.LineAttrib5.Linienart','liegenschaften_lineattrib5_linienart');
-INSERT INTO agi_dm01avso24.T_ILI2DB_CLASSNAME (IliName,SqlName) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.LineAttrib8.Linienart','gemeindegrenzen_lineattrib8_linienart');
 INSERT INTO agi_dm01avso24.T_ILI2DB_CLASSNAME (IliName,SqlName) VALUES ('DM01AVSO24LV95.Nomenklatur.Ortsname','nomenklatur_ortsname');
 INSERT INTO agi_dm01avso24.T_ILI2DB_CLASSNAME (IliName,SqlName) VALUES ('DM01AVSO24LV95.Rohrleitungen.Punktelement','rohrleitungen_punktelement');
 INSERT INTO agi_dm01avso24.T_ILI2DB_CLASSNAME (IliName,SqlName) VALUES ('DM01AVSO24LV95.Bodenbedeckung.BoFlaecheSymbol','bodenbedeckung_boflaechesymbol');
@@ -4485,260 +4485,312 @@ INSERT INTO agi_dm01avso24.T_ILI2DB_TRAFO (iliname,tag,setting) VALUES ('DM01AVS
 INSERT INTO agi_dm01avso24.T_ILI2DB_TRAFO (iliname,tag,setting) VALUES ('DM01AVSO24LV95.Liegenschaften.LineAttrib1','ch.ehi.ili2db.inheritance','newClass');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TRAFO (iliname,tag,setting) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.GebaeudeeingangEntstehung','ch.ehi.ili2db.inheritance','embedded');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TRAFO (iliname,tag,setting) VALUES ('DM01AVSO24LV95.Liegenschaften.LineAttrib2','ch.ehi.ili2db.inheritance','newClass');
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.GebaeudenummerPosGebaeudenummerPos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ObjektnamePosObjektnamePos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.GrundstueckPos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.GebaeudeNamePosGebaeudeNamePos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HFP3Entstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nummerierungsbereiche.NBGeometrie',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.LokalisationsNamePosLokalisationsNamePos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.GebaeudenummerGebaeudenummer_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Hoehen.Hoehenpunkt',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjBoFlaecheSymbol',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.Ortschaft',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ObjektnamePos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.OrtsnamePos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.GrundstueckEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.BoFlaecheEntstehung',NULL);
 INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HilfsfixpunktPosHilfsfixpunktPos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HFP3Nachfuehrung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Kantonsgrenzen.Kantonsgrenzabschnitt',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.ObjektnummerPos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.HFP1Entstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.EinzelpunktPosEinzelpunktPos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.Planbeschriftung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.GelaendenamePos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.HFP2Pos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.HFP2PosHFP2Pos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.ProjLiegenschaftProjLiegenschaft_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.Bergwerk',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.KoordinatenanschriftPosKoordinatenanschriftPos_von',NULL);
 INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.LFP3Symbol',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.LFP1Entstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.LFP1',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.Hoheitsgrenzpunkt',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.FlaechenelementFlaechenelement_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.GemeindegrenzeGemeindegrenze_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OrtschaftsName_PosOrtschaftsName_Pos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.KoordinatenanschriftKoordinatenanschrift_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HFP3PosHFP3Pos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.GEMNachfuehrung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.GebaeudeNameGebaeudeName_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.LinienelementSymbolLinienelementSymbol_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HilfsfixpunktEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjObjektnamePosProjObjektnamePos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OrtschaftsName_Pos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rutschgebiete.RutschungPosRutschungPos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.Einzelpunkt',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.LFP3',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.GelaendenameEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.ProjGrundstueck',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.BergwerkBergwerk_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.ProjGemeindegrenzeProjGemeindegrenze_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.LFP1Nachfuehrung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.BoFlaeche',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.GrenzpunktPosGrenzpunktPos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planeinteilungen.PlanPosPlanPos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.HFP1Pos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.SelbstRecht',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OrtschaftsNameOrtschaftsName_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.PlanbeschriftungPosPlanbeschriftungPos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.LeitungsobjektPosLeitungsobjektPos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.Einzelpunkt',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.SignalpunktEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.HFP2',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.Gebaeudenummer',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjBoFlaecheSymbolProjBoFlaecheSymbol_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.Gemeinde',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.DarstellungsflaecheDarstellungsflaeche_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.FlurnamePos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.PunktelementPunktelement_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Hoehen.Aussparung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.Grenzpunkt',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.ProjGrundstueckEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.Netzkreuz',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.PLZ6Nachfuehrung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.Einzelobjekt',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.LFP3Nachfuehrung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HFP3',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.FlaechenelementSymbol',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.HoheitsgrenzpunktSymbolHoheitsgrenzpunktSymbol_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.PunktelementPunktelement_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OrtschaftsName',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.HFP2Entstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjGebaeudenummerProjGebaeudenummer_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Hoehen.AussparungEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.Flurname',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.KoordinatenLinieKoordinatenLinie_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HilfsfixpunktPos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.Punktelement',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.GrundstueckPosGrundstueckPos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.Punktelement',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rutschgebiete.Rutschung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.GebaeudenummerPos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.OrtsnameEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.Gebaeudeeingang',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.HFP1PosHFP1Pos_von',NULL);
 INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjObjektnamePos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.OrtsnamePosOrtsnamePos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.ProjSelbstRechtProjSelbstRecht_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.LFP1SymbolLFP1Symbol_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.BoFlaecheSymbolBoFlaecheSymbol_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.Flaechenelement',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.LSNachfuehrung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.HoheitsgrenzpunktSymbol',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.EinzelpunktPos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.EinzelpunktEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.GrenzpunktSymbol',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.LinienelementLinienelement_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.Einzelpunkt',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Hoehen.HONachfuehrung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.LFP1Pos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.LinienelementLinienelement_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.TSEinteilung.ToleranzstufePos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.PLZ6PLZ6_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.Liegenschaft',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.GrenzpunktSymbolGrenzpunktSymbol_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planeinteilungen.Plangeometrie',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.Leitungsobjekt',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.SignalpunktPos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.TSEinteilung.ToleranzstufePosToleranzstufePos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjGebaeudenummer',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.HFP1Nachfuehrung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.EinzelpunktPos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.ObjektnameObjektname_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.SignalpunktPosSignalpunktPos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.Linienobjekt',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.LokalisationsNamePos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.BBNachfuehrung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.LFP2Entstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OrtschaftOrtschaft_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.ObjektnamePosObjektnamePos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.ProjBergwerkProjBergwerk_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HilfsFPNachfuehrung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.EinzelpunktEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjGebaeudenummerPos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.GelaendenamePosGelaendenamePos_von',NULL);
 INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjBoFlaecheEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.LokalisationEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.LinienelementSymbol',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.Signalpunkt',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.LiegenschaftLiegenschaft_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.EinzelpunktPos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.LSNachfuehrung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.SignalpunktPos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.ProjLiegenschaftProjLiegenschaft_von',NULL);
 INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.LeitungsobjektEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nummerierungsbereiche.NBGeometrieNBGeometrie_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.Einzelpunkt',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.Gebaeudeeingang',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.LinienelementSymbol',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planeinteilungen.Plangeometrie',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.DarstellungsflaecheDarstellungsflaeche_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.FlurnamePosFlurnamePos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.GemeindegrenzeEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.SignalpunktEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.BenanntesGebiet',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.LFP1Symbol',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjGebaeudenummerProjGebaeudenummer_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Kantonsgrenzen.Kantonsgrenzabschnitt',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.GrenzpunktEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.ObjektnummerPos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.Punktelement',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.SelbstRecht',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.NetzkreuzNetzkreuz_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HFP3',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nummerierungsbereiche.Nummerierungsbereich',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nummerierungsbereiche.NummerierungsbereichPos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.OrtsnamePos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.ProjGrundstueckPos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.ProjBergwerk',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OrtschaftEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.LFP3Nachfuehrung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.LinienelementLinienelement_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HFP3Pos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.GrundstueckEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OrtschaftsVerbund',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.OrtsnamePosOrtsnamePos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.LFP3Pos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.EinzelpunktEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Hoehen.Hoehenpunkt',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.Leitungsobjekt',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Hoehen.AussparungEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.Lokalisation',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HilfsfixpunktPos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.KoordinatenLinie',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjGebaeudenummer',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjBoFlaecheSymbolProjBoFlaecheSymbol_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.Objektnummer',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.LokalisationsNamePosLokalisationsNamePos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.LFP2Symbol',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.Bergwerk',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.OrtsnameEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.GrenzpunktPosGrenzpunktPos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.LeitungsobjektPosLeitungsobjektPos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.FlurnamePos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.Flurname',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.LokalisationsNameBenannte',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.GebaeudeeingangEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.Einzelpunkt',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjBoFlaeche',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.EONachfuehrung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjGebaeudenummerPos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planeinteilungen.PlanPos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.GelaendenamePosGelaendenamePos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.Signalpunkt',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.BoFlaecheSymbolBoFlaecheSymbol_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.LFP2Entstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.TSEinteilung.ToleranzstufePosToleranzstufePos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.LFP2',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HilfsFPNachfuehrung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjObjektname',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.LinienelementLinienelement_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.ProjGrundstueckPosProjGrundstueckPos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.GEBNachfuehrung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.GelaendenameEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Hoehen.HoehenpunktEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.PlanbeschriftungPos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.LFP1Entstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.LFP1PosLFP1Pos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.HFP2Nachfuehrung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.ObjektnameObjektname_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjObjektnamePosProjObjektnamePos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.EinzelpunktEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.ProjBergwerkProjBergwerk_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.HFP1Pos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.LFP3',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Hoehen.HONachfuehrung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.Grundstueck',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjBoFlaecheSymbol',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.GebaeudeBeschreibung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rutschgebiete.RutschungPos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.TSEinteilung.Toleranzstufe',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.EinzelpunktEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.SelbstRechtSelbstRecht_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.BenanntesGebietBenanntesGebiet_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ObjektnamePos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.Planbeschriftung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.HFP1',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.ProjGemeindegrenze',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OrtschaftOrtschaft_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.PlanLayoutSymbolPlanLayoutSymbol_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.ProjSelbstRechtProjSelbstRecht_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OrtschaftsVerbundText',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.EinzelpunktPos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.EinzelobjektEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.EinzelpunktPosEinzelpunktPos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.GebaeudeNameGebaeudeName_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.GebaeudenummerPosGebaeudenummerPos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.EinzelpunktPosEinzelpunktPos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ObjektnameObjektname_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.PLZ6',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.HFP2Entstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.HoheitsgrenzpunktSymbol',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.PlanLayout',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.ObjektnamePos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.ProjGemeindegrenzeEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.BoFlaecheSymbol',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.ObjektnummerPosObjektnummerPos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HFP3Nachfuehrung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.LeitungsobjektPos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.TSEinteilung.ToleranzstufePos',NULL);
 INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.LFP2Pos',NULL);
 INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.GebaeudeName',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OSNachfuehrung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HFP3Pos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Hoehen.GelaendekanteEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HilfsfixpunktSymbolHilfsfixpunktSymbol_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.PLZ6',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.Gemeindegrenze',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OrtschaftsVerbund',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.LinienobjektLinienobjekt_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.LFP3Entstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Hoehen.HoehenpunktPosHoehenpunktPos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.TSEinteilung.Toleranzstufe',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.ProjSelbstRecht',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.LeitungsobjektPos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.GrenzpunktEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HilfsfixpunktSymbol',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.Grundstueck',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OrtschaftEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ObjektnameObjektname_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.LFP2SymbolLFP2Symbol_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.Ortsname',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.NKNachfuehrung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rutschgebiete.RutschungPos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OrtschaftsVerbundText',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.HausnummerPos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.Objektname',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.LFP2PosLFP2Pos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.GebaeudeBeschreibungGebaeudeBeschreibung_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.LFP2Nachfuehrung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.PlanLayoutSymbolPlanLayoutSymbol_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nummerierungsbereiche.NummerierungsbereichPos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.GebaeudeeingangGebaeudeeingang_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.RLNachfuehrung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.GebaeudeNamePos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.ProjBergwerk',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.PlanLayoutSymbol',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.EinzelpunktPos',NULL);
 INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.Darstellungsflaeche',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.EinzelpunktPosEinzelpunktPos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.LFP2',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.KoordinatenanschriftPos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.ProjGrundstueckPosProjGrundstueckPos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nummerierungsbereiche.NBGeometrieNBGeometrie_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HFP3PosHFP3Pos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.Liegenschaft',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.LiegenschaftLiegenschaft_von',NULL);
 INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.PlanbeschriftungPlanbeschriftung_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.EinzelpunktEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.Linienelement',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.BenanntesGebiet',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planeinteilungen.PlangeometriePlangeometrie_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.BenanntesGebietBenanntesGebiet_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.LFP1Symbol',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Hoehen.HoehenpunktEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planeinteilungen.PlanPos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.ProjLiegenschaft',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.GEBNachfuehrung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjObjektnameProjObjektname_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.LokalisationsName',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.Hilfsfixpunkt',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.HoheitsgrenzpunktPos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.LFP3Pos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nummerierungsbereiche.Nummerierungsbereich',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.ObjektnummerObjektnummer_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.Strassenstueck',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.FlaechenelementFlaechenelement_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Hoehen.HoehenpunktPos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.NetzkreuzNetzkreuz_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjObjektname',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.GebaeudeeingangEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.SelbstRechtSelbstRecht_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Landesgrenzen.Landesgrenzabschnitt',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.KoordinatenLinie',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.HFP1PosHFP1Pos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.EONachfuehrung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.Objektnummer',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.Lokalisation',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjGebaeudenummerPosProjGebaeudenummerPos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.BoFlaecheSymbol',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OrtschaftsVerbundTextOrtschaftsVerbundText_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.LFP2Symbol',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.ObjektnamePos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjBoFlaeche',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.LFP1PosLFP1Pos_von',NULL);
 INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.Linienelement',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.LFP3SymbolLFP3Symbol_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.LokalisationEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.GemeindegrenzeGemeindegrenze_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.Objektname',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.PlanLayoutSymbol',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.ProjSelbstRecht',NULL);
 INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.HoheitsgrenzpunktEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.Koordinatenanschrift',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Landesgrenzen.Landesgrenzabschnitt',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.FlaechenelementFlaechenelement_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.Hoheitsgrenzpunkt',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.LFP1Pos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.FlaechenelementFlaechenelement_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.HFP1Nachfuehrung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.LinienobjektLinienobjekt_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ObjektnamePosObjektnamePos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HilfsfixpunktSymbolHilfsfixpunktSymbol_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.Ortsname',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.HausnummerPos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.Gebaeudenummer',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.HoheitsgrenzpunktSymbolHoheitsgrenzpunktSymbol_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.Flaechenelement',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.LFP1Nachfuehrung',NULL);
 INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.FlurnameEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.GemeindegrenzeEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.PlanbeschriftungPos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.Flaechenelement',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.PLZ6Entstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.EinzelpunktPosEinzelpunktPos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nummerierungsbereiche.NummerierungsbereichPosNummerierungsbereichPos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.EinzelobjektEntstehung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.ObjektnummerPosObjektnummerPos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.ProjGemeindegrenze',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Hoehen.Gelaendekante',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.StrassenstueckStrassenstueck_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.HFP1',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjGebaeudenummerPosProjGebaeudenummerPos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.RLNachfuehrung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.Linienobjekt',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.GrenzpunktSymbol',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.KoordinatenanschriftKoordinatenanschrift_von',NULL);
 INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.Gelaendename',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.HoheitsgrenzpunktPosHoheitsgrenzpunktPos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.LFP3PosLFP3Pos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.ProjGrundstueckPos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planeinteilungen.Plan',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.Objektname',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.HausnummerPosHausnummerPos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.FlurnamePosFlurnamePos_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.GrenzpunktPos',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bezirksgrenzen.Bezirksgrenzabschnitt',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.GebaeudeBeschreibung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.HFP2Nachfuehrung',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.ProjGemeindegrenzeEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.GebaeudeBeschreibungGebaeudeBeschreibung_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.LFP3Entstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HilfsfixpunktSymbol',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OrtschaftsName_PosOrtschaftsName_Pos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.LFP1',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rutschgebiete.Rutschung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.KoordinatenanschriftPosKoordinatenanschriftPos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.ProjGemeindegrenzeProjGemeindegrenze_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.HFP2Pos',NULL);
 INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.FlaechenelementSymbolFlaechenelementSymbol_von',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.LokalisationsNameBenannte',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.PlanLayout',NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.BoFlaecheEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.LFP2Nachfuehrung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.ObjektnamePosObjektnamePos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.PunktelementPunktelement_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.KoordinatenanschriftPos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.Gemeindegrenze',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OrtschaftsName',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.GrenzpunktPos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.Hilfsfixpunkt',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bezirksgrenzen.Bezirksgrenzabschnitt',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.FlaechenelementSymbol',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planeinteilungen.PlangeometriePlangeometrie_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nummerierungsbereiche.NBGeometrie',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HilfsfixpunktEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.Einzelpunkt',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.ObjektnummerObjektnummer_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OrtschaftsNameOrtschaftsName_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.KoordinatenLinieKoordinatenLinie_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.BBNachfuehrung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OSNachfuehrung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Hoehen.HoehenpunktPos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.Flaechenelement',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rutschgebiete.RutschungPosRutschungPos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.GrundstueckPosGrundstueckPos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.HoheitsgrenzpunktPosHoheitsgrenzpunktPos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.Objektname',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.PLZ6Entstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.EinzelpunktPos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.HFP2',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.Strassenstueck',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.GebaeudeNamePos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.BoFlaeche',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.ProjLiegenschaft',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.GelaendenamePos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.ProjGrundstueck',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planeinteilungen.PlanPosPlanPos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.Ortschaft',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.PlanbeschriftungPosPlanbeschriftungPos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.PLZ6Nachfuehrung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OrtschaftsVerbundTextOrtschaftsVerbundText_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.LFP2PosLFP2Pos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.LFP2SymbolLFP2Symbol_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Hoehen.Gelaendekante',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.EinzelpunktPosEinzelpunktPos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.StrassenstueckStrassenstueck_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nummerierungsbereiche.NummerierungsbereichPosNummerierungsbereichPos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.ProjGrundstueckEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.GebaeudeeingangGebaeudeeingang_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.LFP3PosLFP3Pos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.LFP3SymbolLFP3Symbol_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.GebaeudenummerPos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.GrundstueckPos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.GEMNachfuehrung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.PLZ6PLZ6_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.ProjObjektnameProjObjektname_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.SignalpunktPosSignalpunktPos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie3.HFP3Entstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planeinteilungen.Plan',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.GrenzpunktSymbolGrenzpunktSymbol_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.LokalisationsName',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.Grenzpunkt',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.LokalisationsNamePos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.HoheitsgrenzpunktPos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Nomenklatur.NKNachfuehrung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Hoehen.HoehenpunktPosHoehenpunktPos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.HausnummerPosHausnummerPos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.HFP1Entstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.PunktelementPunktelement_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gebaeudeadressen.GebaeudeNamePosGebaeudeNamePos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie2.HFP2PosHFP2Pos_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Liegenschaften.BergwerkBergwerk_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.LinienelementSymbolLinienelementSymbol_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Bodenbedeckung.GebaeudenummerGebaeudenummer_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.Koordinatenanschrift',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Rohrleitungen.Punktelement',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.FixpunkteKategorie1.LFP1SymbolLFP1Symbol_von',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Hoehen.GelaendekanteEntstehung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.Linienelement',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Hoehen.Aussparung',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.PLZOrtschaft.OrtschaftsName_Pos',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Planrahmen.Netzkreuz',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Einzelobjekte.Einzelobjekt',NULL);
+INSERT INTO agi_dm01avso24.T_ILI2DB_INHERITANCE (thisClass,baseClass) VALUES ('DM01AVSO24LV95.Gemeindegrenzen.Gemeinde',NULL);
+INSERT INTO agi_dm01avso24.gemeindegrenzen_lineattrib8_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'rechtskraeftig',0,'rechtskraeftig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gemeindegrenzen_lineattrib8_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',1,'streitig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gemeindegrenzen_lineattrib8_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'provisorisch',2,'provisorisch',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gemeindegrenzen_lineattrib8_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'undefiniert',3,'undefiniert',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_im_gebaeude (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'BB',0,'BB',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_im_gebaeude (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'EO',1,'EO',FALSE,NULL);
+INSERT INTO agi_dm01avso24.halignment (seq,iliCode,itfCode,dispName,inactive,description) VALUES (0,'Left',0,'Left',FALSE,NULL);
+INSERT INTO agi_dm01avso24.halignment (seq,iliCode,itfCode,dispName,inactive,description) VALUES (1,'Center',1,'Center',FALSE,NULL);
+INSERT INTO agi_dm01avso24.halignment (seq,iliCode,itfCode,dispName,inactive,description) VALUES (2,'Right',2,'Right',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gemeindegrenzen_hoheitsgrenzpunkt_exaktdefiniert (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Ja',0,'Ja',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gemeindegrenzen_hoheitsgrenzpunkt_exaktdefiniert (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Nein',1,'Nein',FALSE,NULL);
+INSERT INTO agi_dm01avso24.planrahmen_kreuzart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Koord_Kreuz',0,'Koord Kreuz',FALSE,NULL);
+INSERT INTO agi_dm01avso24.planrahmen_kreuzart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Netzkreuz',1,'Netzkreuz',FALSE,NULL);
+INSERT INTO agi_dm01avso24.planrahmen_kreuzart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Netzmarkierung',2,'Netzmarkierung',FALSE,NULL);
+INSERT INTO agi_dm01avso24.planrahmen_kreuzart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',3,'weitere',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_nummerierungsprinzip (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'keineNummern',0,'keineNummern',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_nummerierungsprinzip (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'beliebig',1,'beliebig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_nummerierungsprinzip (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'aufsteigend',2,'aufsteigend',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_nummerierungsprinzip (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ungeradelinks',3,'ungeradelinks',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_nummerierungsprinzip (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'geradelinks',4,'geradelinks',FALSE,NULL);
+INSERT INTO agi_dm01avso24.valignment (seq,iliCode,itfCode,dispName,inactive,description) VALUES (0,'Top',0,'Top',FALSE,NULL);
+INSERT INTO agi_dm01avso24.valignment (seq,iliCode,itfCode,dispName,inactive,description) VALUES (1,'Cap',1,'Cap',FALSE,NULL);
+INSERT INTO agi_dm01avso24.valignment (seq,iliCode,itfCode,dispName,inactive,description) VALUES (2,'Half',2,'Half',FALSE,NULL);
+INSERT INTO agi_dm01avso24.valignment (seq,iliCode,itfCode,dispName,inactive,description) VALUES (3,'Base',3,'Base',FALSE,NULL);
+INSERT INTO agi_dm01avso24.valignment (seq,iliCode,itfCode,dispName,inactive,description) VALUES (4,'Bottom',4,'Bottom',FALSE,NULL);
+INSERT INTO agi_dm01avso24.planrahmen_darstellungsflaeche_auswahlart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'vollstaendig',0,'vollstaendig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.planrahmen_darstellungsflaeche_auswahlart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'teilweise',1,'teilweise',FALSE,NULL);
+INSERT INTO agi_dm01avso24.planrahmen_symbolart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Nordpfeil',0,'Nordpfeil',FALSE,NULL);
+INSERT INTO agi_dm01avso24.planrahmen_symbolart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',1,'weitere',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_lineattrib6_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',0,'streitig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_lineattrib6_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'unvollstaendig',1,'unvollstaendig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_strassenstueck_istachse (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_strassenstueck_istachse (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
+INSERT INTO agi_dm01avso24.status_ga (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'projektiert',0,'projektiert',FALSE,NULL);
+INSERT INTO agi_dm01avso24.status_ga (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'real',1,'real',FALSE,NULL);
+INSERT INTO agi_dm01avso24.status_ga (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'vergangen',2,'vergangen',FALSE,NULL);
+INSERT INTO agi_dm01avso24.rohrleitungen_linienelement_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'sichtbar',0,'sichtbar',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_grundstueck_vollstaendigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Vollstaendig',0,'Vollstaendig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_grundstueck_vollstaendigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'unvollstaendig',1,'unvollstaendig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.schriftstil (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'normal',0,'normal',FALSE,NULL);
+INSERT INTO agi_dm01avso24.schriftstil (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'gesperrt',1,'gesperrt',FALSE,NULL);
+INSERT INTO agi_dm01avso24.schriftstil (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',2,'weitere',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_grenzpunkt_hoheitsgrenzsteinalt (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_grenzpunkt_hoheitsgrenzsteinalt (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
+INSERT INTO agi_dm01avso24.einzelobjekte_einzelpunkt_exaktdefiniert (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Ja',0,'Ja',FALSE,NULL);
+INSERT INTO agi_dm01avso24.einzelobjekte_einzelpunkt_exaktdefiniert (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Nein',1,'Nein',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_projgrundstueck_vollstaendigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Vollstaendig',0,'Vollstaendig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_projgrundstueck_vollstaendigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'unvollstaendig',1,'unvollstaendig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.landesgrenzen_landesgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'rechtskraeftig',0,'rechtskraeftig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.landesgrenzen_landesgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',1,'streitig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.landesgrenzen_landesgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'provisorisch',2,'provisorisch',FALSE,NULL);
+INSERT INTO agi_dm01avso24.landesgrenzen_landesgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'undefiniert',3,'undefiniert',FALSE,NULL);
 INSERT INTO agi_dm01avso24.versicherungsart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Stein',0,'Stein',FALSE,NULL);
 INSERT INTO agi_dm01avso24.versicherungsart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Kunststoffzeichen',1,'Kunststoffzeichen',FALSE,NULL);
 INSERT INTO agi_dm01avso24.versicherungsart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Bolzen',2,'Bolzen',FALSE,NULL);
@@ -4747,231 +4799,64 @@ INSERT INTO agi_dm01avso24.versicherungsart (seq,iliCode,itfCode,dispName,inacti
 INSERT INTO agi_dm01avso24.versicherungsart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Kreuz',5,'Kreuz',FALSE,NULL);
 INSERT INTO agi_dm01avso24.versicherungsart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'unversichert',6,'unversichert',FALSE,NULL);
 INSERT INTO agi_dm01avso24.versicherungsart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',7,'weitere',FALSE,NULL);
-INSERT INTO agi_dm01avso24.einzelobjekte_einzelpunkt_exaktdefiniert (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Ja',0,'Ja',FALSE,NULL);
-INSERT INTO agi_dm01avso24.einzelobjekte_einzelpunkt_exaktdefiniert (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Nein',1,'Nein',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_lineattrib3_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',0,'streitig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_lineattrib3_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'unvollstaendig',1,'unvollstaendig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.rohrleitungen_einzelpunkt_exaktdefiniert (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Ja',0,'Ja',FALSE,NULL);
-INSERT INTO agi_dm01avso24.rohrleitungen_einzelpunkt_exaktdefiniert (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Nein',1,'Nein',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_grenzpunkt_exaktdefiniert (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Ja',0,'Ja',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_grenzpunkt_exaktdefiniert (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Nein',1,'Nein',FALSE,NULL);
-INSERT INTO agi_dm01avso24.schriftgroesse (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'klein',0,'klein',FALSE,NULL);
-INSERT INTO agi_dm01avso24.schriftgroesse (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'mittel',1,'mittel',FALSE,NULL);
-INSERT INTO agi_dm01avso24.schriftgroesse (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'gross',2,'gross',FALSE,NULL);
-INSERT INTO agi_dm01avso24.rohrleitungen_medium (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Oel',0,'Oel',FALSE,NULL);
-INSERT INTO agi_dm01avso24.rohrleitungen_medium (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Gas',1,'Gas',FALSE,NULL);
-INSERT INTO agi_dm01avso24.rohrleitungen_medium (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',2,'weitere',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_strassenstueck_istachse (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_strassenstueck_istachse (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
-INSERT INTO agi_dm01avso24.kantonsgrenzen_kantonsgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'rechtskraeftig',0,'rechtskraeftig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.kantonsgrenzen_kantonsgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',1,'streitig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.kantonsgrenzen_kantonsgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'provisorisch',2,'provisorisch',FALSE,NULL);
-INSERT INTO agi_dm01avso24.kantonsgrenzen_kantonsgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'undefiniert',3,'undefiniert',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ZH',0,'ZH',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'BE',1,'BE',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'LU',2,'LU',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'UR',3,'UR',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'SZ',4,'SZ',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'OW',5,'OW',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'NW',6,'NW',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'GL',7,'GL',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ZG',8,'ZG',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'FR',9,'FR',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'SO',10,'SO',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'BS',11,'BS',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'BL',12,'BL',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'SH',13,'SH',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'AR',14,'AR',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'AI',15,'AI',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'SG',16,'SG',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'GR',17,'GR',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'AG',18,'AG',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'TG',19,'TG',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'TI',20,'TI',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'VD',21,'VD',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'VS',22,'VS',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'NE',23,'NE',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'GE',24,'GE',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'JU',25,'JU',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'FL',26,'FL',FALSE,NULL);
-INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'CH',27,'CH',FALSE,NULL);
-INSERT INTO agi_dm01avso24.rohrleitungen_linienelement_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'sichtbar',0,'sichtbar',FALSE,NULL);
-INSERT INTO agi_dm01avso24.hoehen_aussparung_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ToteFlaeche',0,'ToteFlaeche',FALSE,NULL);
-INSERT INTO agi_dm01avso24.hoehen_aussparung_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',1,'weitere',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_im_gebaeude (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'BB',0,'BB',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_im_gebaeude (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'EO',1,'EO',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_grenzpunkt_hoheitsgrenzsteinalt (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_grenzpunkt_hoheitsgrenzsteinalt (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_istoffiziellebezeichnung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_istoffiziellebezeichnung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_grundstueck_vollstaendigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Vollstaendig',0,'Vollstaendig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_grundstueck_vollstaendigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'unvollstaendig',1,'unvollstaendig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.halignment (seq,iliCode,itfCode,dispName,inactive,description) VALUES (0,'Left',0,'Left',FALSE,NULL);
-INSERT INTO agi_dm01avso24.halignment (seq,iliCode,itfCode,dispName,inactive,description) VALUES (1,'Center',1,'Center',FALSE,NULL);
-INSERT INTO agi_dm01avso24.halignment (seq,iliCode,itfCode,dispName,inactive,description) VALUES (2,'Right',2,'Right',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_attributeprovisorisch (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_attributeprovisorisch (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
-INSERT INTO agi_dm01avso24.planrahmen_beschriftungsart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Nachbarn',0,'Nachbarn',FALSE,NULL);
-INSERT INTO agi_dm01avso24.planrahmen_beschriftungsart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Nachbarplan',1,'Nachbarplan',FALSE,NULL);
-INSERT INTO agi_dm01avso24.planrahmen_beschriftungsart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'UebersichtNachbarn',2,'UebersichtNachbarn',FALSE,NULL);
-INSERT INTO agi_dm01avso24.planrahmen_beschriftungsart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Strassenrichtung',3,'Strassenrichtung',FALSE,NULL);
-INSERT INTO agi_dm01avso24.planrahmen_beschriftungsart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'LK_Nr',4,'LK Nr',FALSE,NULL);
-INSERT INTO agi_dm01avso24.planrahmen_beschriftungsart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'BFSNr',5,'BFSNr',FALSE,NULL);
-INSERT INTO agi_dm01avso24.planrahmen_beschriftungsart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',6,'weitere',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_lineattrib5_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',0,'streitig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_lineattrib5_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'unvollstaendig',1,'unvollstaendig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.qualitaetsstandard (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'AV93',0,'AV93',FALSE,NULL);
-INSERT INTO agi_dm01avso24.qualitaetsstandard (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'PV74',1,'PV74',FALSE,NULL);
-INSERT INTO agi_dm01avso24.qualitaetsstandard (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'PN',2,'PN',FALSE,NULL);
-INSERT INTO agi_dm01avso24.qualitaetsstandard (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'PEP',3,'PEP',FALSE,NULL);
-INSERT INTO agi_dm01avso24.qualitaetsstandard (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',4,'weitere',FALSE,NULL);
-INSERT INTO agi_dm01avso24.zuverlaessigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
-INSERT INTO agi_dm01avso24.zuverlaessigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
-INSERT INTO agi_dm01avso24.sprachtyp (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'de',0,'de',FALSE,NULL);
-INSERT INTO agi_dm01avso24.sprachtyp (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'fr',1,'fr',FALSE,NULL);
-INSERT INTO agi_dm01avso24.sprachtyp (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'it',2,'it',FALSE,NULL);
-INSERT INTO agi_dm01avso24.sprachtyp (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'rm',3,'rm',FALSE,NULL);
-INSERT INTO agi_dm01avso24.sprachtyp (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'en',4,'en',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_lineattrib4_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',0,'streitig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_lineattrib4_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'unvollstaendig',1,'unvollstaendig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.status_ga (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'projektiert',0,'projektiert',FALSE,NULL);
-INSERT INTO agi_dm01avso24.status_ga (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'real',1,'real',FALSE,NULL);
-INSERT INTO agi_dm01avso24.status_ga (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'vergangen',2,'vergangen',FALSE,NULL);
-INSERT INTO agi_dm01avso24.planrahmen_darstellungsflaeche_auswahlart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'vollstaendig',0,'vollstaendig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.planrahmen_darstellungsflaeche_auswahlart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'teilweise',1,'teilweise',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gemeindegrenzen_hoheitsgrenzpunkt_exaktdefiniert (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Ja',0,'Ja',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gemeindegrenzen_hoheitsgrenzpunkt_exaktdefiniert (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Nein',1,'Nein',FALSE,NULL);
-INSERT INTO agi_dm01avso24.fixpunktktgrie3_lfp3_protokoll (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
-INSERT INTO agi_dm01avso24.fixpunktktgrie3_lfp3_protokoll (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
-INSERT INTO agi_dm01avso24.planrahmen_linientyp (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'standard',0,'standard',FALSE,NULL);
-INSERT INTO agi_dm01avso24.planrahmen_linientyp (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',1,'weitere',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_inaenderung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_inaenderung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
-INSERT INTO agi_dm01avso24.fixpunktktgrie1_lfp1_begehbarkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'begehbar',0,'begehbar',FALSE,NULL);
-INSERT INTO agi_dm01avso24.fixpunktktgrie1_lfp1_begehbarkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nicht_begehbar',1,'nicht begehbar',FALSE,NULL);
-INSERT INTO agi_dm01avso24.fixpunktktgrie2_lfp2_begehbarkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'begehbar',0,'begehbar',FALSE,NULL);
-INSERT INTO agi_dm01avso24.fixpunktktgrie2_lfp2_begehbarkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nicht_begehbar',1,'nicht begehbar',FALSE,NULL);
-INSERT INTO agi_dm01avso24.planrahmen_symbolart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Nordpfeil',0,'Nordpfeil',FALSE,NULL);
-INSERT INTO agi_dm01avso24.planrahmen_symbolart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',1,'weitere',FALSE,NULL);
-INSERT INTO agi_dm01avso24.astatus (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'projektiert',0,'projektiert',FALSE,NULL);
-INSERT INTO agi_dm01avso24.astatus (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'gueltig',1,'gueltig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.landesgrenzen_landesgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'rechtskraeftig',0,'rechtskraeftig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.landesgrenzen_landesgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',1,'streitig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.landesgrenzen_landesgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'provisorisch',2,'provisorisch',FALSE,NULL);
-INSERT INTO agi_dm01avso24.landesgrenzen_landesgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'undefiniert',3,'undefiniert',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_lineattrib1_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',0,'streitig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_lineattrib1_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'unvollstaendig',1,'unvollstaendig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.valignment (seq,iliCode,itfCode,dispName,inactive,description) VALUES (0,'Top',0,'Top',FALSE,NULL);
-INSERT INTO agi_dm01avso24.valignment (seq,iliCode,itfCode,dispName,inactive,description) VALUES (1,'Cap',1,'Cap',FALSE,NULL);
-INSERT INTO agi_dm01avso24.valignment (seq,iliCode,itfCode,dispName,inactive,description) VALUES (2,'Half',2,'Half',FALSE,NULL);
-INSERT INTO agi_dm01avso24.valignment (seq,iliCode,itfCode,dispName,inactive,description) VALUES (3,'Base',3,'Base',FALSE,NULL);
-INSERT INTO agi_dm01avso24.valignment (seq,iliCode,itfCode,dispName,inactive,description) VALUES (4,'Bottom',4,'Bottom',FALSE,NULL);
-INSERT INTO agi_dm01avso24.plzortschaft_ortschaft_inaenderung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
-INSERT INTO agi_dm01avso24.plzortschaft_ortschaft_inaenderung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_einzelpunkt_exaktdefiniert (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Ja',0,'Ja',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_einzelpunkt_exaktdefiniert (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Nein',1,'Nein',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_inaenderung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_inaenderung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
-INSERT INTO agi_dm01avso24.schriftstil (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'normal',0,'normal',FALSE,NULL);
-INSERT INTO agi_dm01avso24.schriftstil (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'gesperrt',1,'gesperrt',FALSE,NULL);
-INSERT INTO agi_dm01avso24.schriftstil (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',2,'weitere',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_projgrundstueck_vollstaendigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Vollstaendig',0,'Vollstaendig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_projgrundstueck_vollstaendigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'unvollstaendig',1,'unvollstaendig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.rohrleitungen_signalpunkt_punktart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Signal',0,'Signal',FALSE,NULL);
-INSERT INTO agi_dm01avso24.rohrleitungen_signalpunkt_punktart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Tafel_Stein',1,'Tafel Stein',FALSE,NULL);
-INSERT INTO agi_dm01avso24.rohrleitungen_signalpunkt_punktart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',2,'weitere',FALSE,NULL);
-INSERT INTO agi_dm01avso24.planrahmen_kreuzart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Koord_Kreuz',0,'Koord Kreuz',FALSE,NULL);
-INSERT INTO agi_dm01avso24.planrahmen_kreuzart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Netzkreuz',1,'Netzkreuz',FALSE,NULL);
-INSERT INTO agi_dm01avso24.planrahmen_kreuzart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Netzmarkierung',2,'Netzmarkierung',FALSE,NULL);
-INSERT INTO agi_dm01avso24.planrahmen_kreuzart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',3,'weitere',FALSE,NULL);
-INSERT INTO agi_dm01avso24.planrahmen_planlayout_mit_koordinatennetz (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
-INSERT INTO agi_dm01avso24.planrahmen_planlayout_mit_koordinatennetz (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
-INSERT INTO agi_dm01avso24.tseinteilung_toleranzstufe_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'TS1',0,'TS1',FALSE,NULL);
-INSERT INTO agi_dm01avso24.tseinteilung_toleranzstufe_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'TS2',1,'TS2',FALSE,NULL);
-INSERT INTO agi_dm01avso24.tseinteilung_toleranzstufe_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'TS3',2,'TS3',FALSE,NULL);
-INSERT INTO agi_dm01avso24.tseinteilung_toleranzstufe_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'TS4',3,'TS4',FALSE,NULL);
-INSERT INTO agi_dm01avso24.tseinteilung_toleranzstufe_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'TS5',4,'TS5',FALSE,NULL);
+INSERT INTO agi_dm01avso24.hoehen_gelaendekante_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Bruchkante',0,'Bruchkante',FALSE,NULL);
+INSERT INTO agi_dm01avso24.hoehen_gelaendekante_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Strukturlinie',1,'Strukturlinie',FALSE,NULL);
+INSERT INTO agi_dm01avso24.hoehen_gelaendekante_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',2,'weitere',FALSE,NULL);
 INSERT INTO agi_dm01avso24.liegenschaften_grundstuecksart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Liegenschaft',0,'Liegenschaft',FALSE,NULL);
 INSERT INTO agi_dm01avso24.liegenschaften_grundstuecksart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'SelbstRecht.Baurecht',1,'SelbstRecht.Baurecht',FALSE,NULL);
 INSERT INTO agi_dm01avso24.liegenschaften_grundstuecksart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'SelbstRecht.Quellenrecht',2,'SelbstRecht.Quellenrecht',FALSE,NULL);
 INSERT INTO agi_dm01avso24.liegenschaften_grundstuecksart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'SelbstRecht.Konzessionsrecht',3,'SelbstRecht.Konzessionsrecht',FALSE,NULL);
 INSERT INTO agi_dm01avso24.liegenschaften_grundstuecksart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'SelbstRecht.weitere',4,'SelbstRecht.weitere',FALSE,NULL);
 INSERT INTO agi_dm01avso24.liegenschaften_grundstuecksart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Bergwerk',5,'Bergwerk',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gemeindegrenzen_lineattrib8_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'rechtskraeftig',0,'rechtskraeftig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gemeindegrenzen_lineattrib8_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',1,'streitig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gemeindegrenzen_lineattrib8_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'provisorisch',2,'provisorisch',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gemeindegrenzen_lineattrib8_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'undefiniert',3,'undefiniert',FALSE,NULL);
-INSERT INTO agi_dm01avso24.plzortschaft_plz6_inaenderung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
-INSERT INTO agi_dm01avso24.plzortschaft_plz6_inaenderung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_lineattrib6_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',0,'streitig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_lineattrib6_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'unvollstaendig',1,'unvollstaendig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.hoehen_gelaendekante_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Bruchkante',0,'Bruchkante',FALSE,NULL);
-INSERT INTO agi_dm01avso24.hoehen_gelaendekante_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Strukturlinie',1,'Strukturlinie',FALSE,NULL);
-INSERT INTO agi_dm01avso24.hoehen_gelaendekante_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',2,'weitere',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Gebaeude',0,'Gebaeude',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.Strasse_Weg',1,'befestigt.Strasse Weg',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.Trottoir',2,'befestigt.Trottoir',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.Verkehrsinsel',3,'befestigt.Verkehrsinsel',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.Bahn',4,'befestigt.Bahn',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.Flugplatz',5,'befestigt.Flugplatz',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.Wasserbecken',6,'befestigt.Wasserbecken',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.uebrige_befestigte.Sportanlage_befestigt',7,'befestigt.uebrige befestigte.Sportanlage befestigt',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.uebrige_befestigte.Lagerplatz',8,'befestigt.uebrige befestigte.Lagerplatz',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.uebrige_befestigte.Boeschungsbauwerk',9,'befestigt.uebrige befestigte.Boeschungsbauwerk',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.uebrige_befestigte.Gebaeudeerschliessung',10,'befestigt.uebrige befestigte.Gebaeudeerschliessung',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.uebrige_befestigte.Parkplatz',11,'befestigt.uebrige befestigte.Parkplatz',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.uebrige_befestigte.uebrige_befestigte',12,'befestigt.uebrige befestigte.uebrige befestigte',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.Acker_Wiese_Weide.Acker_Wiese',13,'humusiert.Acker Wiese Weide.Acker Wiese',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.Acker_Wiese_Weide.Weide',14,'humusiert.Acker Wiese Weide.Weide',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.Intensivkultur.Reben',15,'humusiert.Intensivkultur.Reben',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.Intensivkultur.uebrige_Intensivkultur.Obstkultur',16,'humusiert.Intensivkultur.uebrige Intensivkultur.Obstkultur',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.Intensivkultur.uebrige_Intensivkultur.uebrige_Intensivkultur',17,'humusiert.Intensivkultur.uebrige Intensivkultur.uebrige Intensivkultur',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.Gartenanlage.Gartenanlage',18,'humusiert.Gartenanlage.Gartenanlage',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.Gartenanlage.Parkanlage_humusiert',19,'humusiert.Gartenanlage.Parkanlage humusiert',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.Gartenanlage.Sportanlage_humusiert',20,'humusiert.Gartenanlage.Sportanlage humusiert',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.Gartenanlage.Friedhof',21,'humusiert.Gartenanlage.Friedhof',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.Hoch_Flachmoor',22,'humusiert.Hoch Flachmoor',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.uebrige_humusierte',23,'humusiert.uebrige humusierte',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Gewaesser.stehendes',24,'Gewaesser.stehendes',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Gewaesser.fliessendes',25,'Gewaesser.fliessendes',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Gewaesser.Schilfguertel',26,'Gewaesser.Schilfguertel',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'bestockt.geschlossener_Wald',27,'bestockt.geschlossener Wald',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'bestockt.Wytweide.Wytweide_dicht',28,'bestockt.Wytweide.Wytweide dicht',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'bestockt.Wytweide.Wytweide_offen',29,'bestockt.Wytweide.Wytweide offen',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'bestockt.uebrige_bestockte.Parkanlage_bestockt',30,'bestockt.uebrige bestockte.Parkanlage bestockt',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'bestockt.uebrige_bestockte.Hecke',31,'bestockt.uebrige bestockte.Hecke',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'bestockt.uebrige_bestockte.uebrige_bestockte',32,'bestockt.uebrige bestockte.uebrige bestockte',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'vegetationslos.Fels',33,'vegetationslos.Fels',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'vegetationslos.Gletscher_Firn',34,'vegetationslos.Gletscher Firn',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'vegetationslos.Geroell_Sand',35,'vegetationslos.Geroell Sand',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'vegetationslos.Abbau_Deponie.Steinbruch',36,'vegetationslos.Abbau Deponie.Steinbruch',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'vegetationslos.Abbau_Deponie.Kiesgrube',37,'vegetationslos.Abbau Deponie.Kiesgrube',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'vegetationslos.Abbau_Deponie.Deponie',38,'vegetationslos.Abbau Deponie.Deponie',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'vegetationslos.Abbau_Deponie.uebriger_Abbau',39,'vegetationslos.Abbau Deponie.uebriger Abbau',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'vegetationslos.uebrige_vegetationslose',40,'vegetationslos.uebrige vegetationslose',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_nummerierungsprinzip (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'keineNummern',0,'keineNummern',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_nummerierungsprinzip (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'beliebig',1,'beliebig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_nummerierungsprinzip (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'aufsteigend',2,'aufsteigend',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_nummerierungsprinzip (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ungeradelinks',3,'ungeradelinks',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_nummerierungsprinzip (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'geradelinks',4,'geradelinks',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gemeindegrenzen_hoheitsgrenzpunkt_hoheitsgrenzstein (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gemeindegrenzen_hoheitsgrenzpunkt_hoheitsgrenzstein (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bezirksgrenzen_bezirksgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'rechtskraeftig',0,'rechtskraeftig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bezirksgrenzen_bezirksgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',1,'streitig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bezirksgrenzen_bezirksgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'provisorisch',2,'provisorisch',FALSE,NULL);
-INSERT INTO agi_dm01avso24.bezirksgrenzen_bezirksgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'undefiniert',3,'undefiniert',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_attributeprovisorisch (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_attributeprovisorisch (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
+INSERT INTO agi_dm01avso24.fixpunktktgrie3_lfp3_protokoll (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
+INSERT INTO agi_dm01avso24.fixpunktktgrie3_lfp3_protokoll (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_projgrundstueck_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'rechtskraeftig',0,'rechtskraeftig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_projgrundstueck_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',1,'streitig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.planrahmen_planlayout_mit_koordinatennetz (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
+INSERT INTO agi_dm01avso24.planrahmen_planlayout_mit_koordinatennetz (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
 INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'BenanntesGebiet',0,'BenanntesGebiet',FALSE,NULL);
 INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Strasse',1,'Strasse',FALSE,NULL);
 INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Platz',2,'Platz',FALSE,NULL);
-INSERT INTO agi_dm01avso24.rohrleitungen_lineattrib7_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'sichtbar',0,'sichtbar',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_grundstueck_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'rechtskraeftig',0,'rechtskraeftig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_grundstueck_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',1,'streitig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.plzortschaft_plz6_inaenderung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
+INSERT INTO agi_dm01avso24.plzortschaft_plz6_inaenderung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
+INSERT INTO agi_dm01avso24.fixpunktktgrie2_lfp2_begehbarkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'begehbar',0,'begehbar',FALSE,NULL);
+INSERT INTO agi_dm01avso24.fixpunktktgrie2_lfp2_begehbarkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nicht_begehbar',1,'nicht begehbar',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_attributeprovisorisch (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_attributeprovisorisch (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
+INSERT INTO agi_dm01avso24.hoehen_aussparung_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ToteFlaeche',0,'ToteFlaeche',FALSE,NULL);
+INSERT INTO agi_dm01avso24.hoehen_aussparung_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',1,'weitere',FALSE,NULL);
+INSERT INTO agi_dm01avso24.zuverlaessigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
+INSERT INTO agi_dm01avso24.zuverlaessigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
+INSERT INTO agi_dm01avso24.rohrleitungen_einzelpunkt_exaktdefiniert (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Ja',0,'Ja',FALSE,NULL);
+INSERT INTO agi_dm01avso24.rohrleitungen_einzelpunkt_exaktdefiniert (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Nein',1,'Nein',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gemeindegrenzen_hoheitsgrenzpunkt_hoheitsgrenzstein (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gemeindegrenzen_hoheitsgrenzpunkt_hoheitsgrenzstein (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
 INSERT INTO agi_dm01avso24.liegenschaften_lineattrib2_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',0,'streitig',FALSE,NULL);
 INSERT INTO agi_dm01avso24.liegenschaften_lineattrib2_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'unvollstaendig',1,'unvollstaendig',FALSE,NULL);
 INSERT INTO agi_dm01avso24.fixpunktktgrie3_hilfsfixpunkt_protokoll (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
 INSERT INTO agi_dm01avso24.fixpunktktgrie3_hilfsfixpunkt_protokoll (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_attributeprovisorisch (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_attributeprovisorisch (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_lineattrib4_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',0,'streitig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_lineattrib4_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'unvollstaendig',1,'unvollstaendig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.kantonsgrenzen_kantonsgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'rechtskraeftig',0,'rechtskraeftig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.kantonsgrenzen_kantonsgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',1,'streitig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.kantonsgrenzen_kantonsgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'provisorisch',2,'provisorisch',FALSE,NULL);
+INSERT INTO agi_dm01avso24.kantonsgrenzen_kantonsgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'undefiniert',3,'undefiniert',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_grundstueck_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'rechtskraeftig',0,'rechtskraeftig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_grundstueck_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',1,'streitig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.rohrleitungen_signalpunkt_punktart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Signal',0,'Signal',FALSE,NULL);
+INSERT INTO agi_dm01avso24.rohrleitungen_signalpunkt_punktart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Tafel_Stein',1,'Tafel Stein',FALSE,NULL);
+INSERT INTO agi_dm01avso24.rohrleitungen_signalpunkt_punktart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',2,'weitere',FALSE,NULL);
+INSERT INTO agi_dm01avso24.planrahmen_linientyp (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'standard',0,'standard',FALSE,NULL);
+INSERT INTO agi_dm01avso24.planrahmen_linientyp (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',1,'weitere',FALSE,NULL);
+INSERT INTO agi_dm01avso24.rohrleitungen_medium (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Oel',0,'Oel',FALSE,NULL);
+INSERT INTO agi_dm01avso24.rohrleitungen_medium (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Gas',1,'Gas',FALSE,NULL);
+INSERT INTO agi_dm01avso24.rohrleitungen_medium (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',2,'weitere',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_istoffiziellebezeichnung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_istoffiziellebezeichnung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_grenzpunkt_exaktdefiniert (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Ja',0,'Ja',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_grenzpunkt_exaktdefiniert (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Nein',1,'Nein',FALSE,NULL);
 INSERT INTO agi_dm01avso24.einzelobjekte_eoart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Mauer.Mauer',0,'Mauer.Mauer',FALSE,NULL);
 INSERT INTO agi_dm01avso24.einzelobjekte_eoart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Mauer.Laermschutzwand',1,'Mauer.Laermschutzwand',FALSE,NULL);
 INSERT INTO agi_dm01avso24.einzelobjekte_eoart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'unterirdisches_Gebaeude',2,'unterirdisches Gebaeude',FALSE,NULL);
@@ -5018,1010 +4903,1125 @@ INSERT INTO agi_dm01avso24.einzelobjekte_eoart (seq,iliCode,itfCode,dispName,ina
 INSERT INTO agi_dm01avso24.einzelobjekte_eoart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Quelle',43,'Quelle',FALSE,NULL);
 INSERT INTO agi_dm01avso24.einzelobjekte_eoart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Bezugspunkt',44,'Bezugspunkt',FALSE,NULL);
 INSERT INTO agi_dm01avso24.einzelobjekte_eoart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',45,'weitere',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_istoffiziellebezeichnung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
-INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_istoffiziellebezeichnung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_projgrundstueck_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'rechtskraeftig',0,'rechtskraeftig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.liegenschaften_projgrundstueck_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',1,'streitig',FALSE,NULL);
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunktpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2pos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'hilfslinie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudeeingang',NULL,'lage','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufepos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_honachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_rlnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurname',NULL,'entstehung','ch.ehi.ili2db.foreignKey','nomenklatur_nknachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2pos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nummerierungsbereichpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktsymbol',NULL,'hoheitsgrenzpunktsymbol_von','ch.ehi.ili2db.foreignKey','gemeindegrenzen_hoheitsgrenzpunkt');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6',NULL,'entstehung','ch.ehi.ili2db.foreignKey','plzortschaft_plz6nachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelementsymbol',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('landesgrenzen_landesgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_punktelement',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_planpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'plannullpunkt','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2pos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1symbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'uebersichtplannullpunkt','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_leitungsobjektpos',NULL,'leitungsobjektpos_von','ch.ehi.ili2db.foreignKey','rohrleitungen_leitungsobjekt');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktpos',NULL,'grenzpunktpos_von','ch.ehi.ili2db.foreignKey','liegenschaften_grenzpunkt');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1pos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planbeschriftungpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_lsnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_netzkreuz',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2',NULL,'hoehegeom','ch.ehi.ili2db.unit','m');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3',NULL,'entstehung','ch.ehi.ili2db.foreignKey','fixpunktekatgrie3_hfp3nachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projliegenschaft',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_bbnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_projgemeindegrenze',NULL,'projgemeindegrenze_von','ch.ehi.ili2db.foreignKey','gemeindegrenzen_gemeinde');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3pos',NULL,'hfp3pos_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie3_hfp3');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_selbstrecht',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'hilfslinie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6',NULL,'flaeche','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschungpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaeche',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaft',NULL,'entstehung','ch.ehi.ili2db.foreignKey','plzortschaft_osnachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_darstellungsflaeche',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projliegenschaft',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayoutsymbol',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2pos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelementsymbol',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurnamepos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planbeschriftungpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_gebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projgebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenlinie',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunkt',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunktpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3symbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsname',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelementsymbol',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurnamepos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3pos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'plannullpunkt','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_punktelement',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1pos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1symbol',NULL,'lfp1symbol_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie1_lfp1');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planbeschriftungpos',NULL,'planbeschriftungpos_von','ch.ehi.ili2db.foreignKey','planrahmen_planbeschriftung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunkt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunkt',NULL,'entstehung','ch.ehi.ili2db.foreignKey','rohrleitungen_rlnachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bezirksgrenzen_bezirksgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'uebersichtplannullpunkt','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudebeschreibung',NULL,'gebaeudebeschreibung_von','ch.ehi.ili2db.foreignKey','gebaeudeadressen_gebaeudeeingang');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_linienelement',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_selbstrecht',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_benanntesgebiet',NULL,'flaeche','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudeeingang',NULL,'lage','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bezirksgrenzen_bezirksgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('landesgrenzen_landesgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'uebersichtplannullpunkt','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_objektnamepos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2pos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsnamepos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nummerierungsbereichpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_flaechenelement',NULL,'flaechenelement_von','ch.ehi.ili2db.foreignKey','rohrleitungen_leitungsobjekt');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_gelaendenamepos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_honachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'hilfslinie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1pos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_benanntesgebiet',NULL,'flaeche','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_planpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurname',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaeche',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaft',NULL,'ortschaft_von','ch.ehi.ili2db.foreignKey','plzortschaft_ortschaftsverbund');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaft',NULL,'flaeche','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_darstellungsflaeche',NULL,'darstellungsflaeche_von','ch.ehi.ili2db.foreignKey','planrahmen_planlayout');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nummerierungsbereichpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2',NULL,'entstehung','ch.ehi.ili2db.foreignKey','fixpunktekatgrie2_lfp2nachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2pos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunkt',NULL,'geometrie','ch.ehi.ili2db.c3Min','-200.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelementsymbol',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaeche',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurnamepos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelement',NULL,'geometrie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsnamepos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunktpos',NULL,'signalpunktpos_von','ch.ehi.ili2db.foreignKey','rohrleitungen_signalpunkt');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_lsnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_plangeometrie',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_objektnamepos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenlinie',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelementsymbol',NULL,'flaechenelementsymbol_von','ch.ehi.ili2db.foreignKey','einzelobjekte_flaechenelement');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunkt',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6',NULL,'flaeche','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'lokalisationsnamepos_von','ch.ehi.ili2db.foreignKey','gebaeudeadressen_lokalisationsname');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaechesymbol',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunktpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_benanntesgebiet',NULL,'flaeche','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projbergwerk',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktsymbol',NULL,'hilfsfixpunktsymbol_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie3_hilfsfixpunkt');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelobjekt',NULL,'entstehung','ch.ehi.ili2db.foreignKey','einzelobjekte_eonachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('landesgrenzen_landesgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelementsymbol',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'hilfslinie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_bergwerk',NULL,'bergwerk_von','ch.ehi.ili2db.foreignKey','liegenschaften_grundstueck');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('kantonsgrenzen_kantonsgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaechesymbol',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_netzkreuz',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bezirksgrenzen_bezirksgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufepos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nummerierungsbereichpos',NULL,'nummerierungsbereichpos_von','ch.ehi.ili2db.foreignKey','nummerierngsbrche_nummerierungsbereich');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_selbstrecht',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_plangeometrie',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueck',NULL,'gesamteflaechenmass','ch.ehi.ili2db.unit','m2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsname_pos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelement',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_netzkreuz',NULL,'netzkreuz_von','ch.ehi.ili2db.foreignKey','planrahmen_planlayout');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1pos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'plannullpunkt','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_linienobjekt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_netzkreuz',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_nknachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_objektnamepos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3pos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_liegenschaft',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_rlnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurnamepos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelementsymbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6',NULL,'flaeche','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_gelaendenamepos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaechesymbol',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_darstellungsflaeche',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelementsymbol',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaechesymbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_punktelement',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurnamepos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnamepos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'plannullpunkt','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1',NULL,'entstehung','ch.ehi.ili2db.foreignKey','fixpunktekatgrie1_hfp1nachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3pos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projobjektnamepos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planbeschriftung',NULL,'planbeschriftung_von','ch.ehi.ili2db.foreignKey','planrahmen_planlayout');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_gelaendenamepos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_rlnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenlinie',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_punktelement',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnummerpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsname_pos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3pos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2symbol',NULL,'lfp2symbol_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie2_lfp2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_gelaendenamepos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projgebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'hilfslinie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_gelaendekante',NULL,'entstehung','ch.ehi.ili2db.foreignKey','hoehen_honachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.fixpunktktgrie1_lfp1_begehbarkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'begehbar',0,'begehbar',FALSE,NULL);
+INSERT INTO agi_dm01avso24.fixpunktktgrie1_lfp1_begehbarkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nicht_begehbar',1,'nicht begehbar',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_lineattrib5_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',0,'streitig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_lineattrib5_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'unvollstaendig',1,'unvollstaendig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.rohrleitungen_lineattrib7_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'sichtbar',0,'sichtbar',FALSE,NULL);
+INSERT INTO agi_dm01avso24.schriftgroesse (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'klein',0,'klein',FALSE,NULL);
+INSERT INTO agi_dm01avso24.schriftgroesse (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'mittel',1,'mittel',FALSE,NULL);
+INSERT INTO agi_dm01avso24.schriftgroesse (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'gross',2,'gross',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_lineattrib3_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',0,'streitig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_lineattrib3_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'unvollstaendig',1,'unvollstaendig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Gebaeude',0,'Gebaeude',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.Strasse_Weg',1,'befestigt.Strasse Weg',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.Trottoir',2,'befestigt.Trottoir',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.Verkehrsinsel',3,'befestigt.Verkehrsinsel',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.Bahn',4,'befestigt.Bahn',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.Flugplatz',5,'befestigt.Flugplatz',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.Wasserbecken',6,'befestigt.Wasserbecken',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.uebrige_befestigte.Sportanlage_befestigt',7,'befestigt.uebrige befestigte.Sportanlage befestigt',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.uebrige_befestigte.Lagerplatz',8,'befestigt.uebrige befestigte.Lagerplatz',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.uebrige_befestigte.Boeschungsbauwerk',9,'befestigt.uebrige befestigte.Boeschungsbauwerk',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.uebrige_befestigte.Gebaeudeerschliessung',10,'befestigt.uebrige befestigte.Gebaeudeerschliessung',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.uebrige_befestigte.Parkplatz',11,'befestigt.uebrige befestigte.Parkplatz',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'befestigt.uebrige_befestigte.uebrige_befestigte',12,'befestigt.uebrige befestigte.uebrige befestigte',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.Acker_Wiese_Weide.Acker_Wiese',13,'humusiert.Acker Wiese Weide.Acker Wiese',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.Acker_Wiese_Weide.Weide',14,'humusiert.Acker Wiese Weide.Weide',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.Intensivkultur.Reben',15,'humusiert.Intensivkultur.Reben',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.Intensivkultur.uebrige_Intensivkultur.Obstkultur',16,'humusiert.Intensivkultur.uebrige Intensivkultur.Obstkultur',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.Intensivkultur.uebrige_Intensivkultur.uebrige_Intensivkultur',17,'humusiert.Intensivkultur.uebrige Intensivkultur.uebrige Intensivkultur',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.Gartenanlage.Gartenanlage',18,'humusiert.Gartenanlage.Gartenanlage',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.Gartenanlage.Parkanlage_humusiert',19,'humusiert.Gartenanlage.Parkanlage humusiert',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.Gartenanlage.Sportanlage_humusiert',20,'humusiert.Gartenanlage.Sportanlage humusiert',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.Gartenanlage.Friedhof',21,'humusiert.Gartenanlage.Friedhof',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.Hoch_Flachmoor',22,'humusiert.Hoch Flachmoor',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'humusiert.uebrige_humusierte',23,'humusiert.uebrige humusierte',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Gewaesser.stehendes',24,'Gewaesser.stehendes',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Gewaesser.fliessendes',25,'Gewaesser.fliessendes',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Gewaesser.Schilfguertel',26,'Gewaesser.Schilfguertel',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'bestockt.geschlossener_Wald',27,'bestockt.geschlossener Wald',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'bestockt.Wytweide.Wytweide_dicht',28,'bestockt.Wytweide.Wytweide dicht',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'bestockt.Wytweide.Wytweide_offen',29,'bestockt.Wytweide.Wytweide offen',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'bestockt.uebrige_bestockte.Parkanlage_bestockt',30,'bestockt.uebrige bestockte.Parkanlage bestockt',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'bestockt.uebrige_bestockte.Hecke',31,'bestockt.uebrige bestockte.Hecke',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'bestockt.uebrige_bestockte.uebrige_bestockte',32,'bestockt.uebrige bestockte.uebrige bestockte',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'vegetationslos.Fels',33,'vegetationslos.Fels',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'vegetationslos.Gletscher_Firn',34,'vegetationslos.Gletscher Firn',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'vegetationslos.Geroell_Sand',35,'vegetationslos.Geroell Sand',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'vegetationslos.Abbau_Deponie.Steinbruch',36,'vegetationslos.Abbau Deponie.Steinbruch',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'vegetationslos.Abbau_Deponie.Kiesgrube',37,'vegetationslos.Abbau Deponie.Kiesgrube',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'vegetationslos.Abbau_Deponie.Deponie',38,'vegetationslos.Abbau Deponie.Deponie',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'vegetationslos.Abbau_Deponie.uebriger_Abbau',39,'vegetationslos.Abbau Deponie.uebriger Abbau',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_bbart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'vegetationslos.uebrige_vegetationslose',40,'vegetationslos.uebrige vegetationslose',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bezirksgrenzen_bezirksgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'rechtskraeftig',0,'rechtskraeftig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bezirksgrenzen_bezirksgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',1,'streitig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bezirksgrenzen_bezirksgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'provisorisch',2,'provisorisch',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bezirksgrenzen_bezirksgrenzabschnitt_gueltigkeit (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'undefiniert',3,'undefiniert',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_inaenderung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_inaenderung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
+INSERT INTO agi_dm01avso24.astatus (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'projektiert',0,'projektiert',FALSE,NULL);
+INSERT INTO agi_dm01avso24.astatus (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'gueltig',1,'gueltig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.qualitaetsstandard (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'AV93',0,'AV93',FALSE,NULL);
+INSERT INTO agi_dm01avso24.qualitaetsstandard (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'PV74',1,'PV74',FALSE,NULL);
+INSERT INTO agi_dm01avso24.qualitaetsstandard (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'PN',2,'PN',FALSE,NULL);
+INSERT INTO agi_dm01avso24.qualitaetsstandard (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'PEP',3,'PEP',FALSE,NULL);
+INSERT INTO agi_dm01avso24.qualitaetsstandard (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',4,'weitere',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_lineattrib1_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'streitig',0,'streitig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.liegenschaften_lineattrib1_linienart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'unvollstaendig',1,'unvollstaendig',FALSE,NULL);
+INSERT INTO agi_dm01avso24.plzortschaft_ortschaft_inaenderung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
+INSERT INTO agi_dm01avso24.plzortschaft_ortschaft_inaenderung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ZH',0,'ZH',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'BE',1,'BE',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'LU',2,'LU',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'UR',3,'UR',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'SZ',4,'SZ',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'OW',5,'OW',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'NW',6,'NW',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'GL',7,'GL',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ZG',8,'ZG',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'FR',9,'FR',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'SO',10,'SO',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'BS',11,'BS',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'BL',12,'BL',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'SH',13,'SH',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'AR',14,'AR',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'AI',15,'AI',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'SG',16,'SG',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'GR',17,'GR',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'AG',18,'AG',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'TG',19,'TG',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'TI',20,'TI',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'VD',21,'VD',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'VS',22,'VS',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'NE',23,'NE',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'GE',24,'GE',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'JU',25,'JU',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'FL',26,'FL',FALSE,NULL);
+INSERT INTO agi_dm01avso24.nummerierngsbrche_kantonskuerzel (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'CH',27,'CH',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_istoffiziellebezeichnung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_gebaeudeeingang_istoffiziellebezeichnung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
+INSERT INTO agi_dm01avso24.sprachtyp (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'de',0,'de',FALSE,NULL);
+INSERT INTO agi_dm01avso24.sprachtyp (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'fr',1,'fr',FALSE,NULL);
+INSERT INTO agi_dm01avso24.sprachtyp (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'it',2,'it',FALSE,NULL);
+INSERT INTO agi_dm01avso24.sprachtyp (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'rm',3,'rm',FALSE,NULL);
+INSERT INTO agi_dm01avso24.sprachtyp (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'en',4,'en',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_inaenderung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'ja',0,'ja',FALSE,NULL);
+INSERT INTO agi_dm01avso24.gebaeudeadrssen_lokalisation_inaenderung (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'nein',1,'nein',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_einzelpunkt_exaktdefiniert (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Ja',0,'Ja',FALSE,NULL);
+INSERT INTO agi_dm01avso24.bodenbedeckung_einzelpunkt_exaktdefiniert (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Nein',1,'Nein',FALSE,NULL);
+INSERT INTO agi_dm01avso24.planrahmen_beschriftungsart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Nachbarn',0,'Nachbarn',FALSE,NULL);
+INSERT INTO agi_dm01avso24.planrahmen_beschriftungsart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Nachbarplan',1,'Nachbarplan',FALSE,NULL);
+INSERT INTO agi_dm01avso24.planrahmen_beschriftungsart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'UebersichtNachbarn',2,'UebersichtNachbarn',FALSE,NULL);
+INSERT INTO agi_dm01avso24.planrahmen_beschriftungsart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'Strassenrichtung',3,'Strassenrichtung',FALSE,NULL);
+INSERT INTO agi_dm01avso24.planrahmen_beschriftungsart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'LK_Nr',4,'LK Nr',FALSE,NULL);
+INSERT INTO agi_dm01avso24.planrahmen_beschriftungsart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'BFSNr',5,'BFSNr',FALSE,NULL);
+INSERT INTO agi_dm01avso24.planrahmen_beschriftungsart (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'weitere',6,'weitere',FALSE,NULL);
+INSERT INTO agi_dm01avso24.tseinteilung_toleranzstufe_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'TS1',0,'TS1',FALSE,NULL);
+INSERT INTO agi_dm01avso24.tseinteilung_toleranzstufe_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'TS2',1,'TS2',FALSE,NULL);
+INSERT INTO agi_dm01avso24.tseinteilung_toleranzstufe_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'TS3',2,'TS3',FALSE,NULL);
+INSERT INTO agi_dm01avso24.tseinteilung_toleranzstufe_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'TS4',3,'TS4',FALSE,NULL);
+INSERT INTO agi_dm01avso24.tseinteilung_toleranzstufe_art (seq,iliCode,itfCode,dispName,inactive,description) VALUES (NULL,'TS5',4,'TS5',FALSE,NULL);
 INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsname_pos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_bergwerk',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaechesymbol',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnummerpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projbergwerk',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_planpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelementsymbol',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelementsymbol',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenanschriftpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_projgemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaeche',NULL,'entstehung','ch.ehi.ili2db.foreignKey','bodenbedeckung_bbnachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfpnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2pos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunkt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_projgemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projliegenschaft',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufe',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelementsymbol',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_linienelement',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_hausnummerpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'anfangspunkt','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_darstellungsflaeche',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_planpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_hausnummerpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschungpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaechesymbol',NULL,'projboflaechesymbol_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_projboflaeche');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_planpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projgebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projbergwerk',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3pos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnamepos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaeche',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunktpos',NULL,'einzelpunktpos_von','ch.ehi.ili2db.foreignKey','einzelobjekte_einzelpunkt');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nbgeometrie',NULL,'nbgeometrie_von','ch.ehi.ili2db.foreignKey','nummerierngsbrche_nummerierungsbereich');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2pos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsnamepos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschung',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_rlnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunkt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_punktelement',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunkt',NULL,'hoehegeom','ch.ehi.ili2db.unit','m');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2pos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3pos',NULL,'lfp3pos_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie3_lfp3');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'plannullpunkt','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurnamepos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfpnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsname',NULL,'benannte','ch.ehi.ili2db.foreignKey','gebaeudeadressen_lokalisation');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufepos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projliegenschaft',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3',NULL,'hoehegeom','ch.ehi.ili2db.unit','m');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_osnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschungpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnamepos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_gelaendekante',NULL,'geometrie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_benanntesgebiet',NULL,'flaeche','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktsymbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnamepos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunktpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaft',NULL,'flaeche','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projbergwerk',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsnamepos',NULL,'ortsnamepos_von','ch.ehi.ili2db.foreignKey','nomenklatur_ortsname');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunkt',NULL,'entstehung','ch.ehi.ili2db.foreignKey','bodenbedeckung_bbnachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschungpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunktpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planbeschriftungpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsname_pos',NULL,'ortschaftsname_pos_von','ch.ehi.ili2db.foreignKey','plzortschaft_ortschaftsname');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projbergwerk',NULL,'projbergwerk_von','ch.ehi.ili2db.foreignKey','liegenschaften_projgrundstueck');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projselbstrecht',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_linienobjekt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_projgemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_netzkreuz',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2',NULL,'entstehung','ch.ehi.ili2db.foreignKey','fixpunktekatgrie2_hfp2nachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunktpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnummerpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nbgeometrie',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelementsymbol',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'hilfslinie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_leitungsobjektpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_punktelement',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('kantonsgrenzen_kantonsgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1pos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3pos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayoutsymbol',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelement',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsnamepos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
 INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_eonachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_nknachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_rlnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_gebaeudenummerpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurname',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3pos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_lsnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_netzkreuz',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_hausnummerpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projselbstrecht',NULL,'projselbstrecht_von','ch.ehi.ili2db.foreignKey','liegenschaften_projgrundstueck');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_liegenschaft',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_leitungsobjektpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_netzkreuz',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaechesymbol',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaechesymbol',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'hilfslinie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_liegenschaft',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunkt',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_liegenschaft',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelementsymbol',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_eonachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschung',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktsymbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenlinie',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bezirksgrenzen_bezirksgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaechesymbol',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufe',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudeeingang',NULL,'lage','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'strassenstueck_von','ch.ehi.ili2db.foreignKey','gebaeudeadressen_lokalisation');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_gebaeudenummerpos',NULL,'gebaeudenummerpos_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_gebaeudenummer');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_eonachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projobjektnamepos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_objektnamepos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsname',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_punktelement',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenlinie',NULL,'koordinatenlinie_von','ch.ehi.ili2db.foreignKey','planrahmen_planlayout');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudeeingang',NULL,'entstehung','ch.ehi.ili2db.foreignKey','gebaeudeadressen_gebnachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_bbnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_leitungsobjektpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_nknachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueck',NULL,'entstehung','ch.ehi.ili2db.foreignKey','liegenschaften_lsnachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bezirksgrenzen_bezirksgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaeche',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_aussparung',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayoutsymbol',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunkt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_hausnummerpos',NULL,'hausnummerpos_von','ch.ehi.ili2db.foreignKey','gebaeudeadressen_gebaeudeeingang');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_punktelement',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_aussparung',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufepos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projselbstrecht',NULL,'flaechenmass','ch.ehi.ili2db.unit','m2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_hausnummerpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_punktelement',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bezirksgrenzen_bezirksgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunkt',NULL,'entstehung','ch.ehi.ili2db.foreignKey','fixpunktekatgrie3_hilfsfpnachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenanschriftpos',NULL,'koordinatenanschriftpos_von','ch.ehi.ili2db.foreignKey','planrahmen_koordinatenanschrift');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaeche',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufepos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_selbstrecht',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunktpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_selbstrecht',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('kantonsgrenzen_kantonsgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3pos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsverbundtext',NULL,'ortschaftsverbundtext_von','ch.ehi.ili2db.foreignKey','plzortschaft_ortschaftsverbund');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_osnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnummerpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_objektnamepos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('landesgrenzen_landesgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsname',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaechesymbol',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_benanntesgebiet',NULL,'benanntesgebiet_von','ch.ehi.ili2db.foreignKey','gebaeudeadressen_lokalisation');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudeeingang',NULL,'lage','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_benanntesgebiet',NULL,'flaeche','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayoutsymbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_linienobjekt',NULL,'geometrie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenanschriftpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsname_pos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('kantonsgrenzen_kantonsgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsname_pos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_hausnummerpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6',NULL,'plz6_von','ch.ehi.ili2db.foreignKey','plzortschaft_ortschaft');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_planpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_netzkreuz',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_gebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueck',NULL,'gesamteflaechenmass','ch.ehi.ili2db.unit','m2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfpnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_eonachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_aussparung',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunktpos',NULL,'einzelpunktpos_von','ch.ehi.ili2db.foreignKey','rohrleitungen_einzelpunkt');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsname',NULL,'ortschaftsname_von','ch.ehi.ili2db.foreignKey','plzortschaft_ortschaft');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1pos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_bbnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1pos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projselbstrecht',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayoutsymbol',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_liegenschaft',NULL,'liegenschaft_von','ch.ehi.ili2db.foreignKey','liegenschaften_grundstueck');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_lsnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelement',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaechesymbol',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_gelaendekante',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsname',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_osnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenanschriftpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3pos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_bbnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschung',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnamepos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnamepos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsname',NULL,'entstehung','ch.ehi.ili2db.foreignKey','nomenklatur_nknachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_darstellungsflaeche',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_bbnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'plannullpunkt','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1pos',NULL,'lfp1pos_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie1_lfp1');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projselbstrecht',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_gebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelement',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunktpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projliegenschaft',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_gelaendekante',NULL,'geometrie','ch.ehi.ili2db.c3Min','-200.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschungpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelement',NULL,'linienelement_von','ch.ehi.ili2db.foreignKey','einzelobjekte_einzelobjekt');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_rlnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaft',NULL,'flaeche','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projobjektnamepos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_gelaendekante',NULL,'geometrie','ch.ehi.ili2db.coordDimension','3');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunkt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_gelaendekante',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktsymbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaechesymbol',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_leitungsobjektpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurname',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschungpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1pos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_objektnamepos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_projgemeindegrenze',NULL,'entstehung','ch.ehi.ili2db.foreignKey','gemeindegrenzen_gemnachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_leitungsobjektpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1',NULL,'hoehegeom','ch.ehi.ili2db.unit','m');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_honachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_gelaendekante',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('kantonsgrenzen_kantonsgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('landesgrenzen_landesgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
 INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nbgeometrie',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunkt',NULL,'entstehung','ch.ehi.ili2db.foreignKey','einzelobjekte_eonachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurname',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufe',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2pos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufe',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_leitungsobjektpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_leitungsobjektpos',NULL,'leitungsobjektpos_von','ch.ehi.ili2db.foreignKey','rohrleitungen_leitungsobjekt');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_hausnummerpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2pos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2pos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaeche',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudename',NULL,'gebaeudename_von','ch.ehi.ili2db.foreignKey','gebaeudeadressen_gebaeudeeingang');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_punktelement',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_gelaendenamepos',NULL,'gelaendenamepos_von','ch.ehi.ili2db.foreignKey','nomenklatur_gelaendename');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_bergwerk',NULL,'bergwerk_von','ch.ehi.ili2db.foreignKey','liegenschaften_grundstueck');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelementsymbol',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsname_pos',NULL,'pos','ch.ehi.ili2db.srid','2056');
 INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projselbstrecht',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1',NULL,'hoehegeom','ch.ehi.ili2db.unit','m');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_bbnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunkt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1',NULL,'entstehung','ch.ehi.ili2db.foreignKey','fixpunktekatgrie1_lfp1nachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaeche',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6',NULL,'flaeche','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudeeingang',NULL,'lage','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'hilfslinie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2pos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_gelaendekante',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_bergwerk',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_linienobjekt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2pos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunktpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunktpos',NULL,'signalpunktpos_von','ch.ehi.ili2db.foreignKey','rohrleitungen_signalpunkt');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_projgemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_punktelement',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_rlnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
 INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nummerierungsbereichpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3pos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudeeingang',NULL,'lage','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_netzkreuz',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_nknachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufe',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_benanntesgebiet',NULL,'flaeche','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_hausnummerpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_planpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_aussparung',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_aussparung',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
 INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2symbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projliegenschaft',NULL,'flaechenmass','ch.ehi.ili2db.unit','m2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaeche',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_darstellungsflaeche',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_aussparung',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsname',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_planpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3pos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenanschriftpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnamepos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunktpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_bergwerk',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_plangeometrie',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_liegenschaft',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'hilfslinie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projselbstrecht',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planbeschriftungpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projbergwerk',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_objektnamepos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaeche',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_bbnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_osnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_rlnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufepos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projgebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktpos',NULL,'grenzpunktpos_von','ch.ehi.ili2db.foreignKey','liegenschaften_grenzpunkt');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsnamepos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'anfangspunkt','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_honachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_bergwerk',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_osnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenanschriftpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nummerierungsbereichpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenlinie',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'anfangspunkt','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_benanntesgebiet',NULL,'flaeche','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufepos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'anfangspunkt','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'uebersichtplannullpunkt','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1symbol',NULL,'lfp1symbol_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie1_lfp1');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_plangeometrie',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenlinie',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnamepos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('kantonsgrenzen_kantonsgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunktpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'hilfslinie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_rlnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsname',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_gelaendekante',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_projgemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2',NULL,'entstehung','ch.ehi.ili2db.foreignKey','fixpunktekatgrie2_hfp2nachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelementsymbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1pos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_benanntesgebiet',NULL,'flaeche','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnamepos',NULL,'objektnamepos_von','ch.ehi.ili2db.foreignKey','einzelobjekte_objektname');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschungpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_osnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
 INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
 INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1pos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3',NULL,'hoehegeom','ch.ehi.ili2db.unit','m');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_osnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunktpos',NULL,'hoehenpunktpos_von','ch.ehi.ili2db.foreignKey','hoehen_hoehenpunkt');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_objektnamepos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nbgeometrie',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunkt',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projgebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projliegenschaft',NULL,'projliegenschaft_von','ch.ehi.ili2db.foreignKey','liegenschaften_projgrundstueck');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nbgeometrie',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_honachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planbeschriftungpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaft',NULL,'flaeche','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenanschriftpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nbgeometrie',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnummerpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaft',NULL,'flaeche','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenlinie',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projgebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunkt',NULL,'entstehung','ch.ehi.ili2db.foreignKey','gemeindegrenzen_gemnachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2pos',NULL,'hfp2pos_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie2_hfp2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_nknachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_bergwerk',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_bergwerk',NULL,'flaechenmass','ch.ehi.ili2db.unit','m2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_benanntesgebiet',NULL,'flaeche','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_punktelement',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsname',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projliegenschaft',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaechesymbol',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_gebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_liegenschaft',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_leitungsobjektpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelement',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'hilfslinie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurname',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_netzkreuz',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projbergwerk',NULL,'flaechenmass','ch.ehi.ili2db.unit','m2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsnamepos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projobjektnamepos',NULL,'projobjektnamepos_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_projobjektname');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1pos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_linienelement',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurname',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_eonachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunkt',NULL,'entstehung','ch.ehi.ili2db.foreignKey','rohrleitungen_rlnachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenanschrift',NULL,'koordinatenanschrift_von','ch.ehi.ili2db.foreignKey','planrahmen_planlayout');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsnamepos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'grundstueckpos_von','ch.ehi.ili2db.foreignKey','liegenschaften_grundstueck');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_gelaendename',NULL,'entstehung','ch.ehi.ili2db.foreignKey','nomenklatur_nknachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektname',NULL,'objektname_von','ch.ehi.ili2db.foreignKey','einzelobjekte_einzelobjekt');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisation',NULL,'entstehung','ch.ehi.ili2db.foreignKey','gebaeudeadressen_gebnachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_linienelement',NULL,'linienelement_von','ch.ehi.ili2db.foreignKey','rohrleitungen_leitungsobjekt');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planbeschriftungpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2pos',NULL,'lfp2pos_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie2_lfp2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_lsnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3pos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_punktelement',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projliegenschaft',NULL,'flaechenmass','ch.ehi.ili2db.unit','m2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaechesymbol',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
 INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelementsymbol',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_plangeometrie',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1pos',NULL,'hfp1pos_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie1_hfp1');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunktpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_hausnummerpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_objektnamepos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'hilfslinie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1pos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_punktelement',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelementsymbol',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschung',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunkt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_rlnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaeche',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projbergwerk',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'anfangspunkt','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projobjektnamepos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projselbstrecht',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_selbstrecht',NULL,'selbstrecht_von','ch.ehi.ili2db.foreignKey','liegenschaften_grundstueck');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3',NULL,'entstehung','ch.ehi.ili2db.foreignKey','fixpunktekatgrie3_lfp3nachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaechesymbol',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_bergwerk',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2pos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktpos',NULL,'hoheitsgrenzpunktpos_von','ch.ehi.ili2db.foreignKey','gemeindegrenzen_hoheitsgrenzpunkt');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnamepos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudename',NULL,'gebaeudename_von','ch.ehi.ili2db.foreignKey','gebaeudeadressen_gebaeudeeingang');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayoutsymbol',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'gebaeudenamepos_von','ch.ehi.ili2db.foreignKey','gebaeudeadressen_gebaeudename');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunkt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunkt',NULL,'entstehung','ch.ehi.ili2db.foreignKey','hoehen_honachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'anfangspunkt','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1pos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_gelaendenamepos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_aussparung',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufepos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunktpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_osnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayoutsymbol',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'uebersichtplannullpunkt','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunkt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufepos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'hilfslinie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunktpos',NULL,'einzelpunktpos_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_einzelpunkt');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_selbstrecht',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurnamepos',NULL,'flurnamepos_von','ch.ehi.ili2db.foreignKey','nomenklatur_flurname');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschung',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunktpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6',NULL,'flaeche','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunkt',NULL,'entstehung','ch.ehi.ili2db.foreignKey','liegenschaften_lsnachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_linienobjekt',NULL,'linienobjekt_von','ch.ehi.ili2db.foreignKey','planrahmen_planlayout');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3pos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufe',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueck',NULL,'entstehung','ch.ehi.ili2db.foreignKey','liegenschaften_lsnachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projobjektname',NULL,'projobjektname_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_projboflaeche');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfpnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_punktelement',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_punktelement',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nbgeometrie',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsnamepos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudeeingang',NULL,'gebaeudeeingang_von','ch.ehi.ili2db.foreignKey','gebaeudeadressen_lokalisation');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfpnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunktpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunktpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_hausnummerpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaft',NULL,'flaeche','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsnamepos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaeche',NULL,'entstehung','ch.ehi.ili2db.foreignKey','bodenbedeckung_bbnachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_gelaendenamepos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projgebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projselbstrecht',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planbeschriftungpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaeche',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_liegenschaft',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurname',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_planpos',NULL,'planpos_von','ch.ehi.ili2db.foreignKey','planeinteilungen_plan');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaeche',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschungpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3pos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudeeingang',NULL,'lage','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projobjektnamepos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufepos',NULL,'toleranzstufepos_von','ch.ehi.ili2db.foreignKey','tseinteilung_toleranzstufe');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaft',NULL,'flaeche','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfpnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelementsymbol',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_honachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('kantonsgrenzen_kantonsgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenanschriftpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_hausnummerpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_lsnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktsymbol',NULL,'grenzpunktsymbol_von','ch.ehi.ili2db.foreignKey','liegenschaften_grenzpunkt');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsname_pos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projobjektnamepos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenanschriftpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelement',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_gelaendenamepos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsnamepos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_darstellungsflaeche',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufe',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_projgemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nummerierungsbereichpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6',NULL,'flaeche','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'anfangspunkt','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnummerpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planbeschriftungpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_linienobjekt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschungpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'uebersichtplannullpunkt','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'hilfslinie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projgebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_nknachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'projgrundstueckpos_von','ch.ehi.ili2db.foreignKey','liegenschaften_projgrundstueck');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_lsnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_benanntesgebiet',NULL,'flaeche','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_punktelement',NULL,'punktelement_von','ch.ehi.ili2db.foreignKey','rohrleitungen_leitungsobjekt');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_plangeometrie',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_objektname',NULL,'objektname_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_boflaeche');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'geometrie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_plangeometrie',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_gelaendekante',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenlinie',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunktpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projgebaeudenummerpos',NULL,'projgebaeudenummerpos_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_projgebaeudenummer');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_gelaendenamepos',NULL,'gelaendenamepos_von','ch.ehi.ili2db.foreignKey','nomenklatur_gelaendename');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnummerpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1pos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsname',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_plangeometrie',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'uebersichtplannullpunkt','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelementsymbol',NULL,'linienelementsymbol_von','ch.ehi.ili2db.foreignKey','einzelobjekte_linienelement');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_gelaendenamepos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'anfangspunkt','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelement',NULL,'flaechenelement_von','ch.ehi.ili2db.foreignKey','einzelobjekte_einzelobjekt');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_liegenschaft',NULL,'flaechenmass','ch.ehi.ili2db.unit','m2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nummerierungsbereichpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnummerpos',NULL,'objektnummerpos_von','ch.ehi.ili2db.foreignKey','einzelobjekte_objektnummer');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_liegenschaft',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelement',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunkt',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsname_pos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunktpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunktpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projgebaeudenummerpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaechesymbol',NULL,'boflaechesymbol_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_boflaeche');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenlinie',NULL,'geometrie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'plannullpunkt','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('landesgrenzen_landesgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_bergwerk',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemeindegrenze',NULL,'gemeindegrenze_von','ch.ehi.ili2db.foreignKey','gemeindegrenzen_gemeinde');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2',NULL,'hoehegeom','ch.ehi.ili2db.unit','m');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3pos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'hilfslinie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'uebersichtplannullpunkt','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bezirksgrenzen_bezirksgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_plangeometrie',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschung',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3pos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnamepos',NULL,'objektnamepos_von','ch.ehi.ili2db.foreignKey','einzelobjekte_objektname');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projbergwerk',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunktpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3pos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_projgemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_projgemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaeche',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_punktelement',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_punktelement',NULL,'hoehegeom','ch.ehi.ili2db.unit','m');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nbgeometrie',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projliegenschaft',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_punktelement',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_linienelement',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_gebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('kantonsgrenzen_kantonsgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_gebaeudenummer',NULL,'gebaeudenummer_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_boflaeche');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_linienobjekt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projobjektnamepos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_osnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunkt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','3');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschungpos',NULL,'rutschungpos_von','ch.ehi.ili2db.foreignKey','rutschgebiete_rutschung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_punktelement',NULL,'punktelement_von','ch.ehi.ili2db.foreignKey','einzelobjekte_einzelobjekt');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayoutsymbol',NULL,'planlayoutsymbol_von','ch.ehi.ili2db.foreignKey','planrahmen_planlayout');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projselbstrecht',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunkt',NULL,'geometrie','ch.ehi.ili2db.c3Max','1600.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6',NULL,'flaeche','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayoutsymbol',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschung',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaeche',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'anfangspunkt','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurnamepos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2pos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1pos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_leitungsobjektpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_bbnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelementsymbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'hilfslinie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projbergwerk',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufepos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_aussparung',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaechesymbol',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1pos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaechesymbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_nknachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nummerierungsbereichpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_linienelement',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_darstellungsflaeche',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projgebaeudenummer',NULL,'projgebaeudenummer_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_projboflaeche');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaeche',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planbeschriftungpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktpos',NULL,'hilfsfixpunktpos_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie3_hilfsfixpunkt');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_gebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'e_azimut','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenanschriftpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunktpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_linienobjekt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsname_pos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2pos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_aussparung',NULL,'entstehung','ch.ehi.ili2db.foreignKey','hoehen_honachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3symbol',NULL,'lfp3symbol_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie3_lfp3');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_projgemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_leitungsobjektpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2pos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnummer',NULL,'objektnummer_von','ch.ehi.ili2db.foreignKey','einzelobjekte_einzelobjekt');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_gelaendekante',NULL,'geometrie','ch.ehi.ili2db.c3Max','1600.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_aussparung',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_eonachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_selbstrecht',NULL,'flaechenmass','ch.ehi.ili2db.unit','m2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnummerpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_honachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_gebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_objektnamepos',NULL,'objektnamepos_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_objektname');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1pos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'anfangspunkt','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfpnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_leitungsobjekt',NULL,'entstehung','ch.ehi.ili2db.foreignKey','rohrleitungen_rlnachfuehrung');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_honachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('landesgrenzen_landesgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_bergwerk',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufe',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projobjektnamepos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnamepos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_selbstrecht',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_punktelement',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_nknachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurnamepos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_planpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_osnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_eonachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_linienelement',NULL,'geometrie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nummerierungsbereichpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_plangeometrie',NULL,'plangeometrie_von','ch.ehi.ili2db.foreignKey','planeinteilungen_plan');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunktpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('kantonsgrenzen_kantonsgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_linienelement',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('landesgrenzen_landesgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelementsymbol',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
 INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_bergwerk',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
-INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemeindegrenze',NULL,'entstehung','ch.ehi.ili2db.foreignKey','gemeindegrenzen_gemnachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunktpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nummerierungsbereichpos',NULL,'nummerierungsbereichpos_von','ch.ehi.ili2db.foreignKey','nummerierngsbrche_nummerierungsbereich');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_objektnamepos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_eonachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planbeschriftung',NULL,'planbeschriftung_von','ch.ehi.ili2db.foreignKey','planrahmen_planlayout');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3pos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_netzkreuz',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfpnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_punktelement',NULL,'punktelement_von','ch.ehi.ili2db.foreignKey','einzelobjekte_einzelobjekt');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_nknachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2pos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_linienobjekt',NULL,'geometrie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelement',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaechesymbol',NULL,'boflaechesymbol_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_boflaeche');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_linienobjekt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projgebaeudenummerpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projgebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_honachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunkt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschung',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2pos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'grundstueckpos_von','ch.ehi.ili2db.foreignKey','liegenschaften_grundstueck');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bezirksgrenzen_bezirksgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_leitungsobjekt',NULL,'entstehung','ch.ehi.ili2db.foreignKey','rohrleitungen_rlnachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nummerierungsbereichpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaechesymbol',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1',NULL,'entstehung','ch.ehi.ili2db.foreignKey','fixpunktekatgrie1_hfp1nachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunkt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_projgemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufe',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurname',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'plannullpunkt','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'hilfslinie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('kantonsgrenzen_kantonsgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaeche',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaechesymbol',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsname_pos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschung',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_gebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaechesymbol',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_linienelement',NULL,'linienelement_von','ch.ehi.ili2db.foreignKey','rohrleitungen_leitungsobjekt');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_aussparung',NULL,'entstehung','ch.ehi.ili2db.foreignKey','hoehen_honachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projbergwerk',NULL,'flaechenmass','ch.ehi.ili2db.unit','m2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaft',NULL,'flaeche','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfpnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projbergwerk',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_objektnamepos',NULL,'objektnamepos_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_objektname');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3symbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenanschriftpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunktpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschung',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_darstellungsflaeche',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaft',NULL,'entstehung','ch.ehi.ili2db.foreignKey','plzortschaft_osnachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunktpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunkt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3pos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6',NULL,'flaeche','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2pos',NULL,'lfp2pos_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie2_lfp2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_linienobjekt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projobjektnamepos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1pos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_punktelement',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunktpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bezirksgrenzen_bezirksgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1pos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsname',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunktpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufepos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelementsymbol',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunktpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_selbstrecht',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufe',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaeche',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunktpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_honachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_lsnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_punktelement',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_gebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektname',NULL,'objektname_von','ch.ehi.ili2db.foreignKey','einzelobjekte_einzelobjekt');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaechesymbol',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1pos',NULL,'lfp1pos_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie1_lfp1');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_linienelement',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_punktelement',NULL,'hoehegeom','ch.ehi.ili2db.unit','m');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projobjektnamepos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsname_pos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelement',NULL,'geometrie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nbgeometrie',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projobjektnamepos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaechesymbol',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaft',NULL,'flaeche','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_gebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2pos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_liegenschaft',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_netzkreuz',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1pos',NULL,'hfp1pos_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie1_hfp1');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunkt',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudeeingang',NULL,'lage','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnummerpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsnamepos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_osnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurname',NULL,'entstehung','ch.ehi.ili2db.foreignKey','nomenklatur_nknachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'uebersichtplannullpunkt','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_punktelement',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'plannullpunkt','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_benanntesgebiet',NULL,'benanntesgebiet_von','ch.ehi.ili2db.foreignKey','gebaeudeadressen_lokalisation');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_honachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_lsnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projobjektnamepos',NULL,'projobjektnamepos_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_projobjektname');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsname',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktsymbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurnamepos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_bbnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_bergwerk',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelement',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1pos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunkt',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufepos',NULL,'toleranzstufepos_von','ch.ehi.ili2db.foreignKey','tseinteilung_toleranzstufe');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'hilfslinie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_liegenschaft',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_aussparung',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurnamepos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2',NULL,'entstehung','ch.ehi.ili2db.foreignKey','fixpunktekatgrie2_lfp2nachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3pos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'gebaeudenamepos_von','ch.ehi.ili2db.foreignKey','gebaeudeadressen_gebaeudename');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_punktelement',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1pos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bezirksgrenzen_bezirksgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nbgeometrie',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projselbstrecht',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudeeingang',NULL,'lage','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenanschriftpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelementsymbol',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_plangeometrie',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_gebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_gelaendekante',NULL,'geometrie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projbergwerk',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nbgeometrie',NULL,'nbgeometrie_von','ch.ehi.ili2db.foreignKey','nummerierngsbrche_nummerierungsbereich');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_leitungsobjektpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_projgemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaeche',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_bbnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
 INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaechesymbol',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_nknachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_osnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudebeschreibung',NULL,'gebaeudebeschreibung_von','ch.ehi.ili2db.foreignKey','gebaeudeadressen_gebaeudeeingang');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projgebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_rlnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_leitungsobjektpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('landesgrenzen_landesgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudeeingang',NULL,'gebaeudeeingang_von','ch.ehi.ili2db.foreignKey','gebaeudeadressen_lokalisation');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3pos',NULL,'hfp3pos_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie3_hfp3');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projliegenschaft',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_darstellungsflaeche',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnamepos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projobjektnamepos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsname',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_leitungsobjektpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('landesgrenzen_landesgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_darstellungsflaeche',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_selbstrecht',NULL,'selbstrecht_von','ch.ehi.ili2db.foreignKey','liegenschaften_grundstueck');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunktpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_benanntesgebiet',NULL,'flaeche','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_netzkreuz',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_selbstrecht',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_gelaendenamepos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2',NULL,'hoehegeom','ch.ehi.ili2db.unit','m');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projbergwerk',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'hilfslinie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_objektnamepos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_linienobjekt',NULL,'linienobjekt_von','ch.ehi.ili2db.foreignKey','planrahmen_planlayout');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1pos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3symbol',NULL,'lfp3symbol_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie3_lfp3');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunkt',NULL,'geometrie','ch.ehi.ili2db.c3Min','-200.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunkt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschung',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'hilfslinie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelementsymbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'uebersichtplannullpunkt','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschung',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_darstellungsflaeche',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunkt',NULL,'entstehung','ch.ehi.ili2db.foreignKey','hoehen_honachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurnamepos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_lsnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenlinie',NULL,'geometrie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projselbstrecht',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_gelaendekante',NULL,'entstehung','ch.ehi.ili2db.foreignKey','hoehen_honachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunktpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelement',NULL,'linienelement_von','ch.ehi.ili2db.foreignKey','einzelobjekte_einzelobjekt');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufepos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_leitungsobjektpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_liegenschaft',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3pos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschungpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'plannullpunkt','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3pos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_eonachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunktpos',NULL,'einzelpunktpos_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_einzelpunkt');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschungpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_gelaendenamepos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_linienobjekt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_gebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunktpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsnamepos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsname_pos',NULL,'ortschaftsname_pos_von','ch.ehi.ili2db.foreignKey','plzortschaft_ortschaftsname');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelobjekt',NULL,'entstehung','ch.ehi.ili2db.foreignKey','einzelobjekte_eonachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurnamepos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunktpos',NULL,'hoehenpunktpos_von','ch.ehi.ili2db.foreignKey','hoehen_hoehenpunkt');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenlinie',NULL,'koordinatenlinie_von','ch.ehi.ili2db.foreignKey','planrahmen_planlayout');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_hausnummerpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3pos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_rlnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunkt',NULL,'geometrie','ch.ehi.ili2db.c3Max','1600.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelementsymbol',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6',NULL,'plz6_von','ch.ehi.ili2db.foreignKey','plzortschaft_ortschaft');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'e_azimut','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projbergwerk',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelementsymbol',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3pos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnummerpos',NULL,'objektnummerpos_von','ch.ehi.ili2db.foreignKey','einzelobjekte_objektnummer');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunkt',NULL,'entstehung','ch.ehi.ili2db.foreignKey','rohrleitungen_rlnachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nbgeometrie',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projliegenschaft',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktsymbol',NULL,'hoheitsgrenzpunktsymbol_von','ch.ehi.ili2db.foreignKey','gemeindegrenzen_hoheitsgrenzpunkt');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_linienobjekt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueck',NULL,'entstehung','ch.ehi.ili2db.foreignKey','liegenschaften_lsnachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsname_pos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'uebersichtplannullpunkt','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_punktelement',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfpnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_flaechenelement',NULL,'flaechenelement_von','ch.ehi.ili2db.foreignKey','rohrleitungen_leitungsobjekt');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planbeschriftungpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bezirksgrenzen_bezirksgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_gelaendekante',NULL,'geometrie','ch.ehi.ili2db.c3Min','-200.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufe',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2symbol',NULL,'lfp2symbol_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie2_lfp2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaeche',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsname',NULL,'benannte','ch.ehi.ili2db.foreignKey','gebaeudeadressen_lokalisation');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'geometrie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenanschriftpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_aussparung',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_eonachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenanschriftpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaechesymbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_netzkreuz',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunkt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projselbstrecht',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnummerpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projobjektnamepos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3pos',NULL,'lfp3pos_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie3_lfp3');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueck',NULL,'gesamteflaechenmass','ch.ehi.ili2db.unit','m2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenanschrift',NULL,'koordinatenanschrift_von','ch.ehi.ili2db.foreignKey','planrahmen_planlayout');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1pos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projobjektnamepos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenanschriftpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_osnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudeeingang',NULL,'lage','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaeche',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktsymbol',NULL,'hilfsfixpunktsymbol_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie3_hilfsfixpunkt');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelementsymbol',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_nknachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunktpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufepos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_netzkreuz',NULL,'netzkreuz_von','ch.ehi.ili2db.foreignKey','planrahmen_planlayout');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planbeschriftungpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'anfangspunkt','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemeindegrenze',NULL,'entstehung','ch.ehi.ili2db.foreignKey','gemeindegrenzen_gemnachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_planpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_liegenschaft',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufe',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_objektname',NULL,'objektname_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_boflaeche');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projgebaeudenummerpos',NULL,'projgebaeudenummerpos_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_projgebaeudenummer');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'hilfslinie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6',NULL,'flaeche','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projliegenschaft',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunkt',NULL,'entstehung','ch.ehi.ili2db.foreignKey','rohrleitungen_rlnachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_punktelement',NULL,'punktelement_von','ch.ehi.ili2db.foreignKey','rohrleitungen_leitungsobjekt');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_plangeometrie',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufe',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_nknachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_liegenschaft',NULL,'liegenschaft_von','ch.ehi.ili2db.foreignKey','liegenschaften_grundstueck');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projselbstrecht',NULL,'projselbstrecht_von','ch.ehi.ili2db.foreignKey','liegenschaften_projgrundstueck');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6',NULL,'flaeche','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'uebersichtplannullpunkt','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bezirksgrenzen_bezirksgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planbeschriftungpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('landesgrenzen_landesgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaft',NULL,'flaeche','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaeche',NULL,'entstehung','ch.ehi.ili2db.foreignKey','bodenbedeckung_bbnachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnummerpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3pos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_lsnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunktpos',NULL,'einzelpunktpos_von','ch.ehi.ili2db.foreignKey','einzelobjekte_einzelpunkt');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2pos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunkt',NULL,'entstehung','ch.ehi.ili2db.foreignKey','bodenbedeckung_bbnachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelementsymbol',NULL,'linienelementsymbol_von','ch.ehi.ili2db.foreignKey','einzelobjekte_linienelement');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_darstellungsflaeche',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_darstellungsflaeche',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_bbnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelement',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunktpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_planpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschungpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_planpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenlinie',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_gebaeudenummerpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projgebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'anfangspunkt','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_leitungsobjektpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2pos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_projgemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_darstellungsflaeche',NULL,'darstellungsflaeche_von','ch.ehi.ili2db.foreignKey','planrahmen_planlayout');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projbergwerk',NULL,'projbergwerk_von','ch.ehi.ili2db.foreignKey','liegenschaften_projgrundstueck');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenlinie',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaeche',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_bbnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'hilfslinie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_linienobjekt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1pos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projselbstrecht',NULL,'flaechenmass','ch.ehi.ili2db.unit','m2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_gelaendename',NULL,'entstehung','ch.ehi.ili2db.foreignKey','nomenklatur_nknachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bezirksgrenzen_bezirksgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschung',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_nknachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsname',NULL,'ortschaftsname_von','ch.ehi.ili2db.foreignKey','plzortschaft_ortschaft');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2',NULL,'hoehegeom','ch.ehi.ili2db.unit','m');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaeche',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_rlnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_eonachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaechesymbol',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_gelaendekante',NULL,'geometrie','ch.ehi.ili2db.coordDimension','3');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('kantonsgrenzen_kantonsgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6',NULL,'flaeche','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2pos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_eonachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_linienelement',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaft',NULL,'flaeche','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayoutsymbol',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_linienelement',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_benanntesgebiet',NULL,'flaeche','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_honachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurnamepos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnummerpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_aussparung',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurnamepos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaeche',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudeeingang',NULL,'lage','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenlinie',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_gelaendenamepos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudeeingang',NULL,'lage','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_projgemeindegrenze',NULL,'projgemeindegrenze_von','ch.ehi.ili2db.foreignKey','gemeindegrenzen_gemeinde');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnamepos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projgebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnummerpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurname',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6',NULL,'flaeche','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('kantonsgrenzen_kantonsgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'plannullpunkt','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6',NULL,'flaeche','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projgebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaeche',NULL,'entstehung','ch.ehi.ili2db.foreignKey','bodenbedeckung_bbnachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_linienelement',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_hausnummerpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_leitungsobjektpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaechesymbol',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurname',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunktpos',NULL,'einzelpunktpos_von','ch.ehi.ili2db.foreignKey','rohrleitungen_einzelpunkt');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudeeingang',NULL,'entstehung','ch.ehi.ili2db.foreignKey','gebaeudeadressen_gebnachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1pos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nummerierungsbereichpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_selbstrecht',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1pos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschungpos',NULL,'rutschungpos_von','ch.ehi.ili2db.foreignKey','rutschgebiete_rutschung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'projgrundstueckpos_von','ch.ehi.ili2db.foreignKey','liegenschaften_projgrundstueck');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projliegenschaft',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_linienelement',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsname',NULL,'entstehung','ch.ehi.ili2db.foreignKey','nomenklatur_nknachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_projgemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projliegenschaft',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bezirksgrenzen_bezirksgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelementsymbol',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('kantonsgrenzen_kantonsgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayoutsymbol',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_linienelement',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunktpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_objektnamepos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planbeschriftungpos',NULL,'planbeschriftungpos_von','ch.ehi.ili2db.foreignKey','planrahmen_planbeschriftung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaft',NULL,'ortschaft_von','ch.ehi.ili2db.foreignKey','plzortschaft_ortschaftsverbund');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_selbstrecht',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2pos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_gelaendenamepos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projliegenschaft',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnummer',NULL,'objektnummer_von','ch.ehi.ili2db.foreignKey','einzelobjekte_einzelobjekt');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurnamepos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurname',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_planpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_gebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1',NULL,'entstehung','ch.ehi.ili2db.foreignKey','fixpunktekatgrie1_lfp1nachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnamepos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projliegenschaft',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'plannullpunkt','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_hausnummerpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunkt',NULL,'hoehegeom','ch.ehi.ili2db.unit','m');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_planpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelement',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_gelaendekante',NULL,'geometrie','ch.ehi.ili2db.c3Max','1600.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1pos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planbeschriftungpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3pos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planbeschriftungpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planbeschriftungpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_liegenschaft',NULL,'flaechenmass','ch.ehi.ili2db.unit','m2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_nknachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_objektnamepos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_gebaeudenummerpos',NULL,'gebaeudenummerpos_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_gebaeudenummer');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschungpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projbergwerk',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueck',NULL,'gesamteflaechenmass','ch.ehi.ili2db.unit','m2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'hilfslinie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_bergwerk',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktsymbol',NULL,'grenzpunktsymbol_von','ch.ehi.ili2db.foreignKey','liegenschaften_grenzpunkt');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_liegenschaft',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayoutsymbol',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemeindegrenze',NULL,'gemeindegrenze_von','ch.ehi.ili2db.foreignKey','gemeindegrenzen_gemeinde');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayoutsymbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2pos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurname',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsnamepos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_osnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelementsymbol',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunkt',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelementsymbol',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_gelaendekante',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_selbstrecht',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaeche',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_linienelement',NULL,'geometrie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_selbstrecht',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_punktelement',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_punktelement',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3',NULL,'hoehegeom','ch.ehi.ili2db.unit','m');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayoutsymbol',NULL,'planlayoutsymbol_von','ch.ehi.ili2db.foreignKey','planrahmen_planlayout');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaechesymbol',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'hilfslinie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsnamepos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3pos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planbeschriftungpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurname',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaechesymbol',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nbgeometrie',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsverbundtext',NULL,'ortschaftsverbundtext_von','ch.ehi.ili2db.foreignKey','plzortschaft_ortschaftsverbund');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaechesymbol',NULL,'projboflaechesymbol_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_projboflaeche');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('landesgrenzen_landesgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunkt',NULL,'entstehung','ch.ehi.ili2db.foreignKey','einzelobjekte_eonachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('landesgrenzen_landesgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisation',NULL,'entstehung','ch.ehi.ili2db.foreignKey','gebaeudeadressen_gebnachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschungpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'hilfslinie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1pos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'anfangspunkt','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_netzkreuz',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_punktelement',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunkt',NULL,'entstehung','ch.ehi.ili2db.foreignKey','gemeindegrenzen_gemnachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaechesymbol',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_benanntesgebiet',NULL,'flaeche','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_bergwerk',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunktsymbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunktpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projgebaeudenummer',NULL,'projgebaeudenummer_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_projboflaeche');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurnamepos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_projgemeindegrenze',NULL,'entstehung','ch.ehi.ili2db.foreignKey','gemeindegrenzen_gemnachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayoutsymbol',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnamepos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelementsymbol',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_gelaendekante',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projselbstrecht',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_bbnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_bergwerk',NULL,'flaechenmass','ch.ehi.ili2db.unit','m2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'strassenstueck_von','ch.ehi.ili2db.foreignKey','gebaeudeadressen_lokalisation');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenanschriftpos',NULL,'koordinatenanschriftpos_von','ch.ehi.ili2db.foreignKey','planrahmen_koordinatenanschrift');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_gelaendenamepos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_planpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufepos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_benanntesgebiet',NULL,'flaeche','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_hausnummerpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_eonachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3pos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projgebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelementsymbol',NULL,'flaechenelementsymbol_von','ch.ehi.ili2db.foreignKey','einzelobjekte_flaechenelement');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunkt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfpnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_plangeometrie',NULL,'plangeometrie_von','ch.ehi.ili2db.foreignKey','planeinteilungen_plan');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_leitungsobjektpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2pos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufepos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnummerpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelement',NULL,'flaechenelement_von','ch.ehi.ili2db.foreignKey','einzelobjekte_einzelobjekt');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1pos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'uebersichtplannullpunkt','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'plannullpunkt','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projobjektname',NULL,'projobjektname_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_projboflaeche');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschung',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnummerpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_selbstrecht',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenanschriftpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_planpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_honachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nbgeometrie',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nummerierungsbereichpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufepos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2pos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaechesymbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnamepos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_bbnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_punktelement',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_gebaeudenummerpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_objektnamepos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3',NULL,'hoehegeom','ch.ehi.ili2db.unit','m');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunkt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('kantonsgrenzen_kantonsgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.geomType','COMPOUNDCURVE');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaft',NULL,'flaeche','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_boflaechesymbol',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_selbstrecht',NULL,'flaechenmass','ch.ehi.ili2db.unit','m2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1symbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunkt',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'lokalisationsnamepos_von','ch.ehi.ili2db.foreignKey','gebaeudeadressen_lokalisationsname');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunkt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunkt',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_gelaendenamepos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_bergwerk',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_objektnamepos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'hilfslinie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsname_pos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaft',NULL,'flaeche','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_liegenschaft',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nummerierungsbereichpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsname',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nummerierungsbereichpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayoutsymbol',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_punktelement',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsnamepos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunktpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('landesgrenzen_landesgrenzabschnitt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2pos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsname_pos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_lsnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_aussparung',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projobjektnamepos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_hausnummerpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsname',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschungpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_planpos',NULL,'planpos_von','ch.ehi.ili2db.foreignKey','planeinteilungen_plan');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_aussparung',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1',NULL,'hoehegeom','ch.ehi.ili2db.unit','m');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsname_pos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2pos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nummerierungsbereichpos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelementsymbol',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfpnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_gelaendenamepos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3pos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projselbstrecht',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'anfangspunkt','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_linienelement',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_punktelement',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nummerierungsbereichpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3pos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunkt',NULL,'entstehung','ch.ehi.ili2db.foreignKey','fixpunktekatgrie3_hilfsfpnachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3pos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaft',NULL,'flaeche','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_ortschaftsname_pos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6',NULL,'entstehung','ch.ehi.ili2db.foreignKey','plzortschaft_plz6nachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('tseinteilung_toleranzstufe',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2pos',NULL,'hfp2pos_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie2_hfp2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rutschgebiete_rutschungpos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6',NULL,'flaeche','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsname',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1pos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktpos',NULL,'hoheitsgrenzpunktpos_von','ch.ehi.ili2db.foreignKey','gemeindegrenzen_hoheitsgrenzpunkt');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1',NULL,'geometrie','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenanschriftpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_gelaendenamepos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfpnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaeche',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_hausnummerpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaeche',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsnamepos',NULL,'ortsnamepos_von','ch.ehi.ili2db.foreignKey','nomenklatur_ortsname');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunkt',NULL,'geometrie','ch.ehi.ili2db.coordDimension','3');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_plangeometrie',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaechesymbol',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_hoehenpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3pos',NULL,'pos','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_projgemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_hfp2',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_objektnamepos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3',NULL,'entstehung','ch.ehi.ili2db.foreignKey','fixpunktekatgrie3_hfp3nachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'plannullpunkt','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_linienobjekt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_plangeometrie',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'hilfslinie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayoutsymbol',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2pos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurnamepos',NULL,'flurnamepos_von','ch.ehi.ili2db.foreignKey','nomenklatur_flurname');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1',NULL,'hoehegeom','ch.ehi.ili2db.unit','m');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_honachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_strassenstueck',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('plzortschaft_plz6nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnamepos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_lokalisationsnamepos',NULL,'hilfslinie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_darstellungsflaeche',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_punktelement',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_objektnummerpos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_flurname',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projobjektnamepos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_gelaendekante',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_gemeindegrenze',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayout',NULL,'uebersichtplannullpunkt','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nummerierngsbrche_nbgeometrie',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_gebaeudenummer',NULL,'gebaeudenummer_von','ch.ehi.ili2db.foreignKey','bodenbedeckung_boflaeche');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktpos',NULL,'pos','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('nomenklatur_ortsnamepos',NULL,'pos','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunktpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudeeingang',NULL,'lage','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunktpos',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projgrundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudenamepos',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunktsymbol',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hfp3',NULL,'geometrie','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projliegenschaft',NULL,'projliegenschaft_von','ch.ehi.ili2db.foreignKey','liegenschaften_projgrundstueck');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1pos',NULL,'pos','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_koordinatenlinie',NULL,'geometrie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_planlayoutsymbol',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueck',NULL,'entstehung','ch.ehi.ili2db.foreignKey','liegenschaften_lsnachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_lsnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktpos',NULL,'hilfsfixpunktpos_von','ch.ehi.ili2db.foreignKey','fixpunktekatgrie3_hilfsfixpunkt');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_projboflaeche',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('bodenbedeckung_einzelpunkt',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_netzkreuz',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_signalpunkt',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1nachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie2_lfp2pos',NULL,'ori','ch.ehi.ili2db.unit','Grads');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_rlnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planeinteilungen_plangeometrie',NULL,'geometrie','ch.ehi.ili2db.geomType','CURVEPOLYGON');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('einzelobjekte_flaechenelementsymbol',NULL,'pos','ch.ehi.ili2db.srid','2056');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_projbergwerk',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grenzpunkt',NULL,'entstehung','ch.ehi.ili2db.foreignKey','liegenschaften_lsnachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_grundstueckpos',NULL,'hilfslinie','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunktpos',NULL,'pos','ch.ehi.ili2db.c2Min','1205000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_hfp1',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_flaechenelement',NULL,'geometrie','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfpnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.c1Min','2580000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('hoehen_gelaendekante',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('rohrleitungen_punktelement',NULL,'geometrie','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('planrahmen_netzkreuz',NULL,'pos','ch.ehi.ili2db.c2Max','1270000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie1_lfp1',NULL,'geometrie','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_hilfsfixpunkt',NULL,'geometrie','ch.ehi.ili2db.c1Max','2660000.000');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('liegenschaften_lsnachfuehrung',NULL,'perimeter','ch.ehi.ili2db.coordDimension','2');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('fixpunktekatgrie3_lfp3',NULL,'entstehung','ch.ehi.ili2db.foreignKey','fixpunktekatgrie3_lfp3nachfuehrung');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_gebaeudeeingang',NULL,'lage','ch.ehi.ili2db.geomType','POINT');
+INSERT INTO agi_dm01avso24.T_ILI2DB_COLUMN_PROP (tablename,subtype,columnname,tag,setting) VALUES ('gebaeudeadressen_hausnummerpos',NULL,'hausnummerpos_von','ch.ehi.ili2db.foreignKey','gebaeudeadressen_gebaeudeeingang');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('fixpunktktgrie2_lfp2_begehbarkeit','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunkt_exaktdefiniert','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('gebaeudeadrssen_lokalisation_nummerierungsprinzip','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('planrahmen_kreuzart','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('liegenschaften_grundstueck_gueltigkeit','ch.ehi.ili2db.tableKind','ENUM');
-INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('gebaeudeadrssen_gebaeudeeingang_istoffiziellebezeichnung','ch.ehi.ili2db.tableKind','ENUM');
-INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('gebaeudeadrssen_gebaeudeeingang_inaenderung','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('gebaeudeadrssen_lokalisation_art','ch.ehi.ili2db.tableKind','ENUM');
+INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('gebaeudeadrssen_gebaeudeeingang_inaenderung','ch.ehi.ili2db.tableKind','ENUM');
+INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('gebaeudeadrssen_gebaeudeeingang_istoffiziellebezeichnung','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('rohrleitungen_linienelement_linienart','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('valignment','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('planrahmen_symbolart','ch.ehi.ili2db.tableKind','ENUM');
@@ -6029,31 +6029,31 @@ INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('einzelobjekte_einzelpunkt_exaktdefiniert','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('gebaeudeadrssen_gebaeudeeingang_im_gebaeude','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('astatus','ch.ehi.ili2db.tableKind','ENUM');
-INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('qualitaetsstandard','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('rohrleitungen_lineattrib7_linienart','ch.ehi.ili2db.tableKind','ENUM');
+INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('qualitaetsstandard','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('liegenschaften_grenzpunkt_hoheitsgrenzsteinalt','ch.ehi.ili2db.tableKind','ENUM');
-INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('fixpunktktgrie1_lfp1_begehbarkeit','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('gemeindegrenzen_hoheitsgrenzpunkt_hoheitsgrenzstein','ch.ehi.ili2db.tableKind','ENUM');
+INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('fixpunktktgrie1_lfp1_begehbarkeit','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('rohrleitungen_signalpunkt_punktart','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('bodenbedeckung_einzelpunkt_exaktdefiniert','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('gebaeudeadrssen_strassenstueck_istachse','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('gebaeudeadrssen_lokalisation_inaenderung','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('liegenschaften_lineattrib3_linienart','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('planrahmen_planlayout_mit_koordinatennetz','ch.ehi.ili2db.tableKind','ENUM');
-INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('rohrleitungen_medium','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('liegenschaften_projgrundstueck_gueltigkeit','ch.ehi.ili2db.tableKind','ENUM');
+INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('rohrleitungen_medium','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('versicherungsart','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('gebaeudeadrssen_gebaeudeeingang_attributeprovisorisch','ch.ehi.ili2db.tableKind','ENUM');
-INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('tseinteilung_toleranzstufe_art','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('gemeindegrenzen_lineattrib8_linienart','ch.ehi.ili2db.tableKind','ENUM');
+INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('tseinteilung_toleranzstufe_art','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('liegenschaften_grundstueck_vollstaendigkeit','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('hoehen_gelaendekante_art','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('plzortschaft_ortschaft_inaenderung','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('gebaeudeadrssen_lokalisation_attributeprovisorisch','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('bodenbedeckung_bbart','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('sprachtyp','ch.ehi.ili2db.tableKind','ENUM');
-INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('zuverlaessigkeit','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('liegenschaften_grundstuecksart','ch.ehi.ili2db.tableKind','ENUM');
+INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('zuverlaessigkeit','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('liegenschaften_lineattrib2_linienart','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('planrahmen_beschriftungsart','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('halignment','ch.ehi.ili2db.tableKind','ENUM');
@@ -6067,12 +6067,12 @@ INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('status_ga','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('rohrleitungen_einzelpunkt_exaktdefiniert','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('plzortschaft_plz6_inaenderung','ch.ehi.ili2db.tableKind','ENUM');
-INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('kantonsgrenzen_kantonsgrenzabschnitt_gueltigkeit','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('planrahmen_darstellungsflaeche_auswahlart','ch.ehi.ili2db.tableKind','ENUM');
+INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('kantonsgrenzen_kantonsgrenzabschnitt_gueltigkeit','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('liegenschaften_grenzpunkt_exaktdefiniert','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('liegenschaften_projgrundstueck_vollstaendigkeit','ch.ehi.ili2db.tableKind','ENUM');
-INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('hoehen_aussparung_art','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('schriftstil','ch.ehi.ili2db.tableKind','ENUM');
+INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('hoehen_aussparung_art','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('gebaeudeadrssen_lokalisation_istoffiziellebezeichnung','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('planrahmen_linientyp','ch.ehi.ili2db.tableKind','ENUM');
 INSERT INTO agi_dm01avso24.T_ILI2DB_TABLE_PROP (tablename,tag,setting) VALUES ('liegenschaften_lineattrib5_linienart','ch.ehi.ili2db.tableKind','ENUM');
@@ -7897,13 +7897,13 @@ CODE
   BLANK = DEFAULT, UNDEFINED = DEFAULT, CONTINUE = DEFAULT;
   TID = ANY;
 END.
-','2019-05-01 13:39:32.555');
+','2019-05-24 10:49:19.188');
 INSERT INTO agi_dm01avso24.T_ILI2DB_SETTINGS (tag,setting) VALUES ('ch.ehi.ili2db.createMetaInfo','True');
 INSERT INTO agi_dm01avso24.T_ILI2DB_SETTINGS (tag,setting) VALUES ('ch.ehi.ili2db.beautifyEnumDispName','underscore');
 INSERT INTO agi_dm01avso24.T_ILI2DB_SETTINGS (tag,setting) VALUES ('ch.ehi.ili2db.arrayTrafo','coalesce');
 INSERT INTO agi_dm01avso24.T_ILI2DB_SETTINGS (tag,setting) VALUES ('ch.ehi.ili2db.nameOptimization','topic');
 INSERT INTO agi_dm01avso24.T_ILI2DB_SETTINGS (tag,setting) VALUES ('ch.ehi.ili2db.numericCheckConstraints','create');
-INSERT INTO agi_dm01avso24.T_ILI2DB_SETTINGS (tag,setting) VALUES ('ch.ehi.ili2db.sender','ili2pg-4.0.0-9a3d59426b26f41c7cda8f6144f931ff807f43c1');
+INSERT INTO agi_dm01avso24.T_ILI2DB_SETTINGS (tag,setting) VALUES ('ch.ehi.ili2db.sender','ili2pg-4.1.0-aa1d00a37ee431852bdee6b990f34b3620f9c1c1');
 INSERT INTO agi_dm01avso24.T_ILI2DB_SETTINGS (tag,setting) VALUES ('ch.ehi.ili2db.createForeignKey','yes');
 INSERT INTO agi_dm01avso24.T_ILI2DB_SETTINGS (tag,setting) VALUES ('ch.ehi.sqlgen.createGeomIndex','True');
 INSERT INTO agi_dm01avso24.T_ILI2DB_SETTINGS (tag,setting) VALUES ('ch.ehi.ili2db.defaultSrsAuthority','EPSG');
