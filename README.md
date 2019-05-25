@@ -58,6 +58,52 @@ Hinweise:
 - `--strokeArcs`: Im Erfassungsmodell sollen die Kreisbogen erhalten bleiben. Im Publikationsmodell ("MOpublic") werden die Kreisbogen segmentiert.
 - `--createUnique`: Kann nicht verwendet werden, da einige Attribute kantonsweit nicht eindeutig sein können.
 
+## AWS-S3
+Es gibt einen Benutzer `avdpool`, welcher der Gruppe `avdpool-group` zugehört. Der Gruppe ist die Policy `avdpool-S3` zugewiesen:
+
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": "s3:GetBucketLocation",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:PutObject",
+                "s3:PutObjectAcl",
+                "s3:GetObject",
+                "s3:GetObjectAcl",
+                "s3:DeleteObject"
+            ],
+            "Resource": "arn:aws:s3:::ch.so.agi.av.dm01avso24lv95-dev/*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:ListBucketMultipartUploads",
+                "s3:AbortMultipartUpload",
+                "s3:ListMultipartUploadParts"
+            ],
+            "Resource": [
+                "arn:aws:s3:::ch.so.agi.av.dm01avso24lv95-dev",
+                "arn:aws:s3:::ch.so.agi.av.dm01avso24lv95-dev/*"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": "s3:ListBucket",
+            "Resource": "*"
+        }
+    ]
+}
+```
+
+Access Key und Secret Access Key sind am üblichen Ort in der GDI abgelegt.
+
 ## Entwicklerdokumentation
 
 ### Lokale Datenbank
