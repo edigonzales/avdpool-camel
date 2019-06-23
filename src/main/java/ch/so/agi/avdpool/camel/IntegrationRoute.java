@@ -117,15 +117,15 @@ public class IntegrationRoute extends RouteBuilder {
             noSmtpAuthPredicate = PredicateBuilder.constant(false);
         }
         
-        onException(Exception.class)
-        .setHeader("subject", simple("AV-Import/-Export: Fehler"))
-        .setHeader("to", simple(emailUserRecipient))
-        .setBody(simple("Route Id: ${routeId} \n Date: ${date:now:yyyy-MM-dd HH:mm:ss} \n File: ${in.header.CamelFileAbsolutePath} \n Message: ${exception.message} \n Stacktrace: ${exception.stacktrace}"))
-        .choice()
-            .when(noSmtpAuthPredicate).to(emailSmtpSender+"?mail.smtp.auth="+smtpAuth)
-        .otherwise()
-            .to(emailSmtpSender+"?username="+emailUserSender+"&password="+emailPwdSender)
-        .end();
+//        onException(Exception.class)
+//        .setHeader("subject", simple("AV-Import/-Export: Fehler"))
+//        .setHeader("to", simple(emailUserRecipient))
+//        .setBody(simple("Route Id: ${routeId} \n Date: ${date:now:yyyy-MM-dd HH:mm:ss} \n File: ${in.header.CamelFileAbsolutePath} \n Message: ${exception.message} \n Stacktrace: ${exception.stacktrace}"))
+//        .choice()
+//            .when(noSmtpAuthPredicate).to(emailSmtpSender+"?mail.smtp.auth="+smtpAuth)
+//        .otherwise()
+//            .to(emailSmtpSender+"?username="+emailUserSender+"&password="+emailPwdSender)
+//        .end();
          
         /*
          * Download ITF (ZIP) files from Infogrips FTP server every n seconds or minutes.
