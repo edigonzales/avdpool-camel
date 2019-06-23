@@ -116,22 +116,26 @@ public class IntegrationRoute extends RouteBuilder {
         } else {
             noSmtpAuthPredicate = PredicateBuilder.constant(false);
         }
-        
-//        onException(Exception.class)
-//        .setHeader("subject", simple("AV-Import/-Export: Fehler"))
-//        .setHeader("to", simple(emailUserRecipient))
-//        .setBody(simple("Route Id: ${routeId} \n Date: ${date:now:yyyy-MM-dd HH:mm:ss} \n File: ${in.header.CamelFileAbsolutePath} \n Message: ${exception.message} \n Stacktrace: ${exception.stacktrace}"))
-//        .choice()
-//            .when(noSmtpAuthPredicate).to(emailSmtpSender+"?mail.smtp.auth="+smtpAuth)
-//        .otherwise()
-//            .to(emailSmtpSender+"?username="+emailUserSender+"&password="+emailPwdSender)
-//        .end();
+
+        onException(Exception.class)
+        .continued(true)
+        .setHeader("subject", simple("AV-Import/-Export: Fehler"))
+        .setHeader("to", simple(emailUserRecipient))
+        .setBody(simple("Route Id: ${routeId} \n Date: ${date:now:yyyy-MM-dd HH:mm:ss} \n File: ${in.header.CamelFileAbsolutePath} \n Message: ${exception.message} \n Stacktrace: ${exception.stacktrace}"))
+        .choice()
+            .when(noSmtpAuthPredicate).to(emailSmtpSender+"?mail.smtp.auth="+smtpAuth)
+        .otherwise()
+            .to(emailSmtpSender+"?username="+emailUserSender+"&password="+emailPwdSender)
+        .end()
+        .log(LoggingLevel.ERROR, simple("${exception.stacktrace}").getText());
          
         /*
          * Download ITF (ZIP) files from Infogrips FTP server every n seconds or minutes.
          */
-        from("ftp://"+ftpUserInfogrips+"@"+ftpUrlInfogrips+"/\\dm01avso24lv95\\itf\\?password="+ftpPwdInfogrips+"&antInclude=*.zip&autoCreate=false&noop=true&readLock=changed&stepwise=false&separator=Windows&passiveMode=true&binary=true&delay="+downloadDelay+"&initialDelay="+initialDownloadDelay+"&idempotentRepository=#fileConsumerRepo&idempotentKey=ftp-${file:name}-${file:size}-${file:modified}")
+        //from("ftp://"+ftpUserInfogrips+"@"+ftpUrlInfogrips+"/\\dm01avso24lv95\\itf\\?password="+ftpPwdInfogrips+"&antInclude=*.zip&autoCreate=false&noop=true&readLock=changed&stepwise=false&separator=Windows&passiveMode=true&binary=true&delay="+downloadDelay+"&initialDelay="+initialDownloadDelay+"&idempotentRepository=#fileConsumerRepo&idempotentKey=ftp-${file:name}-${file:size}-${file:modified}")
+        from("ftp://"+ftpUserInfogrips+"@"+ftpUrlInfogrips+"/\\dm01avso24lv95\\itf\\?password="+ftpPwdInfogrips+"&antInclude=240100.zip&autoCreate=false&noop=true&readLock=changed&stepwise=false&separator=Windows&passiveMode=true&binary=true&delay="+downloadDelay+"&initialDelay="+initialDownloadDelay+"&idempotentRepository=#fileConsumerRepo&idempotentKey=ftp-${file:name}-${file:size}-${file:modified}")
         .routeId("_download_")
+        .log(LoggingLevel.INFO, "Downloading and unzipping route: ${in.header.CamelFileNameOnly}")
         .to("file://"+pathToDownloadFolder)
         .split(new ZipSplitter())
         .streaming().convertBodyTo(String.class, "ISO-8859-1") 
@@ -139,14 +143,14 @@ public class IntegrationRoute extends RouteBuilder {
                 .when(body().isNotNull())
                     .to("file://"+pathToUnzipFolder+"?charset=ISO-8859-1")
             .end()
-        .end()
-        .log(LoggingLevel.INFO, "File unzipped: ${in.header.CamelFileNameOnly}");
+        .end();
         
         /*
          * Upload the unzipped ITF files to S3 every n seconds or minutes.
          */
         from("file://"+pathToUnzipFolder+"/?noop=true&include=.*\\.itf&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-${file:name}-${file:size}-${file:modified}")
         .routeId("_upload_")
+        .log(LoggingLevel.INFO, "Uploading DM01-SO: ${in.header.CamelFileNameOnly}") 
         .convertBodyTo(byte[].class)
         .setHeader(S3Constants.CONTENT_LENGTH, simple("${in.header.CamelFileLength}"))
         .setHeader(S3Constants.KEY,simple("${in.header.CamelFileNameOnly}"))
@@ -154,8 +158,7 @@ public class IntegrationRoute extends RouteBuilder {
         .to("aws-s3://" + awsBucketNameSO
                 + "?deleteAfterWrite=false&region=EU_CENTRAL_1" //https://docs.aws.amazon.com/de_de/general/latest/gr/rande.html https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/regions/Regions.html
                 + "&accessKey={{awsAccessKey}}"
-                + "&secretKey=RAW({{awsSecretKey}})")
-        .log(LoggingLevel.INFO, "DM01-SO-File uploaded: ${in.header.CamelFileNameOnly}");
+                + "&secretKey=RAW({{awsSecretKey}})");
         
         /*
          * Convert ITF files to "Bundesmodell" (DM01AVCH24DLV95) every n seconds or minutes.
@@ -164,15 +167,16 @@ public class IntegrationRoute extends RouteBuilder {
          */
         from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&delay="+convertDelay+"&initialDelay="+initialConvertDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=av2ch-${file:name}-${file:size}-${file:modified}")
         .routeId("_av2ch_")
+        .log(LoggingLevel.INFO, "Converting file to DM01-CH: ${in.header.CamelFileNameOnly}")        
         .process(new Av2chProcessor())
-        .to("file://"+pathToAv2ChFolder+"/")
-        .log(LoggingLevel.INFO, "File converted to DM01-CH: ${in.header.CamelFileNameOnly}");
+        .to("file://"+pathToAv2ChFolder+"/");
 
         /*
          * Upload "Bundesmodell" to S3 every n seconds or minutes.
          */
         from("file://"+pathToAv2ChFolder+"/?noop=true&include=.*\\.itf&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-ch-${file:name}-${file:size}-${file:modified}")
         .routeId("_av2ch upload_")
+        .log(LoggingLevel.INFO, "Uploading DM01-CH-File: ${in.header.CamelFileNameOnly}")        
         .convertBodyTo(byte[].class)
         .setHeader(S3Constants.CONTENT_LENGTH, simple("${in.header.CamelFileLength}"))
         .setHeader(S3Constants.KEY,simple("${in.header.CamelFileNameOnly}"))
@@ -180,8 +184,7 @@ public class IntegrationRoute extends RouteBuilder {
         .to("aws-s3://" + awsBucketNameCH
                 + "?deleteAfterWrite=false&region=EU_CENTRAL_1" 
                 + "&accessKey={{awsAccessKey}}"
-                + "&secretKey=RAW({{awsSecretKey}})")
-        .log(LoggingLevel.INFO, "DM01-CH-File uploaded: ${in.header.CamelFileNameOnly}");
+                + "&secretKey=RAW({{awsSecretKey}})");
         
         /*
          * Import ITF files into database three times a day (12:00 and 18:00 and 23:00).
@@ -189,7 +192,7 @@ public class IntegrationRoute extends RouteBuilder {
         //from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&delay=30000&initialDelay=5000&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=ili2pg-${file:name}-${file:size}-${file:modified}")
         from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&scheduler=spring&scheduler.cron="+importCronScheduleExpression+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=ili2pg-${file:name}-${file:size}-${file:modified}")
         .routeId("_ili2pg_")
-        .toD("ili2pg:replace?dbhost="+dbHostEdit+"&dbport="+dbPortEdit+"&dbdatabase="+dbDatabaseEdit+"&dbschema="+dbSchemaEdit+"&dbusr="+dbUserEdit+"&dbpwd="+dbPwdEdit+"&dataset=${in.header.CamelFileNameOnly.substring(0,4)}")
-        .log(LoggingLevel.INFO, "File imported: ${in.header.CamelFileNameOnly}");
+        .log(LoggingLevel.INFO, "Importing File: ${in.header.CamelFileNameOnly}")        
+        .toD("ili2pg:replace?dbhost="+dbHostEdit+"&dbport="+dbPortEdit+"&dbdatabase="+dbDatabaseEdit+"&dbschema="+dbSchemaEdit+"&dbusr="+dbUserEdit+"&dbpwd="+dbPwdEdit+"&dataset=${in.header.CamelFileNameOnly.substring(0,4)}");
     }
 }

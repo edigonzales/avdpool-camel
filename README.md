@@ -79,7 +79,14 @@ Es gibt einen Benutzer `avdpool`, welcher der Gruppe `avdpool-group` zugehört. 
                 "s3:GetObjectAcl",
                 "s3:DeleteObject"
             ],
-            "Resource": "arn:aws:s3:::ch.so.agi.av.dm01avso24lv95-dev/*"
+            "Resource": [
+                "arn:aws:s3:::ch.so.agi.av.dm01avso24lv95-dev/*",
+                "arn:aws:s3:::ch.so.agi.av.dm01avso24lv95-test/*",
+                "arn:aws:s3:::ch.so.agi.av.dm01avso24lv95/*",
+                "arn:aws:s3:::ch.so.agi.av.dm01avch24lv95d-dev/*",
+                "arn:aws:s3:::ch.so.agi.av.dm01avch24lv95d-test/*",
+                "arn:aws:s3:::ch.so.agi.av.dm01avch24lv95d/*"
+            ]
         },
         {
             "Effect": "Allow",
@@ -90,7 +97,17 @@ Es gibt einen Benutzer `avdpool`, welcher der Gruppe `avdpool-group` zugehört. 
             ],
             "Resource": [
                 "arn:aws:s3:::ch.so.agi.av.dm01avso24lv95-dev",
-                "arn:aws:s3:::ch.so.agi.av.dm01avso24lv95-dev/*"
+                "arn:aws:s3:::ch.so.agi.av.dm01avso24lv95-dev/*",
+                "arn:aws:s3:::ch.so.agi.av.dm01avso24lv95-test",
+                "arn:aws:s3:::ch.so.agi.av.dm01avso24lv95-test/*",
+                "arn:aws:s3:::ch.so.agi.av.dm01avso24lv95",
+                "arn:aws:s3:::ch.so.agi.av.dm01avso24lv95/*",
+                "arn:aws:s3:::ch.so.agi.av.dm01avch24lv95d-dev",
+                "arn:aws:s3:::ch.so.agi.av.dm01avch24lv95d-dev/*",
+                "arn:aws:s3:::ch.so.agi.av.dm01avch24lv95d-test",
+                "arn:aws:s3:::ch.so.agi.av.dm01avch24lv95d-test/*",
+                "arn:aws:s3:::ch.so.agi.av.dm01avch24lv95d",
+                "arn:aws:s3:::ch.so.agi.av.dm01avch24lv95d/*"
             ]
         },
         {
