@@ -1,5 +1,6 @@
 package ch.so.agi.avdpool.camel;
 
+import org.apache.camel.Exchange;
 import org.apache.camel.LoggingLevel;
 import org.apache.camel.Predicate;
 import org.apache.camel.builder.PredicateBuilder;
@@ -141,6 +142,7 @@ public class IntegrationRoute extends RouteBuilder {
         .streaming().convertBodyTo(String.class, "ISO-8859-1") 
             .choice()
                 .when(body().isNotNull())
+                    .setHeader(Exchange.FILE_NAME, simple("${file:name.noext}.itf"))
                     .to("file://"+pathToUnzipFolder+"?charset=ISO-8859-1")
             .end()
         .end();
