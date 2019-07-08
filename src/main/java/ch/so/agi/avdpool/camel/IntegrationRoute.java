@@ -120,6 +120,7 @@ public class IntegrationRoute extends RouteBuilder {
 
         onException(Exception.class)
         .continued(true)
+        .setHeader("from", simple(emailUserSender))
         .setHeader("subject", simple("AV-Import/-Export: Fehler"))
         .setHeader("to", simple(emailUserRecipient))
         .setBody(simple("Route Id: ${routeId} \n Date: ${date:now:yyyy-MM-dd HH:mm:ss} \n File: ${in.header.CamelFileAbsolutePath} \n Message: ${exception.message} \n Stacktrace: ${exception.stacktrace}"))
