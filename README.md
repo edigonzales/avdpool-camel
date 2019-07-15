@@ -67,7 +67,10 @@ Es gibt einen Benutzer `avdpool`, welcher der Gruppe `avdpool-group` zugehört. 
     "Statement": [
         {
             "Effect": "Allow",
-            "Action": "s3:GetBucketLocation",
+            "Action": [
+                "s3:GetBucketLocation",
+                "s3:ListAllMyBuckets"
+            ],
             "Resource": "*"
         },
         {
