@@ -10,6 +10,7 @@ import org.apache.camel.dataformat.zipfile.ZipSplitter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import ch.so.agi.camel.processors.Av2GeobauProcessor;
 import ch.so.agi.camel.processors.Av2chProcessor;
 
 import org.slf4j.Logger;
@@ -39,6 +40,9 @@ public class IntegrationRoute extends RouteBuilder {
     
     @Value("${app.pathToAv2ChFolder}")
     private String pathToAv2ChFolder;
+    
+    @Value("${app.pathToAv2GeobauFolder}")
+    private String pathToAv2GeobauFolder;
 
     @Value("${app.awsAccessKey}")
     private String awsAccessKey;
@@ -51,6 +55,9 @@ public class IntegrationRoute extends RouteBuilder {
     
     @Value("${app.awsBucketNameCH}")
     private String awsBucketNameCH;
+    
+    @Value("${app.awsBucketNameDXF}")
+    private String awsBucketNameDXF;
 
     @Value("${app.downloadDelay}")
     private String downloadDelay;
@@ -166,7 +173,7 @@ public class IntegrationRoute extends RouteBuilder {
         /*
          * Convert ITF files to "Bundesmodell" (DM01AVCH24DLV95) every n seconds or minutes.
          * Be careful: The library writes the error log messages to dev/null since it was really verbose.
-         * It should restore the default behaviour but in there can be exotic corner cases... 
+         * It should restore the default behaviour but there can be exotic corner cases... 
          */
         from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&delay="+convertDelay+"&initialDelay="+initialConvertDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=av2ch-${file:name}-${file:size}-${file:modified}")
         .routeId("_av2ch_")
@@ -189,6 +196,30 @@ public class IntegrationRoute extends RouteBuilder {
                 + "&accessKey={{awsAccessKey}}"
                 + "&secretKey=RAW({{awsSecretKey}})");
         
+        /*
+         * Convert Bundesmodell to DXF-Geobau.
+         */
+        from("file://"+pathToAv2ChFolder+"/?noop=true&include=.*\\.itf&delay="+convertDelay+"&initialDelay="+initialConvertDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=av2geobau-${file:name}-${file:size}-${file:modified}")        
+        .routeId("_av2geobau_")
+        .log(LoggingLevel.INFO, "Converting file to DXF-Geobau: ${in.header.CamelFileNameOnly}")        
+        .process(new Av2GeobauProcessor())
+        .to("file://"+pathToAv2GeobauFolder+"?fileName=${file:name.noext}.dxf");
+
+        /*
+         * Upload "DXF-Geobau" to S3 every n seconds or minutes.
+         */
+        from("file://"+pathToAv2GeobauFolder+"/?noop=true&include=.*\\.dxf&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-dxf-${file:name}-${file:size}-${file:modified}")
+        .routeId("_av2geobau upload_")
+        .log(LoggingLevel.INFO, "Uploading DXF-Geobau-File: ${in.header.CamelFileNameOnly}")        
+        .convertBodyTo(byte[].class)
+        .setHeader(S3Constants.CONTENT_LENGTH, simple("${in.header.CamelFileLength}"))
+        .setHeader(S3Constants.KEY,simple("${in.header.CamelFileNameOnly}"))
+        .setHeader(S3Constants.CANNED_ACL,simple("PublicRead")) 
+        .to("aws-s3://" + awsBucketNameDXF
+                + "?deleteAfterWrite=false&region=EU_CENTRAL_1" 
+                + "&accessKey={{awsAccessKey}}"
+                + "&secretKey=RAW({{awsSecretKey}})");
+
         /*
          * Import ITF files into database three times a day (12:00 and 18:00 and 23:00).
          */

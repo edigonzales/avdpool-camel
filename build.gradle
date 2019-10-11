@@ -37,7 +37,8 @@ dependencies {
     implementation "org.apache.camel:camel-mail:${apacheCamelVersion}"
     implementation "org.apache.camel:camel-zipfile:${apacheCamelVersion}"
     implementation "org.apache.camel:camel-aws:${apacheCamelVersion}"
-    implementation ('ch.so.agi.camel:camel-ili2pg:latest.integration') {changing = true}
+    //implementation ('ch.so.agi.camel:camel-ili2pg:latest.integration') {changing = true}
+    implementation ('ch.so.agi.camel:camel-ili2pg:1.0.18')
     implementation ('ch.so.agi.camel:camel-components:latest.integration') {changing = true}
     
     implementation 'com.sun.xml.bind:jaxb-core:2.3.0.1'
