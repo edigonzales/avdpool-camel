@@ -47,14 +47,17 @@ sogis/avdpool
 
 ### ili2pg
 ```
-java -jar /Users/stefan/apps/ili2pg-4.0.0/ili2pg-4.0.0.jar \
+java -jar /Users/stefan/apps/ili2pg-4.1.0/ili2pg-4.1.0.jar \
 --dbschema agi_dm01avso24 --models DM01AVSO24LV95 \
 --defaultSrsCode 2056 --createGeomIdx --createFk --createFkIdx --createEnumTabs --beautifyEnumDispName --createMetaInfo --createNumChecks --nameByTopic \
 --createBasketCol --createDatasetCol --createImportTabs --createscript sql/agi_dm01avso24.sql
 ```
 
 Hinweise:
-- Pre- und Postscripts werden nicht in das erzeugte SQL geschrieben.
+- Pre- und Postscripts werden nicht in das erzeugte SQL geschrieben. Die SQL-Skripte deshalb ausführen mit
+```
+psql --single-transaction -h XXXXXX -d edit -f sql/prescript.sql -f sql/agi_dm01avso24.sql -f sql/postscript.sql
+```
 - `--strokeArcs`: Im Erfassungsmodell sollen die Kreisbogen erhalten bleiben. Im Publikationsmodell ("MOpublic") werden die Kreisbogen segmentiert.
 - `--createUnique`: Kann nicht verwendet werden, da einige Attribute kantonsweit nicht eindeutig sein können.
 
