@@ -10,8 +10,8 @@ import org.apache.camel.dataformat.zipfile.ZipSplitter;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import ch.so.agi.camel.processors.Av2GeobauProcessor;
-import ch.so.agi.camel.processors.Av2chProcessor;
+import ch.so.agi.avdpool.camel.Av2chProcessor;
+import ch.so.agi.avdpool.camel.Av2GeobauProcessor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -156,9 +156,9 @@ public class IntegrationRoute extends RouteBuilder {
         .end();
         
         /*
-         * Upload the unzipped ITF files to S3 every n seconds or minutes.
+         * Upload the (original) zipped ITF files to S3 every n seconds or minutes.
          */
-        from("file://"+pathToUnzipFolder+"/?noop=true&include=.*\\.itf&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-${file:name}-${file:size}-${file:modified}")
+        from("file://"+pathToDownloadFolder+"/?noop=true&include=.*\\.zip&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-${file:name}-${file:size}-${file:modified}")
         .routeId("_upload_")
         .log(LoggingLevel.INFO, "Uploading DM01-SO: ${in.header.CamelFileNameOnly}") 
         .convertBodyTo(byte[].class)
@@ -171,7 +171,7 @@ public class IntegrationRoute extends RouteBuilder {
                 + "&secretKey=RAW({{awsSecretKey}})");
         
         /*
-         * Convert ITF files to "Bundesmodell" (DM01AVCH24DLV95) every n seconds or minutes.
+         * Convert ITF files to zipped "Bundesmodell" (DM01AVCH24DLV95) every n seconds or minutes.
          * Be careful: The library writes the error log messages to dev/null since it was really verbose.
          * It should restore the default behaviour but there can be exotic corner cases... 
          */
@@ -179,12 +179,14 @@ public class IntegrationRoute extends RouteBuilder {
         .routeId("_av2ch_")
         .log(LoggingLevel.INFO, "Converting file to DM01-CH: ${in.header.CamelFileNameOnly}")        
         .process(new Av2chProcessor())
+        .to("file://"+pathToAv2ChFolder+"/")
+        .marshal().zipFile()
         .to("file://"+pathToAv2ChFolder+"/");
 
         /*
          * Upload "Bundesmodell" to S3 every n seconds or minutes.
          */
-        from("file://"+pathToAv2ChFolder+"/?noop=true&include=.*\\.itf&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-ch-${file:name}-${file:size}-${file:modified}")
+        from("file://"+pathToAv2ChFolder+"/?noop=true&include=.*\\.itf.zip&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-ch-${file:name}-${file:size}-${file:modified}")
         .routeId("_av2ch upload_")
         .log(LoggingLevel.INFO, "Uploading DM01-CH-File: ${in.header.CamelFileNameOnly}")        
         .convertBodyTo(byte[].class)
@@ -203,12 +205,15 @@ public class IntegrationRoute extends RouteBuilder {
         .routeId("_av2geobau_")
         .log(LoggingLevel.INFO, "Converting file to DXF-Geobau: ${in.header.CamelFileNameOnly}")        
         .process(new Av2GeobauProcessor())
-        .to("file://"+pathToAv2GeobauFolder+"?fileName=${file:name.noext}.dxf");
-
+        .to("file://"+pathToAv2GeobauFolder+"?fileName=${file:name.noext}.dxf")
+        .setHeader(Exchange.FILE_NAME, simple("${file:name.noext}.dxf"))
+        .marshal().zipFile()
+        .to("file://"+pathToAv2GeobauFolder+"/");
+        
         /*
          * Upload "DXF-Geobau" to S3 every n seconds or minutes.
          */
-        from("file://"+pathToAv2GeobauFolder+"/?noop=true&include=.*\\.dxf&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-dxf-${file:name}-${file:size}-${file:modified}")
+        from("file://"+pathToAv2GeobauFolder+"/?noop=true&include=.*\\.dxf.zip&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-dxf-${file:name}-${file:size}-${file:modified}")
         .routeId("_av2geobau upload_")
         .log(LoggingLevel.INFO, "Uploading DXF-Geobau-File: ${in.header.CamelFileNameOnly}")        
         .convertBodyTo(byte[].class)
@@ -223,10 +228,17 @@ public class IntegrationRoute extends RouteBuilder {
         /*
          * Import ITF files into database three times a day (12:00 and 18:00 and 23:00).
          */
-        //from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&delay=30000&initialDelay=5000&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=ili2pg-${file:name}-${file:size}-${file:modified}")
-        from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&scheduler=spring&scheduler.cron="+importCronScheduleExpression+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=ili2pg-${file:name}-${file:size}-${file:modified}")
+        from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&delay=30000&initialDelay=5000&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=ili2pg-${file:name}-${file:size}-${file:modified}")
+        //from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&scheduler=spring&scheduler.cron="+importCronScheduleExpression+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=ili2pg-${file:name}-${file:size}-${file:modified}")
         .routeId("_ili2pg_")
         .log(LoggingLevel.INFO, "Importing File: ${in.header.CamelFileNameOnly}")        
-        .toD("ili2pg:replace?dbhost="+dbHostEdit+"&dbport="+dbPortEdit+"&dbdatabase="+dbDatabaseEdit+"&dbschema="+dbSchemaEdit+"&dbusr="+dbUserEdit+"&dbpwd="+dbPwdEdit+"&dataset=${in.header.CamelFileNameOnly.substring(0,4)}");
+        .setProperty("dbhost", constant(dbHostEdit))
+        .setProperty("dbport", constant(dbPortEdit))
+        .setProperty("dbdatabase", constant(dbDatabaseEdit))
+        .setProperty("dbschema", constant(dbSchemaEdit))
+        .setProperty("dbusr", constant(dbUserEdit))
+        .setProperty("dbpwd", constant(dbPwdEdit))
+        .setProperty("dataset", simple("${header.CamelFileName.substring(0,4)}"))
+        .process(new Ili2pgReplaceProcessor());
     }
 }

@@ -38,8 +38,12 @@ dependencies {
     implementation "org.apache.camel:camel-zipfile:${apacheCamelVersion}"
     implementation "org.apache.camel:camel-aws:${apacheCamelVersion}"
     //implementation ('ch.so.agi.camel:camel-ili2pg:latest.integration') {changing = true}
-    implementation ('ch.so.agi.camel:camel-ili2pg:1.0.18')
-    implementation ('ch.so.agi.camel:camel-components:latest.integration') {changing = true}
+    //implementation ('ch.so.agi.camel:camel-ili2pg:1.0.18')
+    implementation "ch.interlis:ili2pg:4.3.1"
+    implementation "ch.ehi:ehibasics:1.2.0"
+    implementation "ch.so.agi.av:av2ch:1.0.12"
+    implementation "ch.interlis:av2geobau:1.0.0-SNAPSHOT"
+    //implementation ('ch.so.agi.camel:camel-components:latest.integration') {changing = true}
     
     implementation 'com.sun.xml.bind:jaxb-core:2.3.0.1'
     implementation 'javax.xml.bind:jaxb-api:2.3.1'
