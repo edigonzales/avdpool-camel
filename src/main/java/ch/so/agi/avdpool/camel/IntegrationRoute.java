@@ -182,6 +182,7 @@ public class IntegrationRoute extends RouteBuilder {
         .to("file://"+pathToAv2ChFolder+"/")
         .marshal().zipFile()
         .to("file://"+pathToAv2ChFolder+"/");
+        
 
         /*
          * Upload "Bundesmodell" to S3 every n seconds or minutes.
@@ -240,5 +241,10 @@ public class IntegrationRoute extends RouteBuilder {
         .setProperty("dbpwd", constant(dbPwdEdit))
         .setProperty("dataset", simple("${header.CamelFileName.substring(0,4)}"))
         .process(new Ili2pgReplaceProcessor());
+        
+//        from("timer:foo?period=5s")
+//        .process(new DeleteTemporaryDirectory())
+//        .log("Hello World");
+        
     }
 }

@@ -32,6 +32,7 @@ configurations.all {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-actuator'
+    implementation 'commons-io:commons-io:2.6'
     implementation "org.apache.camel:camel-spring-boot-starter:${apacheCamelVersion}"
     implementation "org.apache.camel:camel-ftp:${apacheCamelVersion}"
     implementation "org.apache.camel:camel-mail:${apacheCamelVersion}"
@@ -54,9 +55,8 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
-// Slighly better ("thinner") docker image handling
 task deleteFilesJarDir(type: Delete) {
-    delete fileTree("${buildDir}/dependency/")//.listFiles()
+    delete fileTree("${buildDir}/dependency/")
     delete file("${buildDir}/dependency/")
 }
 
