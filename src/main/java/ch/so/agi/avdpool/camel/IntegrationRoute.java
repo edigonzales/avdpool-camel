@@ -242,9 +242,9 @@ public class IntegrationRoute extends RouteBuilder {
         .setProperty("dataset", simple("${header.CamelFileName.substring(0,4)}"))
         .process(new Ili2pgReplaceProcessor());
         
-//        from("timer:foo?period=5s")
-//        .process(new DeleteTemporaryDirectory())
-//        .log("Hello World");
-        
+        from("timer:foo?period=1h")
+        .routeId("_cleaning_")
+        .log(LoggingLevel.INFO, "Cleaning temporary directory.")
+        .process(new CleanTemporaryDirectory());
     }
 }
