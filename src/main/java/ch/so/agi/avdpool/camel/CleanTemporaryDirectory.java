@@ -23,7 +23,7 @@ public class CleanTemporaryDirectory implements Processor {
         // directory in the systems default temporary directory.
         // This should be safe.
         String tempDir = System.getProperty("java.io.tmpdir");
-        long cutoff = System.currentTimeMillis() - (4 * 60 * 60 * 1000);
+        long cutoff = System.currentTimeMillis() - (4 *  60 * 60 * 1000);
 
         log.info("Files and folder in the folder " + tempDir + " older than " + new Date(cutoff) + " will be deleted.");
 
