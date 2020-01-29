@@ -13,4 +13,4 @@ RUN chown -R 1001:0 /home/avdpool && \
 
 USER 1001
 
-ENTRYPOINT ["java","-Xmx2g","-cp","/home/avdpool/app:/home/avdpool/app/lib/*","ch.so.agi.avdpool.AvdpoolApplication"]
+ENTRYPOINT ["java","-XX:MaxRAMPercentage=80.0","-cp","/home/avdpool/app:/home/avdpool/app/lib/*","ch.so.agi.avdpool.AvdpoolApplication"]
