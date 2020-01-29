@@ -13,4 +13,4 @@ RUN chown -R 1001:0 /home/avdpool && \
 
 USER 1001
 
-ENTRYPOINT ["java","-cp","/home/avdpool/app:/home/avdpool/app/lib/*","ch.so.agi.avdpool.AvdpoolApplication"]
+ENTRYPOINT ["java","-Xmx2g","-cp","/home/avdpool/app:/home/avdpool/app/lib/*","ch.so.agi.avdpool.AvdpoolApplication"]
