@@ -43,7 +43,7 @@ dependencies {
     implementation "ch.interlis:ili2pg:4.3.1"
     implementation "ch.ehi:ehibasics:1.2.0"
     implementation "ch.so.agi.av:av2ch:1.0.12"
-    implementation "ch.interlis:av2geobau:1.0.0-SNAPSHOT"
+    implementation "ch.interlis:av2geobau:1.0.0"
     //implementation ('ch.so.agi.camel:camel-components:latest.integration') {changing = true}
     
     implementation 'com.sun.xml.bind:jaxb-core:2.3.0.1'
