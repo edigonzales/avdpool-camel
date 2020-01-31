@@ -24,7 +24,6 @@ public class Av2GeobauProcessor implements Processor {
         
         try {
             boolean ok = Av2geobau.convert(itfFile, dxfFile, settings);
-            
             if (!ok) {
                 throw new Exception("could not convert: " + itfFile.getAbsolutePath());
             }

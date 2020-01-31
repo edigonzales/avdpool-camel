@@ -19,9 +19,8 @@ public class Av2chProcessor implements Processor {
         File outFile = Paths.get(tempDir.toFile().getAbsolutePath(), "ch_" + inFile.getName()).toFile();        
         
         try {
-
             Av2ch av2ch = new Av2ch();
-            av2ch.convert("/root/", tempDir.toFile().getAbsolutePath(), outFile.getName(), "de");
+            av2ch.convert(inFile.getAbsolutePath(), tempDir.toFile().getAbsolutePath(), outFile.getName(), "de");
         } catch (Exception e) {
             e.printStackTrace();
             throw new Exception("could not convert: " + inFile.getAbsolutePath());

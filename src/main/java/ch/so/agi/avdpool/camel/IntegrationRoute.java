@@ -125,18 +125,18 @@ public class IntegrationRoute extends RouteBuilder {
             noSmtpAuthPredicate = PredicateBuilder.constant(false);
         }
 
-//        onException(Exception.class)
-//        .continued(true)
-//        .setHeader("from", simple(emailUserSender))
-//        .setHeader("subject", simple("AV-Import/-Export: Fehler"))
-//        .setHeader("to", simple(emailUserRecipient))
-//        .setBody(simple("Route Id: ${routeId} \n Date: ${date:now:yyyy-MM-dd HH:mm:ss} \n File: ${in.header.CamelFileAbsolutePath} \n Message: ${exception.message} \n Stacktrace: ${exception.stacktrace}"))
-//        .choice()
-//            .when(noSmtpAuthPredicate).to(emailSmtpSender+"?mail.smtp.auth="+smtpAuth)
-//        .otherwise()
-//            .to(emailSmtpSender+"?username="+emailUserSender+"&password="+emailPwdSender)
-//        .end()
-//        .log(LoggingLevel.ERROR, simple("${exception.stacktrace}").getText());
+        onException(Exception.class)
+        .handled(true)
+        .setHeader("from", simple(emailUserSender))
+        .setHeader("subject", simple("AV-Import/-Export: Fehler"))
+        .setHeader("to", simple(emailUserRecipient))
+        .setBody(simple("Route Id: ${routeId} \n Date: ${date:now:yyyy-MM-dd HH:mm:ss} \n File: ${in.header.CamelFileAbsolutePath} \n Message: ${exception.message} \n Stacktrace: ${exception.stacktrace}"))
+        .choice()
+            .when(noSmtpAuthPredicate).to(emailSmtpSender+"?mail.smtp.auth="+smtpAuth)
+        .otherwise()
+            .to(emailSmtpSender+"?username="+emailUserSender+"&password="+emailPwdSender)
+        .end()
+        .log(LoggingLevel.ERROR, simple("${exception.stacktrace}").getText());
          
         /*
          * Download ITF (ZIP) files from Infogrips FTP server every n seconds or minutes.
@@ -176,7 +176,7 @@ public class IntegrationRoute extends RouteBuilder {
          * Be careful: The library writes the error log messages to /dev/null since it was really verbose.
          * It should restore the default behaviour but there can be exotic corner cases... 
          */
-        from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&delay="+convertDelay+"&initialDelay="+initialConvertDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=av2ch-${file:name}-${file:size}-${file:modified}")
+        from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&delay="+convertDelay+"&initialDelay="+initialConvertDelay+"&readLock=changed&readLockMinAge=60s&idempotentRepository=#fileConsumerRepo&idempotentKey=av2ch-${file:name}-${file:size}-${file:modified}")
         .routeId("_av2ch_")
         .log(LoggingLevel.INFO, "Converting file to DM01-CH: ${in.header.CamelFileNameOnly}")        
         .process(new Av2chProcessor())
@@ -188,7 +188,7 @@ public class IntegrationRoute extends RouteBuilder {
         /*
          * Upload "Bundesmodell" to S3 every n seconds or minutes.
          */
-        from("file://"+pathToAv2ChFolder+"/?noop=true&include=.*\\.itf.zip&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-ch-${file:name}-${file:size}-${file:modified}")
+        from("file://"+pathToAv2ChFolder+"/?noop=true&include=.*\\.itf.zip&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&readLockMinAge=60s&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-ch-${file:name}-${file:size}-${file:modified}")
         .routeId("_av2ch upload_")
         .log(LoggingLevel.INFO, "Uploading DM01-CH-File: ${in.header.CamelFileNameOnly}")        
         .convertBodyTo(byte[].class)
@@ -204,7 +204,7 @@ public class IntegrationRoute extends RouteBuilder {
         /*
          * Convert Bundesmodell to DXF-Geobau.
          */
-        from("file://"+pathToAv2ChFolder+"/?noop=true&include=.*\\.itf&delay="+convertDelay+"&initialDelay="+initialConvertDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=av2geobau-${file:name}-${file:size}-${file:modified}")        
+        from("file://"+pathToAv2ChFolder+"/?noop=true&include=.*\\.itf&delay="+convertDelay+"&initialDelay="+initialConvertDelay+"&readLock=changed&readLockMinAge=60s&idempotentRepository=#fileConsumerRepo&idempotentKey=av2geobau-${file:name}-${file:size}-${file:modified}")        
         .routeId("_av2geobau_")
         .log(LoggingLevel.INFO, "Converting file to DXF-Geobau: ${in.header.CamelFileNameOnly}")        
         .process(new Av2GeobauProcessor())
@@ -218,7 +218,7 @@ public class IntegrationRoute extends RouteBuilder {
         /*
          * Upload "DXF-Geobau" to S3 every n seconds or minutes.
          */
-        from("file://"+pathToAv2GeobauFolder+"/?noop=true&include=.*\\.dxf.zip&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-dxf-${file:name}-${file:size}-${file:modified}")
+        from("file://"+pathToAv2GeobauFolder+"/?noop=true&include=.*\\.dxf.zip&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&readLockMinAge=60s&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-dxf-${file:name}-${file:size}-${file:modified}")
         .routeId("_av2geobau upload_")
         .log(LoggingLevel.INFO, "Uploading DXF-Geobau-File: ${in.header.CamelFileNameOnly}")        
         .convertBodyTo(byte[].class)
@@ -234,7 +234,7 @@ public class IntegrationRoute extends RouteBuilder {
         /*
          * Import ITF files into database three times a day (12:00 and 18:00 and 23:00).
          */
-        //from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&delay=30000&initialDelay=5000&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=ili2pg-${file:name}-${file:size}-${file:modified}")
+        //from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&delay=30000&initialDelay=5000&readLock=changed&readLockMinAge=60s&idempotentRepository=#fileConsumerRepo&idempotentKey=ili2pg-${file:name}-${file:size}-${file:modified}")
         from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&scheduler=spring&scheduler.cron="+importCronScheduleExpression+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=ili2pg-${file:name}-${file:size}-${file:modified}")
         .routeId("_ili2pg_")
         .log(LoggingLevel.INFO, "Importing File: ${in.header.CamelFileNameOnly}")        
