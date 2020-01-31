@@ -22,12 +22,17 @@ public class Av2GeobauProcessor implements Processor {
         Settings settings=new Settings();
         settings.setValue(Av2geobau.SETTING_ILIDIRS, Av2geobau.SETTING_DEFAULT_ILIDIRS);
         
-        boolean ok = Av2geobau.convert(itfFile, dxfFile, settings);
-        
-        if (!ok) {
+        try {
+            boolean ok = Av2geobau.convert(itfFile, dxfFile, settings);
+            
+            if (!ok) {
+                throw new Exception("could not convert: " + itfFile.getAbsolutePath());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
             throw new Exception("could not convert: " + itfFile.getAbsolutePath());
         }
-        
+
         exchange.getIn().setBody(dxfFile);
     }
 }

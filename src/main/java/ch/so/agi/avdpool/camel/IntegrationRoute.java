@@ -125,18 +125,18 @@ public class IntegrationRoute extends RouteBuilder {
             noSmtpAuthPredicate = PredicateBuilder.constant(false);
         }
 
-        onException(Exception.class)
-        .continued(true)
-        .setHeader("from", simple(emailUserSender))
-        .setHeader("subject", simple("AV-Import/-Export: Fehler"))
-        .setHeader("to", simple(emailUserRecipient))
-        .setBody(simple("Route Id: ${routeId} \n Date: ${date:now:yyyy-MM-dd HH:mm:ss} \n File: ${in.header.CamelFileAbsolutePath} \n Message: ${exception.message} \n Stacktrace: ${exception.stacktrace}"))
-        .choice()
-            .when(noSmtpAuthPredicate).to(emailSmtpSender+"?mail.smtp.auth="+smtpAuth)
-        .otherwise()
-            .to(emailSmtpSender+"?username="+emailUserSender+"&password="+emailPwdSender)
-        .end()
-        .log(LoggingLevel.ERROR, simple("${exception.stacktrace}").getText());
+//        onException(Exception.class)
+//        .continued(true)
+//        .setHeader("from", simple(emailUserSender))
+//        .setHeader("subject", simple("AV-Import/-Export: Fehler"))
+//        .setHeader("to", simple(emailUserRecipient))
+//        .setBody(simple("Route Id: ${routeId} \n Date: ${date:now:yyyy-MM-dd HH:mm:ss} \n File: ${in.header.CamelFileAbsolutePath} \n Message: ${exception.message} \n Stacktrace: ${exception.stacktrace}"))
+//        .choice()
+//            .when(noSmtpAuthPredicate).to(emailSmtpSender+"?mail.smtp.auth="+smtpAuth)
+//        .otherwise()
+//            .to(emailSmtpSender+"?username="+emailUserSender+"&password="+emailPwdSender)
+//        .end()
+//        .log(LoggingLevel.ERROR, simple("${exception.stacktrace}").getText());
          
         /*
          * Download ITF (ZIP) files from Infogrips FTP server every n seconds or minutes.
@@ -173,7 +173,7 @@ public class IntegrationRoute extends RouteBuilder {
         
         /*
          * Convert ITF files to zipped "Bundesmodell" (DM01AVCH24DLV95) every n seconds or minutes.
-         * Be careful: The library writes the error log messages to dev/null since it was really verbose.
+         * Be careful: The library writes the error log messages to /dev/null since it was really verbose.
          * It should restore the default behaviour but there can be exotic corner cases... 
          */
         from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&delay="+convertDelay+"&initialDelay="+initialConvertDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=av2ch-${file:name}-${file:size}-${file:modified}")
