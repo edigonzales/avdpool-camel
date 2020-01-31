@@ -168,7 +168,8 @@ public class IntegrationRoute extends RouteBuilder {
         .to("aws-s3://" + awsBucketNameSO
                 + "?deleteAfterWrite=false&region=EU_CENTRAL_1" //https://docs.aws.amazon.com/de_de/general/latest/gr/rande.html https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/regions/Regions.html
                 + "&accessKey={{awsAccessKey}}"
-                + "&secretKey=RAW({{awsSecretKey}})");
+                + "&secretKey=RAW({{awsSecretKey}})")
+        .log(LoggingLevel.INFO, "Upload DM01-SO done: ${in.header.CamelFileNameOnly}");
         
         /*
          * Convert ITF files to zipped "Bundesmodell" (DM01AVCH24DLV95) every n seconds or minutes.
@@ -181,9 +182,9 @@ public class IntegrationRoute extends RouteBuilder {
         .process(new Av2chProcessor())
         .to("file://"+pathToAv2ChFolder+"/")
         .marshal().zipFile()
-        .to("file://"+pathToAv2ChFolder+"/");
+        .to("file://"+pathToAv2ChFolder+"/")
+        .log(LoggingLevel.INFO, "Convertion to DM01-CH done: ${in.header.CamelFileNameOnly}");
         
-
         /*
          * Upload "Bundesmodell" to S3 every n seconds or minutes.
          */
@@ -197,7 +198,8 @@ public class IntegrationRoute extends RouteBuilder {
         .to("aws-s3://" + awsBucketNameCH
                 + "?deleteAfterWrite=false&region=EU_CENTRAL_1" 
                 + "&accessKey={{awsAccessKey}}"
-                + "&secretKey=RAW({{awsSecretKey}})");
+                + "&secretKey=RAW({{awsSecretKey}})")
+        .log(LoggingLevel.INFO, "Upload DM01-CH done: ${in.header.CamelFileNameOnly}");
         
         /*
          * Convert Bundesmodell to DXF-Geobau.
@@ -209,7 +211,9 @@ public class IntegrationRoute extends RouteBuilder {
         .to("file://"+pathToAv2GeobauFolder+"?fileName=${file:name.noext}.dxf")
         .setHeader(Exchange.FILE_NAME, simple("${file:name.noext}.dxf"))
         .marshal().zipFile()
-        .to("file://"+pathToAv2GeobauFolder+"/");
+        .to("file://"+pathToAv2GeobauFolder+"/")
+        .log(LoggingLevel.INFO, "Convertion to DXF-Geobau done: ${in.header.CamelFileNameOnly}");
+
         
         /*
          * Upload "DXF-Geobau" to S3 every n seconds or minutes.
@@ -224,7 +228,8 @@ public class IntegrationRoute extends RouteBuilder {
         .to("aws-s3://" + awsBucketNameDXF
                 + "?deleteAfterWrite=false&region=EU_CENTRAL_1" 
                 + "&accessKey={{awsAccessKey}}"
-                + "&secretKey=RAW({{awsSecretKey}})");
+                + "&secretKey=RAW({{awsSecretKey}})")
+        .log(LoggingLevel.INFO, "Upload DXF-Geobau done: ${in.header.CamelFileNameOnly}");
 
         /*
          * Import ITF files into database three times a day (12:00 and 18:00 and 23:00).
