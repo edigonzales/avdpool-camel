@@ -6,6 +6,7 @@ Ablösung für AV-Import/-Export.
 2. Betriebsdokumentation
 3. Entwicklerdokumentation
 4. TODO
+5. Incidents
 
 ## Beschreibung
 Importiert die Daten der amtlichen Vermessung in die Edit-Datenbank und erstellt verschiedene (DM01-Bund, DXF-Geobau (to be done)) abgeleitete Produkte. Die Originaldateien wie auch die Derivate werden auf AWS-S3 archiviert.
@@ -159,6 +160,24 @@ Entweder werden sie z.B. in die `.bashrc`-Datei o.ä. geschrieben oder in Eclips
 ## TODO 
 - Zusätzliche Indexe in den DB-Tabellen. Welche?
 - Anpassung Modellierungshandbuch an ili2pg-4.0. Anfang ist gemacht.
+
+## Incidents
+### FTP lädt keine Daten mehr herunter
+2020-09-07
+
+Nach der Warnung
+```
+2020-09-07 08:45:59.289  WARN 1 --- [24lv95%5Citf%5C] o.a.c.component.file.remote.FtpConsumer  : ftp://vaso@ftp.infogrips.ch/%5Cdm01avso24lv95%5Citf%5C?antInclude=*.zip&autoCreate=false&binary=true&delay=60000&idempotentKey=ftp-%24%7Bfile%3Aname%7D-%24%7Bfile%3Asize%7D-%24%7Bfile%3Amodified%7D&idempotentRepository=%23fileConsumerRepo&initialDelay=5000&noop=true&passiveMode=true&password=xxxxxx&readLock=changed&separator=Windows&stepwise=false cannot begin processing file: RemoteFile[257900.zip] due to: File operation failed: 150 ASCII data connection opened for file list.
+ Read timed out. Code: 150. Caused by: [org.apache.camel.component.file.GenericFileOperationFailedException - File operation failed: 150 ASCII data connection opened for file list.
+ Read timed out. Code: 150]
+
+org.apache.camel.component.file.GenericFileOperationFailedException: File operation failed: 150 ASCII data connection opened for file list.
+ Read timed out. Code: 150
+```
+werden keine Daten mehr vom FTP heruntergeladen, obwohl weiter gepollt wird. Ein Problem ist, dass Apache Camel scheinbar die Exception nicht sauber weiterleitet (resp. Apache Commons) und damit auch keine E-Mail verschickt werden kann. Das Pollen nach der Warnung dauert Millisekunden, vor der Warnung dauerte das Pollen jeweils ein paar Sekunden.
+
+Nach einem Restart funktioniert es wieder. Richtig viele Informationen findet man dazu nicht.
+
 
 
 
