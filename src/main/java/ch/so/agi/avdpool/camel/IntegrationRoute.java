@@ -201,35 +201,35 @@ public class IntegrationRoute extends RouteBuilder {
                 + "&secretKey=RAW({{awsSecretKey}})")
         .log(LoggingLevel.INFO, "Upload DM01-CH done: ${in.header.CamelFileNameOnly}");
         
-        /*
-         * Convert Bundesmodell to DXF-Geobau.
-         */
-        from("file://"+pathToAv2ChFolder+"/?noop=true&include=.*\\.itf&delay="+convertDelay+"&initialDelay="+initialConvertDelay+"&readLock=changed&readLockMinAge=60s&idempotentRepository=#fileConsumerRepo&idempotentKey=av2geobau-${file:name}-${file:size}-${file:modified}")        
-        .routeId("_av2geobau_")
-        .log(LoggingLevel.INFO, "Converting file to DXF-Geobau: ${in.header.CamelFileNameOnly}")        
-        .process(new Av2GeobauProcessor())
-        .to("file://"+pathToAv2GeobauFolder+"?fileName=${file:name.noext}.dxf")
-        .setHeader(Exchange.FILE_NAME, simple("${file:name.noext}.dxf"))
-        .marshal().zipFile()
-        .to("file://"+pathToAv2GeobauFolder+"/")
-        .log(LoggingLevel.INFO, "Convertion to DXF-Geobau done: ${in.header.CamelFileNameOnly}");
-
-        
-        /*
-         * Upload "DXF-Geobau" to S3 every n seconds or minutes.
-         */
-        from("file://"+pathToAv2GeobauFolder+"/?noop=true&include=.*\\.dxf.zip&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&readLockMinAge=60s&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-dxf-${file:name}-${file:size}-${file:modified}")
-        .routeId("_av2geobau upload_")
-        .log(LoggingLevel.INFO, "Uploading DXF-Geobau-File: ${in.header.CamelFileNameOnly}")        
-        .convertBodyTo(byte[].class)
-        .setHeader(S3Constants.CONTENT_LENGTH, simple("${in.header.CamelFileLength}"))
-        .setHeader(S3Constants.KEY,simple("${in.header.CamelFileNameOnly}"))
-        .setHeader(S3Constants.CANNED_ACL,simple("PublicRead")) 
-        .to("aws-s3://" + awsBucketNameDXF
-                + "?deleteAfterWrite=false&region=EU_CENTRAL_1" 
-                + "&accessKey={{awsAccessKey}}"
-                + "&secretKey=RAW({{awsSecretKey}})")
-        .log(LoggingLevel.INFO, "Upload DXF-Geobau done: ${in.header.CamelFileNameOnly}");
+//        /*
+//         * Convert Bundesmodell to DXF-Geobau.
+//         */
+//        from("file://"+pathToAv2ChFolder+"/?noop=true&include=.*\\.itf&delay="+convertDelay+"&initialDelay="+initialConvertDelay+"&readLock=changed&readLockMinAge=60s&idempotentRepository=#fileConsumerRepo&idempotentKey=av2geobau-${file:name}-${file:size}-${file:modified}")        
+//        .routeId("_av2geobau_")
+//        .log(LoggingLevel.INFO, "Converting file to DXF-Geobau: ${in.header.CamelFileNameOnly}")        
+//        .process(new Av2GeobauProcessor())
+//        .to("file://"+pathToAv2GeobauFolder+"?fileName=${file:name.noext}.dxf")
+//        .setHeader(Exchange.FILE_NAME, simple("${file:name.noext}.dxf"))
+//        .marshal().zipFile()
+//        .to("file://"+pathToAv2GeobauFolder+"/")
+//        .log(LoggingLevel.INFO, "Convertion to DXF-Geobau done: ${in.header.CamelFileNameOnly}");
+//
+//        
+//        /*
+//         * Upload "DXF-Geobau" to S3 every n seconds or minutes.
+//         */
+//        from("file://"+pathToAv2GeobauFolder+"/?noop=true&include=.*\\.dxf.zip&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&readLockMinAge=60s&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-dxf-${file:name}-${file:size}-${file:modified}")
+//        .routeId("_av2geobau upload_")
+//        .log(LoggingLevel.INFO, "Uploading DXF-Geobau-File: ${in.header.CamelFileNameOnly}")        
+//        .convertBodyTo(byte[].class)
+//        .setHeader(S3Constants.CONTENT_LENGTH, simple("${in.header.CamelFileLength}"))
+//        .setHeader(S3Constants.KEY,simple("${in.header.CamelFileNameOnly}"))
+//        .setHeader(S3Constants.CANNED_ACL,simple("PublicRead")) 
+//        .to("aws-s3://" + awsBucketNameDXF
+//                + "?deleteAfterWrite=false&region=EU_CENTRAL_1" 
+//                + "&accessKey={{awsAccessKey}}"
+//                + "&secretKey=RAW({{awsSecretKey}})")
+//        .log(LoggingLevel.INFO, "Upload DXF-Geobau done: ${in.header.CamelFileNameOnly}");
 
         /*
          * Import ITF files into database three times a day (12:00 and 18:00 and 23:00).
