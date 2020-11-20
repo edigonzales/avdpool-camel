@@ -1,5 +1,7 @@
 package ch.so.agi.avdpool.camel;
 
+import javax.sql.DataSource;
+
 import org.apache.camel.Exchange;
 import org.apache.camel.LoggingLevel;
 import org.apache.camel.Predicate;
@@ -7,6 +9,7 @@ import org.apache.camel.builder.PredicateBuilder;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.aws.s3.S3Constants;
 import org.apache.camel.dataformat.zipfile.ZipSplitter;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -79,15 +82,6 @@ public class IntegrationRoute extends RouteBuilder {
     
     @Value("${app.importCronScheduleExpression}")
     private String importCronScheduleExpression;
-
-    @Value("${app.dbHostEdit}")
-    private String dbHostEdit;
-    
-    @Value("${app.dbPortEdit}")
-    private String dbPortEdit;
-    
-    @Value("${app.dbDatabaseEdit}")
-    private String dbDatabaseEdit;
     
     @Value("${app.dbSchemaEdit}")
     private String dbSchemaEdit;
@@ -112,6 +106,9 @@ public class IntegrationRoute extends RouteBuilder {
 
     @Value("${app.smtpAuth}")
     private String smtpAuth = "false";
+    
+    @Autowired
+    DataSource dataSource;
 
     @Override
     public void configure() throws Exception {
@@ -141,8 +138,8 @@ public class IntegrationRoute extends RouteBuilder {
         /*
          * Download ITF (ZIP) files from Infogrips FTP server every n seconds or minutes.
          */
-        from("ftp://"+ftpUserInfogrips+"@"+ftpUrlInfogrips+"/\\dm01avso24lv95\\itf\\?password="+ftpPwdInfogrips+"&antInclude=*.zip&autoCreate=false&noop=true&readLock=changed&stepwise=false&separator=Windows&passiveMode=true&binary=true&delay="+downloadDelay+"&initialDelay="+initialDownloadDelay+"&idempotentRepository=#fileConsumerRepo&idempotentKey=ftp-${file:name}-${file:size}-${file:modified}")
-        //from("ftp://"+ftpUserInfogrips+"@"+ftpUrlInfogrips+"/\\dm01avso24lv95\\itf\\?password="+ftpPwdInfogrips+"&antInclude=240100.zip&autoCreate=false&noop=true&readLock=changed&stepwise=false&separator=Windows&passiveMode=true&binary=true&delay="+downloadDelay+"&initialDelay="+initialDownloadDelay+"&idempotentRepository=#fileConsumerRepo&idempotentKey=ftp-${file:name}-${file:size}-${file:modified}")
+        from("ftp://"+ftpUserInfogrips+"@"+ftpUrlInfogrips+"/\\dm01avso24lv95\\itf\\?password="+ftpPwdInfogrips+"&antInclude=*.zip&autoCreate=false&noop=true&readLock=changed&stepwise=false&separator=Windows&passiveMode=true&binary=true&delay="+downloadDelay+"&initialDelay="+initialDownloadDelay+"&maxMessagesPerPoll=10&idempotentRepository=#jdbcConsumerRepo&inProgressRepository=#jdbcConsumerRepo&idempotentKey=ftp-${file:name}-${file:size}-${file:modified}")
+        //from("ftp://"+ftpUserInfogrips+"@"+ftpUrlInfogrips+"/\\dm01avso24lv95\\itf\\?password="+ftpPwdInfogrips+"&antInclude=240100.zip&autoCreate=false&noop=true&readLock=changed&stepwise=false&separator=Windows&passiveMode=true&binary=true&delay="+downloadDelay+"&initialDelay="+initialDownloadDelay+"&idempotentRepository=#jdbcConsumerRepo&idempotentKey=ftp-${file:name}-${file:size}-${file:modified}")
         .routeId("_download_")
         .log(LoggingLevel.INFO, "Downloading and unzipping route: ${in.header.CamelFileNameOnly}")
         .to("file://"+pathToDownloadFolder)
@@ -155,88 +152,86 @@ public class IntegrationRoute extends RouteBuilder {
             .end()
         .end();
         
-        /*
-         * Upload the (original) zipped ITF files to S3 every n seconds or minutes.
-         */
-        from("file://"+pathToDownloadFolder+"/?noop=true&include=.*\\.zip&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-${file:name}-${file:size}-${file:modified}")
-        .routeId("_upload_")
-        .log(LoggingLevel.INFO, "Uploading DM01-SO: ${in.header.CamelFileNameOnly}") 
-        .convertBodyTo(byte[].class)
-        .setHeader(S3Constants.CONTENT_LENGTH, simple("${in.header.CamelFileLength}"))
-        .setHeader(S3Constants.KEY,simple("${in.header.CamelFileNameOnly}"))
-        .setHeader(S3Constants.CANNED_ACL,simple("PublicRead")) // https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/model/CannedAccessControlList.html
-        .to("aws-s3://" + awsBucketNameSO
-                + "?deleteAfterWrite=false&region=EU_CENTRAL_1" //https://docs.aws.amazon.com/de_de/general/latest/gr/rande.html https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/regions/Regions.html
-                + "&accessKey={{awsAccessKey}}"
-                + "&secretKey=RAW({{awsSecretKey}})")
-        .log(LoggingLevel.INFO, "Upload DM01-SO done: ${in.header.CamelFileNameOnly}");
-        
-        /*
-         * Convert ITF files to zipped "Bundesmodell" (DM01AVCH24DLV95) every n seconds or minutes.
-         * Be careful: The library writes the error log messages to /dev/null since it was really verbose.
-         * It should restore the default behaviour but there can be exotic corner cases... 
-         */
-        from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&delay="+convertDelay+"&initialDelay="+initialConvertDelay+"&readLock=changed&readLockMinAge=60s&idempotentRepository=#fileConsumerRepo&idempotentKey=av2ch-${file:name}-${file:size}-${file:modified}")
-        .routeId("_av2ch_")
-        .log(LoggingLevel.INFO, "Converting file to DM01-CH: ${in.header.CamelFileNameOnly}")        
-        .process(new Av2chProcessor())
-        .to("file://"+pathToAv2ChFolder+"/")
-        .marshal().zipFile()
-        .to("file://"+pathToAv2ChFolder+"/")
-        .log(LoggingLevel.INFO, "Convertion to DM01-CH done: ${in.header.CamelFileNameOnly}");
-        
-        /*
-         * Upload "Bundesmodell" to S3 every n seconds or minutes.
-         */
-        from("file://"+pathToAv2ChFolder+"/?noop=true&include=.*\\.itf.zip&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&readLockMinAge=60s&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-ch-${file:name}-${file:size}-${file:modified}")
-        .routeId("_av2ch upload_")
-        .log(LoggingLevel.INFO, "Uploading DM01-CH-File: ${in.header.CamelFileNameOnly}")        
-        .convertBodyTo(byte[].class)
-        .setHeader(S3Constants.CONTENT_LENGTH, simple("${in.header.CamelFileLength}"))
-        .setHeader(S3Constants.KEY,simple("${in.header.CamelFileNameOnly}"))
-        .setHeader(S3Constants.CANNED_ACL,simple("PublicRead")) 
-        .to("aws-s3://" + awsBucketNameCH
-                + "?deleteAfterWrite=false&region=EU_CENTRAL_1" 
-                + "&accessKey={{awsAccessKey}}"
-                + "&secretKey=RAW({{awsSecretKey}})")
-        .log(LoggingLevel.INFO, "Upload DM01-CH done: ${in.header.CamelFileNameOnly}");
-        
-        /*
-         * Convert Bundesmodell to DXF-Geobau.
-         */
-        from("file://"+pathToAv2ChFolder+"/?noop=true&include=.*\\.itf&delay="+convertDelay+"&initialDelay="+initialConvertDelay+"&readLock=changed&readLockMinAge=60s&idempotentRepository=#fileConsumerRepo&idempotentKey=av2geobau-${file:name}-${file:size}-${file:modified}")        
-        .routeId("_av2geobau_")
-        .log(LoggingLevel.INFO, "Converting file to DXF-Geobau: ${in.header.CamelFileNameOnly}")        
-        .process(new Av2GeobauProcessor())
-        .to("file://"+pathToAv2GeobauFolder+"?fileName=${file:name.noext}.zip")
-        .log(LoggingLevel.INFO, "Convertion to DXF-Geobau done: ${in.header.CamelFileNameOnly}");
-
-        /*
-         * Upload "DXF-Geobau" to S3 every n seconds or minutes.
-         */
-        from("file://"+pathToAv2GeobauFolder+"/?noop=true&include=.*\\.zip&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&readLockMinAge=60s&idempotentRepository=#fileConsumerRepo&idempotentKey=s3-dxf-${file:name}-${file:size}-${file:modified}")
-        .routeId("_av2geobau upload_")
-        .log(LoggingLevel.INFO, "Uploading DXF-Geobau-File: ${in.header.CamelFileNameOnly}")        
-        .convertBodyTo(byte[].class)
-        .setHeader(S3Constants.CONTENT_LENGTH, simple("${in.header.CamelFileLength}"))
-        .setHeader(S3Constants.KEY,simple("${in.header.CamelFileNameOnly}"))
-        .setHeader(S3Constants.CANNED_ACL,simple("PublicRead")) 
-        .to("aws-s3://" + awsBucketNameDXF
-                + "?deleteAfterWrite=false&region=EU_CENTRAL_1" 
-                + "&accessKey={{awsAccessKey}}"
-                + "&secretKey=RAW({{awsSecretKey}})")
-        .log(LoggingLevel.INFO, "Upload DXF-Geobau done: ${in.header.CamelFileNameOnly}");
-
+//        /*
+//         * Upload the (original) zipped ITF files to S3 every n seconds or minutes.
+//         */
+//        from("file://"+pathToDownloadFolder+"/?noop=true&include=.*\\.zip&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&idempotentRepository=#jdbcConsumerRepo&idempotentKey=s3-${file:name}-${file:size}-${file:modified}")
+//        .routeId("_upload_")
+//        .log(LoggingLevel.INFO, "Uploading DM01-SO: ${in.header.CamelFileNameOnly}") 
+//        .convertBodyTo(byte[].class)
+//        .setHeader(S3Constants.CONTENT_LENGTH, simple("${in.header.CamelFileLength}"))
+//        .setHeader(S3Constants.KEY,simple("${in.header.CamelFileNameOnly}"))
+//        .setHeader(S3Constants.CANNED_ACL,simple("PublicRead")) // https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/s3/model/CannedAccessControlList.html
+//        .to("aws-s3://" + awsBucketNameSO
+//                + "?deleteAfterWrite=false&region=EU_CENTRAL_1" //https://docs.aws.amazon.com/de_de/general/latest/gr/rande.html https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/regions/Regions.html
+//                + "&accessKey={{awsAccessKey}}"
+//                + "&secretKey=RAW({{awsSecretKey}})")
+//        .log(LoggingLevel.INFO, "Upload DM01-SO done: ${in.header.CamelFileNameOnly}");
+//        
+//        /*
+//         * Convert ITF files to zipped "Bundesmodell" (DM01AVCH24DLV95) every n seconds or minutes.
+//         * Be careful: The library writes the error log messages to /dev/null since it was really verbose.
+//         * It should restore the default behaviour but there can be exotic corner cases... 
+//         */
+//        from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&delay="+convertDelay+"&initialDelay="+initialConvertDelay+"&readLock=changed&readLockMinAge=60s&idempotentRepository=#jdbcConsumerRepo&idempotentKey=av2ch-${file:name}-${file:size}-${file:modified}")
+//        .routeId("_av2ch_")
+//        .log(LoggingLevel.INFO, "Converting file to DM01-CH: ${in.header.CamelFileNameOnly}")        
+//        .process(new Av2chProcessor())
+//        .to("file://"+pathToAv2ChFolder+"/")
+//        .marshal().zipFile()
+//        .to("file://"+pathToAv2ChFolder+"/")
+//        .log(LoggingLevel.INFO, "Convertion to DM01-CH done: ${in.header.CamelFileNameOnly}");
+//        
+//        /*
+//         * Upload "Bundesmodell" to S3 every n seconds or minutes.
+//         */
+//        from("file://"+pathToAv2ChFolder+"/?noop=true&include=.*\\.itf.zip&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&readLockMinAge=60s&idempotentRepository=#jdbcConsumerRepo&idempotentKey=s3-ch-${file:name}-${file:size}-${file:modified}")
+//        .routeId("_av2ch upload_")
+//        .log(LoggingLevel.INFO, "Uploading DM01-CH-File: ${in.header.CamelFileNameOnly}")        
+//        .convertBodyTo(byte[].class)
+//        .setHeader(S3Constants.CONTENT_LENGTH, simple("${in.header.CamelFileLength}"))
+//        .setHeader(S3Constants.KEY,simple("${in.header.CamelFileNameOnly}"))
+//        .setHeader(S3Constants.CANNED_ACL,simple("PublicRead")) 
+//        .to("aws-s3://" + awsBucketNameCH
+//                + "?deleteAfterWrite=false&region=EU_CENTRAL_1" 
+//                + "&accessKey={{awsAccessKey}}"
+//                + "&secretKey=RAW({{awsSecretKey}})")
+//        .log(LoggingLevel.INFO, "Upload DM01-CH done: ${in.header.CamelFileNameOnly}");
+//        
+//        /*
+//         * Convert Bundesmodell to DXF-Geobau.
+//         */
+//        from("file://"+pathToAv2ChFolder+"/?noop=true&include=.*\\.itf&delay="+convertDelay+"&initialDelay="+initialConvertDelay+"&readLock=changed&readLockMinAge=60s&idempotentRepository=#jdbcConsumerRepo&idempotentKey=av2geobau-${file:name}-${file:size}-${file:modified}")        
+//        .routeId("_av2geobau_")
+//        .log(LoggingLevel.INFO, "Converting file to DXF-Geobau: ${in.header.CamelFileNameOnly}")        
+//        .process(new Av2GeobauProcessor())
+//        .to("file://"+pathToAv2GeobauFolder+"?fileName=${file:name.noext}.zip")
+//        .log(LoggingLevel.INFO, "Convertion to DXF-Geobau done: ${in.header.CamelFileNameOnly}");
+//
+//        /*
+//         * Upload "DXF-Geobau" to S3 every n seconds or minutes.
+//         */
+//        from("file://"+pathToAv2GeobauFolder+"/?noop=true&include=.*\\.zip&delay="+uploadDelay+"&initialDelay="+initialUploadDelay+"&readLock=changed&readLockMinAge=60s&idempotentRepository=#jdbcConsumerRepo&idempotentKey=s3-dxf-${file:name}-${file:size}-${file:modified}")
+//        .routeId("_av2geobau upload_")
+//        .log(LoggingLevel.INFO, "Uploading DXF-Geobau-File: ${in.header.CamelFileNameOnly}")        
+//        .convertBodyTo(byte[].class)
+//        .setHeader(S3Constants.CONTENT_LENGTH, simple("${in.header.CamelFileLength}"))
+//        .setHeader(S3Constants.KEY,simple("${in.header.CamelFileNameOnly}"))
+//        .setHeader(S3Constants.CANNED_ACL,simple("PublicRead")) 
+//        .to("aws-s3://" + awsBucketNameDXF
+//                + "?deleteAfterWrite=false&region=EU_CENTRAL_1" 
+//                + "&accessKey={{awsAccessKey}}"
+//                + "&secretKey=RAW({{awsSecretKey}})")
+//        .log(LoggingLevel.INFO, "Upload DXF-Geobau done: ${in.header.CamelFileNameOnly}");
+//
         /*
          * Import ITF files into database three times a day (12:00 and 18:00 and 23:00).
          */
-        //from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&delay=30000&initialDelay=5000&readLock=changed&readLockMinAge=60s&idempotentRepository=#fileConsumerRepo&idempotentKey=ili2pg-${file:name}-${file:size}-${file:modified}")
-        from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&scheduler=spring&scheduler.cron="+importCronScheduleExpression+"&readLock=changed&idempotentRepository=#fileConsumerRepo&idempotentKey=ili2pg-${file:name}-${file:size}-${file:modified}")
+        from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&delay=30000&initialDelay=5000&readLock=changed&readLockMinAge=60s&maxMessagesPerPoll=10&idempotentRepository=#jdbcConsumerRepo&inProgressRepository=#jdbcConsumerRepo&idempotentKey=ili2pg-${file:name}-${file:size}-${file:modified}")
+        //from("file://"+pathToUnzipFolder+"/?noop=true&charset=ISO-8859-1&include=.*\\.itf&scheduler=spring&scheduler.cron="+importCronScheduleExpression+"&readLock=changed&idempotentRepository=#jdbcConsumerRepo&idempotentKey=ili2pg-${file:name}-${file:size}-${file:modified}")
         .routeId("_ili2pg_")
         .log(LoggingLevel.INFO, "Importing File: ${in.header.CamelFileNameOnly}")        
-        .setProperty("dbhost", constant(dbHostEdit))
-        .setProperty("dbport", constant(dbPortEdit))
-        .setProperty("dbdatabase", constant(dbDatabaseEdit))
+        .setProperty("datasource", constant(dataSource))
         .setProperty("dbschema", constant(dbSchemaEdit))
         .setProperty("dbusr", constant(dbUserEdit))
         .setProperty("dbpwd", constant(dbPwdEdit))

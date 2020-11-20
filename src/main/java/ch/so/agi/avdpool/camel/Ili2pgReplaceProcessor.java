@@ -1,6 +1,8 @@
 package ch.so.agi.avdpool.camel;
 
 import java.io.File;
+import java.net.URI;
+import java.sql.Connection;
 
 import org.apache.camel.Exchange;
 import org.apache.camel.Processor;
@@ -11,6 +13,8 @@ import ch.ehi.ili2db.base.Ili2db;
 import ch.ehi.ili2db.gui.Config;
 import ch.ehi.ili2pg.PgMain;
 
+import javax.sql.DataSource;
+
 public class Ili2pgReplaceProcessor implements Processor {
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
@@ -18,9 +22,23 @@ public class Ili2pgReplaceProcessor implements Processor {
     public void process(Exchange exchange) throws Exception {
         File xtfFile = exchange.getIn().getBody(File.class);
         
-        String dbhost = (String) exchange.getProperty("dbhost");
-        String dbport = (String) exchange.getProperty("dbport");
-        String dbdatabase = (String) exchange.getProperty("dbdatabase");
+        String dbhost = null;
+        String dbport = null;
+        String dbdatabase = null;
+        DataSource dataSource = (DataSource) exchange.getProperty("datasource");
+        try (Connection con = dataSource.getConnection();) {
+            String url = con.getMetaData().getURL();
+            String cleanUrl = url.substring(5);
+            URI uri = URI.create(cleanUrl);
+            dbhost = uri.getHost();
+            dbport = String.valueOf(uri.getPort());
+            dbdatabase = uri.getPath().substring(1);
+        } catch (Exception e) {
+               e.printStackTrace();
+               log.error(e.getMessage());
+               throw new Exception(e);               
+        }
+        
         String dbschema = (String) exchange.getProperty("dbschema");
         String dbusr = (String) exchange.getProperty("dbusr");
         String dbpwd = (String) exchange.getProperty("dbpwd");
