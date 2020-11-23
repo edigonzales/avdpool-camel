@@ -19,10 +19,12 @@ Bei jedem Git-Push wird mittels Travis das Docker-Image neu gebildet und als sog
 ### Konfiguration
 Die Verbindungsparameter werden über Spring Boot Profile gesteuert. Für jede Umgebung gibt es ein application-[dev|test|int|prod]properties. Diese spezielle, zusätzliche Propertiesfile kann mit der speziellen Spring-Boot-Umgebungsvariable SPRING_PROFILES_ACTIVE gesteuert werden: SPRING_PROFILES_ACTIVE=[dev|test|int|prod] vorhanden sein.
 
+Secrets werden mittels ENV-Variablen gesetzt.
+
 Der Import wird über eine Cron-Schedule-Expression gesteuert, allen anderen Zyklen über Millisekundenangaben.
 
 ### Persistenz
-Es ist ein Persistence-Volume notwendig (siehe `docker run`-Befehl).
+Es wird ein JdbcIdempotent-Repository sowohl für die prozessierten wie auch für die in-progress Messages. Ob es aber so genug "robust" für den Betrieb mit mehreren Pods ist, muss sich noch zeigen.
 
 ### Docker
 ```

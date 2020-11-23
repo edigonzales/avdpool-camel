@@ -32,19 +32,18 @@ configurations.all {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-jdbc'      
     implementation 'commons-io:commons-io:2.6'
     implementation "org.apache.camel:camel-spring-boot-starter:${apacheCamelVersion}"
     implementation "org.apache.camel:camel-ftp:${apacheCamelVersion}"
     implementation "org.apache.camel:camel-mail:${apacheCamelVersion}"
     implementation "org.apache.camel:camel-zipfile:${apacheCamelVersion}"
     implementation "org.apache.camel:camel-aws:${apacheCamelVersion}"
-    //implementation ('ch.so.agi.camel:camel-ili2pg:latest.integration') {changing = true}
-    //implementation ('ch.so.agi.camel:camel-ili2pg:1.0.18')
+    implementation "org.apache.camel:camel-sql:${apacheCamelVersion}"    
     implementation "ch.interlis:ili2pg:4.3.1"
     implementation "ch.ehi:ehibasics:1.2.0"
     implementation "ch.so.agi.av:av2ch:1.0.12"
     implementation "ch.interlis:av2geobau:1.0.1-SNAPSHOT"
-    //implementation ('ch.so.agi.camel:camel-components:latest.integration') {changing = true}
     
     implementation 'com.sun.xml.bind:jaxb-core:2.3.0.1'
     implementation 'javax.xml.bind:jaxb-api:2.3.1'
